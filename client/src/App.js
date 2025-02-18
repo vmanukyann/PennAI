@@ -1,5 +1,5 @@
-import "./App.css";
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -8,31 +8,60 @@ function App() {
   const handleSend = () => {
     if (input.trim()) {
       setMessages([...messages, { text: input, sender: "user" }]);
+      // Add simulated AI response
+      setTimeout(() => {
+        setMessages(prev => [
+          ...prev,
+          { text: "This is a simulated response", sender: "bot" }
+        ]);
+      }, 1000);
       setInput("");
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      handleSend();
+      e.preventDefault();
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>ChatPHS</h1>
-      </header>
+    <div className="app">
+      <div className="sidebar">
+        <div className="header">
+          <h1>ChatPHS</h1>
+        </div>
+      </div>
+      
       <div className="chat-container">
         <div className="messages">
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
-              {msg.text}
+              <div className="message-content">
+                {msg.sender === 'bot' && <div className="avatar">AI</div>}
+                <div className="text">{msg.text}</div>
+              </div>
             </div>
           ))}
         </div>
-        <div className="input-container">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Type a message..."
-          />
-          <button onClick={handleSend}>Send</button>
+        
+        <div className="input-area">
+          <div className="input-wrapper">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyPress}
+              placeholder="Send a message..."
+            />
+            <button onClick={handleSend} className="send-button">
+              ➢
+            </button>
+          </div>
+          <div className="disclaimer">
+            Bro what the Sigma :D
+          </div>
         </div>
       </div>
     </div>
