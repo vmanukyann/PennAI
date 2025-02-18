@@ -53,14 +53,14 @@ function App() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyPress}
-              placeholder="Send a message..."
+              placeholder="Enter Message..."
             />
             <button onClick={handleSend} className="send-button">
               ➢
             </button>
           </div>
           <div className="disclaimer">
-            Bro what the Sigma :D
+          ChatPHS is a simulated chat application. Do not enter any personal information.
           </div>
         </div>
       </div>
