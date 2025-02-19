@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [chats, setChats] = useState(() => {
@@ -20,7 +21,7 @@ function App() {
     localStorage.setItem("currentChatId", JSON.stringify(currentChatId));
   }, [currentChatId]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
       setChats(chats.map(chat => 
         chat.id === currentChatId 
@@ -32,14 +33,19 @@ function App() {
           : chat
       ));
       setInput("");
-      // Add simulated AI response
-      setTimeout(() => {
+
+      try {
+        console.log("Sending message:", input); // Log sending message
+        const response = await axios.post('/api/chat', { message: input });
+        console.log("Received response:", response.data); // Log received response
         setChats(prevChats => prevChats.map(chat => 
           chat.id === currentChatId 
-            ? { ...chat, messages: [...chat.messages, { text: "Hi! How are you on", sender: "bot" }] }
+            ? { ...chat, messages: [...chat.messages, { text: response.data.reply, sender: "bot" }] }
             : chat
         ));
-      }, 1000);
+      } catch (error) {
+        console.error("Error communicating with backend:", error);
+      }
     }
   };
 
