@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [chats, setChats] = useState([{ id: 1, name: "Chat 1", messages: [] }]);
-  const [currentChatId, setCurrentChatId] = useState(1);
+  const [chats, setChats] = useState(() => {
+    const savedChats = localStorage.getItem("chats");
+    return savedChats ? JSON.parse(savedChats) : [{ id: 1, name: "Chat 1", messages: [] }];
+  });
+  const [currentChatId, setCurrentChatId] = useState(() => {
+    const savedCurrentChatId = localStorage.getItem("currentChatId");
+    return savedCurrentChatId ? JSON.parse(savedCurrentChatId) : 1;
+  });
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("chats", JSON.stringify(chats));
+  }, [chats]);
+
+  useEffect(() => {
+    localStorage.setItem("currentChatId", JSON.stringify(currentChatId));
+  }, [currentChatId]);
 
   const handleSend = () => {
     if (input.trim()) {
