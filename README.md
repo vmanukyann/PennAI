@@ -1,8 +1,9 @@
 # PennAI - AI Assistant for Penn High School
 
 PennAI is an AI-powered chat application designed specifically for Penn High School students. Built as a ChatGPT clone, it provides instant, accurate information on school-related queries, from graduation requirements to language barrier assistance. Developed with React for a seamless UI, PennAI aims to be a centralized resource for all student needs.
+![logo png](https://github.com/user-attachments/assets/39ea7deb-2fe8-4e4f-911c-3b9c234d1788)
 
-![PennAI Screenshot](![Screenshot 2025-02-19 001235](https://github.com/user-attachments/assets/4e6fa77e-f6c6-456e-b205-5fb6a7391890))
+(![Screenshot 2025-02-19 001235](https://github.com/user-attachments/assets/4e6fa77e-f6c6-456e-b205-5fb6a7391890))
 
 ## Features ✨
 
