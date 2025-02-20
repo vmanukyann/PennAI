@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  // State to manage chat sessions
   const [chats, setChats] = useState([{ id: 1, name: "Chat 1", messages: [] }]);
-  const [currentChatId, setCurrentChatId] = useState(1);
-  const [input, setInput] = useState("");
+  const [currentChatId, setCurrentChatId] = useState(1); // Tracks the currently active chat
+  const [input, setInput] = useState(""); // Stores the input text
 
+  // Function to send a message
   const handleSend = () => {
     if (input.trim()) {
+      // Update the chats state by adding the new message
       setChats(chats.map(chat => 
         chat.id === currentChatId 
           ? { 
@@ -17,8 +20,9 @@ function App() {
             }
           : chat
       ));
-      setInput("");
-      // Add simulated AI response
+      setInput(""); // Clear input field
+      
+      // Simulate an AI response after a delay
       setTimeout(() => {
         setChats(prevChats => prevChats.map(chat => 
           chat.id === currentChatId 
@@ -29,27 +33,32 @@ function App() {
     }
   };
 
+  // Handle 'Enter' key press to send message
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
       handleSend();
-      e.preventDefault();
+      e.preventDefault(); // Prevent new line
     }
   };
 
+  // Function to create a new chat session
   const handleNewChat = () => {
     const newChatId = chats.length + 1;
     setChats([...chats, { id: newChatId, name: `Chat ${newChatId}`, messages: [] }]);
-    setCurrentChatId(newChatId);
+    setCurrentChatId(newChatId); // Switch to new chat
   };
 
+  // Function to switch between chat sessions
   const handleSwitchChat = (id) => {
     setCurrentChatId(id);
   };
 
+  // Get the current active chat
   const currentChat = chats.find(chat => chat.id === currentChatId);
 
   return (
     <div className="app">
+      {/* Sidebar for chat selection and creating new chats */}
       <div className="sidebar">
         <div className="header">
           <h1>ChatPHS</h1>
@@ -68,6 +77,7 @@ function App() {
         </div>
       </div>
       
+      {/* Chat container where messages are displayed */}
       <div className="chat-container">
         <div className="messages">
           {currentChat.messages.map((msg, index) => (
@@ -80,6 +90,7 @@ function App() {
           ))}
         </div>
         
+        {/* Input area for sending messages */}
         <div className="input-area">
           <div className="input-wrapper">
             <input
@@ -89,12 +100,10 @@ function App() {
               onKeyDown={handleKeyPress}
               placeholder="Enter Message..."
             />
-            <button onClick={handleSend} className="send-button">
-            ➢
-            </button>
+            <button onClick={handleSend} className="send-button">➢</button>
           </div>
           <div className="disclaimer">
-          ChatPHS is a simulated chat application. Do not enter any personal information.
+            ChatPHS is a simulated chat application. Do not enter any personal information.
           </div>
         </div>
       </div>
