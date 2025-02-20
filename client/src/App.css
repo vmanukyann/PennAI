@@ -113,7 +113,6 @@ input:focus {
   color: #8e8ea0;
   cursor: pointer;
   padding: 0.25rem;
-  transform: rotate(90deg);
 }
 
 .send-button:hover {
@@ -157,7 +156,7 @@ input:focus {
 }
 
 .new-chat-button:hover {
-  background-color: #4CAF50;
+  background-color: #4d4d4f;
 }
 
 .chat-item {
@@ -183,7 +182,7 @@ input:focus {
 }
 
 .chat-button:hover {
-  background-color: #4CAF50;
+  background-color: #2a2a2a;
 }
 
 .delete-chat-button {
@@ -191,7 +190,7 @@ input:focus {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 25px;
   margin-left: 10px;
 }
 
