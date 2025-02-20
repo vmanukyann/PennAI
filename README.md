@@ -6,7 +6,8 @@ PennAI is an AI-powered chat application designed specifically for Penn High Sch
 
 ![logo png](https://github.com/user-attachments/assets/39ea7deb-2fe8-4e4f-911c-3b9c234d1788)
 
-(![Screenshot 2025-02-19 001235](https://github.com/user-attachments/assets/4e6fa77e-f6c6-456e-b205-5fb6a7391890))
+![Screenshot 2025-02-19 001235](https://github.com/user-attachments/assets/4e6fa77e-f6c6-456e-b205-5fb6a7391890)
+
 
 ## Features ✨
 
