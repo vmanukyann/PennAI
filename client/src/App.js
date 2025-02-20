@@ -7,6 +7,7 @@ function App() {
   const [chats, setChats] = useState([{ id: 1, name: "Chat 1", messages: [] }]);
   const [currentChatId, setCurrentChatId] = useState(1); // Tracks the currently active chat
   const [input, setInput] = useState(""); // Stores the input text
+  const [showWelcome, setShowWelcome] = useState(true); // State to manage welcome message visibility
 
   // Function to send a message
   const handleSend = () => {
@@ -22,6 +23,7 @@ function App() {
           : chat
       ));
       setInput(""); // Clear input field
+      setShowWelcome(false); // Hide welcome message
       
       // Simulate an AI response after a delay
       setTimeout(() => {
@@ -47,11 +49,13 @@ function App() {
     const newChatId = chats.length + 1;
     setChats([...chats, { id: newChatId, name: `Chat ${newChatId}`, messages: [] }]);
     setCurrentChatId(newChatId); // Switch to new chat
+    setShowWelcome(true); // Show welcome message for new chat
   };
 
   // Function to switch between chat sessions
   const handleSwitchChat = (id) => {
     setCurrentChatId(id);
+    setShowWelcome(chats.find(chat => chat.id === id).messages.length === 0); // Show welcome message if chat is empty
   };
 
   // Function to delete a chat session
@@ -60,8 +64,10 @@ function App() {
     setChats(updatedChats);
     if (currentChatId === id && updatedChats.length > 0) {
       setCurrentChatId(updatedChats[0].id);
+      setShowWelcome(updatedChats[0].messages.length === 0); // Show welcome message if chat is empty
     } else if (updatedChats.length === 0) {
       setCurrentChatId(null);
+      setShowWelcome(true); // Show welcome message if no chats are left
     }
   };
 
@@ -98,6 +104,7 @@ function App() {
       
       {/* Chat container where messages are displayed */}
       <div className="chat-container">
+        {showWelcome && <div className="welcome-message">ChatPHS</div>}
         <div className="messages">
           {currentChat && currentChat.messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
