@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { FaTrash } from "react-icons/fa"; // Import trash icon
 
 function App() {
   // State to manage chat sessions
@@ -53,6 +54,17 @@ function App() {
     setCurrentChatId(id);
   };
 
+  // Function to delete a chat session
+  const handleDeleteChat = (id) => {
+    const updatedChats = chats.filter(chat => chat.id !== id);
+    setChats(updatedChats);
+    if (currentChatId === id && updatedChats.length > 0) {
+      setCurrentChatId(updatedChats[0].id);
+    } else if (updatedChats.length === 0) {
+      setCurrentChatId(null);
+    }
+  };
+
   // Get the current active chat
   const currentChat = chats.find(chat => chat.id === currentChatId);
 
@@ -66,13 +78,20 @@ function App() {
         </div>
         <div className="chat-list">
           {chats.map(chat => (
-            <button 
-              key={chat.id} 
-              onClick={() => handleSwitchChat(chat.id)} 
-              className={`chat-button ${chat.id === currentChatId ? 'active' : ''}`}
-            >
-              {chat.name}
-            </button>
+            <div key={chat.id} className="chat-item">
+              <button 
+                onClick={() => handleSwitchChat(chat.id)} 
+                className={`chat-button ${chat.id === currentChatId ? 'active' : ''}`}
+              >
+                {chat.name}
+              </button>
+              <button 
+                onClick={() => handleDeleteChat(chat.id)} 
+                className="delete-chat-button"
+              >
+                <FaTrash />
+              </button>
+            </div>
           ))}
         </div>
       </div>
@@ -80,7 +99,7 @@ function App() {
       {/* Chat container where messages are displayed */}
       <div className="chat-container">
         <div className="messages">
-          {currentChat.messages.map((msg, index) => (
+          {currentChat && currentChat.messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
                 {msg.sender === 'bot' && <div className="avatar">AI</div>}

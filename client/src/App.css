@@ -146,7 +146,7 @@ input:focus {
 }
 
 .new-chat-button {
-  background-color: #4CAF50;
+  background-color: #202123;
   color: white;
   padding: 10px 20px;
   margin: 10px 0;
@@ -157,12 +157,17 @@ input:focus {
 }
 
 .new-chat-button:hover {
-  background-color: #45a049;
+  background-color: #4CAF50;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
 }
 
 .chat-button {
-  background-color: #f1f1f1;
-  color: black;
+  background-color: #202123;
+  color: white;
   padding: 10px 20px;
   margin: 5px 0;
   border: none;
@@ -170,12 +175,26 @@ input:focus {
   width: 100%;
   text-align: left;
   font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .chat-button.active {
-  background-color: #ddd;
+  background-color: #4d4d4f;
 }
 
 .chat-button:hover {
-  background-color: #ccc;
+  background-color: #4CAF50;
+}
+
+.delete-chat-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.delete-chat-button:hover {
+  color: red;
 }
