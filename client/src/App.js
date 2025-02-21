@@ -1,13 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { FaTrash } from "react-icons/fa"; // Import trash icon
 
 function App() {
   // State to manage chat sessions
-  const [chats, setChats] = useState([{ id: 1, name: "Chat 1", messages: [] }]);
-  const [currentChatId, setCurrentChatId] = useState(1); // Tracks the currently active chat
+  const [chats, setChats] = useState(() => {
+    const savedChats = localStorage.getItem("chats");
+    return savedChats ? JSON.parse(savedChats) : [{ id: 1, name: "Chat 1", messages: [] }];
+  });
+  const [currentChatId, setCurrentChatId] = useState(() => {
+    const savedCurrentChatId = localStorage.getItem("currentChatId");
+    return savedCurrentChatId ? JSON.parse(savedCurrentChatId) : 1;
+  });
   const [input, setInput] = useState(""); // Stores the input text
-  const [showWelcome, setShowWelcome] = useState(true); // State to manage welcome message visibility
+  const [showWelcome, setShowWelcome] = useState(() => {
+    const savedShowWelcome = localStorage.getItem("showWelcome");
+    return savedShowWelcome ? JSON.parse(savedShowWelcome) : true;
+  }); // State to manage welcome message visibility
+
+  // Save chats to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("chats", JSON.stringify(chats));
+  }, [chats]);
+
+  // Save current chat ID to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("currentChatId", JSON.stringify(currentChatId));
+  }, [currentChatId]);
+
+  // Save showWelcome to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("showWelcome", JSON.stringify(showWelcome));
+  }, [showWelcome]);
 
   // Function to send a message
   const handleSend = () => {
