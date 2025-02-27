@@ -153,7 +153,7 @@ function App() {
             <button onClick={handleSend} className="send-button">➢</button>
           </div>
           <div className="disclaimer">
-            ChatPS is a simulated chat application. Do not enter any personal information.
+            ChatPHS is a simulated chat application. Do not enter any personal information.
           </div>
         </div>
       </div>
