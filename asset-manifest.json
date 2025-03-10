@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PennAI/static/css/main.ab4a7a79.css",
+    "main.js": "/PennAI/static/js/main.0a25c31b.js",
+    "static/js/453.419a5d54.chunk.js": "/PennAI/static/js/453.419a5d54.chunk.js",
+    "index.html": "/PennAI/index.html",
+    "main.ab4a7a79.css.map": "/PennAI/static/css/main.ab4a7a79.css.map",
+    "main.0a25c31b.js.map": "/PennAI/static/js/main.0a25c31b.js.map",
+    "453.419a5d54.chunk.js.map": "/PennAI/static/js/453.419a5d54.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab4a7a79.css",
+    "static/js/main.0a25c31b.js"
+  ]
+}
