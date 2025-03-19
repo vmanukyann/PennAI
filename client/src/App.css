@@ -212,3 +212,31 @@ input:focus {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
+
+
+/* Send Button */
+.card {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.card:hover::before {
+  content: none; 
+}
+
+.card:hover .paperplane {
+  transform: scale(0.9) translateY(-10%) rotate(15deg); /* Adjusted size and rotation */
+}
+
+.paperplane {
+  fill: #888;
+  width: 30px; /* Size of button*/
+  transition: 0.7s all;
+}
+
+@keyframes animate {
+  50% {
+    filter: hue-rotate(350deg);
+  }
+}
