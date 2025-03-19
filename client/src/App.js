@@ -53,7 +53,7 @@ function App() {
       setTimeout(() => {
         setChats(prevChats => prevChats.map(chat => 
           chat.id === currentChatId 
-            ? { ...chat, messages: [...chat.messages, { text: "Hi! How are you on", sender: "bot" }] }
+            ? { ...chat, messages: [...chat.messages, { text: "Hi Ben", sender: "bot" }] }
             : chat
         ));
       }, 1000);
@@ -103,7 +103,7 @@ function App() {
       {/* Sidebar for chat selection and creating new chats */}
       <div className="sidebar">
         <div className="header">
-          <h1>ChatPHS</h1>
+          <h1>PennAI</h1>
           <button onClick={handleNewChat} className="new-chat-button">New Chat</button>
         </div>
         <div className="chat-list">
