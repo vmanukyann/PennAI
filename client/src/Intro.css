@@ -1,0 +1,35 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #343541;
+  color: white;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.start-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #10a37f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #0e8a6c;
+}

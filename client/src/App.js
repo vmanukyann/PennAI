@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
 import { FaTrash } from "react-icons/fa"; // Import trash icon
+import Intro from "./Intro";
 
-function App() {
+function MainApp() {
+  const navigate = useNavigate();
+
   // State to manage chat sessions
   const [chats, setChats] = useState(() => {
     const savedChats = localStorage.getItem("chats");
@@ -53,7 +57,7 @@ function App() {
       setTimeout(() => {
         setChats(prevChats => prevChats.map(chat => 
           chat.id === currentChatId 
-            ? { ...chat, messages: [...chat.messages, { text: "Hi Ben", sender: "bot" }] }
+            ? { ...chat, messages: [...chat.messages, { text: "Hi ", sender: "bot" }] }
             : chat
         ));
       }, 1000);
@@ -103,7 +107,7 @@ function App() {
       {/* Sidebar for chat selection and creating new chats */}
       <div className="sidebar">
         <div className="header">
-          <h1>PennAI</h1>
+          <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>PennAI</h1>
           <button onClick={handleNewChat} className="new-chat-button">New Chat</button>
         </div>
         <div className="chat-list">
@@ -128,7 +132,7 @@ function App() {
       
       {/* Chat container where messages are displayed */}
       <div className="chat-container">
-        {showWelcome && <div className="welcome-message">ChatPHS</div>}
+        {showWelcome && <div className="welcome-message">PennAI</div>}
         <div className="messages">
           {currentChat && currentChat.messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
@@ -164,6 +168,17 @@ function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Intro />} />
+        <Route path="/app" element={<MainApp />} />
+      </Routes>
+    </Router>
   );
 }
 
