@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-route
 import "./App.css";
 import { FaTrash } from "react-icons/fa"; // Import trash icon
 import Intro from "./Intro";
+import About from "./About";
 
 function MainApp() {
   const navigate = useNavigate();
@@ -177,6 +178,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/app" element={<MainApp />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   );
