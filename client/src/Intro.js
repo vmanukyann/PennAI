@@ -8,7 +8,7 @@ function NavBar() {
       <div className="nav-logo">PennAI</div>
       <ul className="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About Us</a></li>
+        <li><a href="/about">Our Mission</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>

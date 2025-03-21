@@ -7,7 +7,7 @@ function NavBar() {
       <div className="nav-logo">PennAI</div>
       <ul className="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About Us</a></li>
+        <li><a href="/about">Our Mission</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
@@ -19,7 +19,7 @@ function About() {
     <div>
       <NavBar />
       <div className="about-container">
-        <h1>About Us</h1>
+        <h1>Our Mission</h1>
         <p>
           Welcome to <span className="brand">PennAI</span>, your ultimate academic companion. We’re dedicated to revolutionizing learning at Penn High School by harnessing cutting-edge AI technology. Our mission is to deliver smart, dependable support that makes education more efficient, engaging, and accessible for everyone.
         </p>
