@@ -1,23 +1,84 @@
-# PennAI - AI Assistant for Penn High School
+# PennAI
 
-PennAI is an AI-powered chat application designed specifically for Penn High School students. Built as a ChatGPT clone, it provides instant, accurate information on school-related queries, from graduation requirements to language barrier assistance. Developed with React for a seamless UI, PennAI aims to be a centralized resource for all student needs.
+Welcome to **PennAI**, your personalized academic assistant designed to revolutionize learning at Penn High School. With cutting-edge AI technology, PennAI provides intelligent, reliable, and efficient support to students and educators, making education more engaging and accessible.
 
-[PennAI Screenshot]()
+## Features
 
-## Features ✨
+- **Intelligent Chat**: Engage in meaningful conversations with PennAI to get academic assistance.
+- **User-Friendly Interface**: A clean and intuitive design for seamless navigation.
+- **Customizable Chats**: Create, switch, and delete chat sessions effortlessly.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Contact and Support**: Easily reach out to the PennAI team for assistance or feedback.
 
-- **School-Specific Guidance**: Get detailed information on graduation requirements, course schedules, and extracurricular activities.
-- **Language Barrier Support**: Real-time translation and multilingual assistance for non-native English speakers.
-- **24/7 Availability**: Access help anytime, anywhere—no need to wait for office hours.
-- **Privacy-First**: No personal data collection. Conversations are anonymized and secure.
-- **User-Friendly Interface**: Clean, intuitive design built with React for smooth navigation.
-- **Instant Responses**: Powered by AI to deliver quick and accurate answers.
+## Pages
 
-## Installation 🛠️
+### 1. **Home Page**
+The landing page introduces PennAI and provides a "Get Started" button to navigate to the main application.
 
-1. **Clone the Repository**:
+### 2. **About Us**
+Learn about PennAI's mission, vision, and the team behind this innovative project.
+
+### 3. **Contact Us**
+Reach out to the PennAI team via email, phone, or social media for support or inquiries.
+
+### 4. **Chat Application**
+Interact with PennAI through a chat interface designed for academic assistance.
+
+## Technologies Used
+
+- **Frontend**: React.js
+- **Styling**: CSS3 with responsive design principles
+- **Routing**: React Router DOM
+- **Icons**: React Icons
+- **Deployment**: GitHub Pages
+
+## Installation
+
+To run PennAI locally, follow these steps:
+
+1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/PennAI.git
-   cd PennAI
+   git clone https://github.com/vmanukyann/PennAI.git
+   cd PennAI/client
+   ```
 
-   
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
+## Deployment
+
+PennAI is deployed on GitHub Pages. Visit the live application at:
+[https://vmanukyann.github.io/PennAI/](https://vmanukyann.github.io/PennAI/)
+
+To deploy updates, run:
+```bash
+npm run deploy
+```
+
+## Contact
+
+For questions, feedback, or support, please contact us:
+
+- **Email**: [penncomputerclub@phm.k12.in.us](mailto:penncomputerclub@phm.k12.in.us)
+- **Phone**: +1 (574) 855-7065
+- **Instagram**: [@pennaiclub](https://instagram.com/pennaiclub)
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+---
+
+Thank you for using PennAI. Together, let's transform education with technology!

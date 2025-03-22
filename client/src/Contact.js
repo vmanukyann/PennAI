@@ -25,13 +25,13 @@ function Contact() {
           We're here to help and ensure you have the best experience possible.
         </p>
         <h2>Get in Touch</h2>
-        <p>Email: <a href="mailto:support@pennai.com">support@pennai.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+1 (574) 855-7065</a></p>
+        <p>Email: <a href="mailto:support@pennai.com">penncomputerclub@phm.k12.in.us</a></p>
+        <p>Phone: <a href="tel:+5748557065">+1 (574) 855-7065</a></p>
         <h2>Follow Us</h2>
         <p>
           Stay updated with the latest news and updates from PennAI:
           <ul>
-            <li><a href="https://instagram.com/pennai" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://instagram.com/pennaiclub" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           </ul>
         </p>
       </div>
