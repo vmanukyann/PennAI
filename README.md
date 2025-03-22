@@ -75,6 +75,15 @@ For questions, feedback, or support, please contact us:
 - **Phone**: +1 (574) 855-7065
 - **Instagram**: [@pennaiclub](https://instagram.com/pennaiclub)
 
+## Credits
+
+This project was made possible with the help of the following resources:
+
+- [FreeCodeCamp](https://www.freecodecamp.org/) - For providing excellent tutorials and resources on web development.
+- [Tech With Tim](https://www.techwithtim.net/) - For insightful programming tutorials and guidance.
+- [React Documentation](https://reactjs.org/docs/getting-started.html) - For comprehensive documentation on React.js.
+- [ChatGPT](https://openai.com/chatgpt) - For assisting with code suggestions and explanations.
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
