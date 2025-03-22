@@ -4,6 +4,7 @@ import "./App.css";
 import { FaTrash } from "react-icons/fa"; // Import trash icon
 import Intro from "./Intro";
 import About from "./About";
+import Contact from "./Contact";
 
 function MainApp() {
   const navigate = useNavigate();
@@ -179,6 +180,7 @@ function App() {
         <Route path="/" element={<Intro />} />
         <Route path="/app" element={<MainApp />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
