@@ -232,7 +232,7 @@ input:focus {
 .paperplane {
   fill: #888;
   width: 30px; /* Size of button*/
-  transition: 0.7s all;
+  transition: 0.71s all;
 }
 
 @keyframes animate {
