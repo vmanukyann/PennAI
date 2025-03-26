@@ -1,4 +1,24 @@
-/* App.css */
+/* Define CSS variables for theme */
+:root {
+  --primary-bg: #282828;
+  --sidebar-bg: #151515;
+  --header-text: rgb(72, 72, 72);
+  --header-border: #4d4d4f;
+  --chat-bg: #40414f;
+  --input-border: #565869;
+  --input-focus: #707184;
+  --button-bg: #202123;
+  --button-hover: #4d4d4f;
+  --button-active: #4d4d4f;
+  --delete-hover: red;
+  --avatar-bg: #2200ff;
+  --bot-bg: #444654;
+  --scroll-track: #343541;
+  --scroll-thumb: #565869;
+  --scroll-thumb-hover: #707184;
+}
+
+/* Global reset and fonts */
 * {
   margin: 0;
   padding: 0;
@@ -6,31 +26,100 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* App layout */
 .app {
   display: flex;
   height: 100vh;
-  background-color: #282828;
+  background-color: var(--primary-bg);
 }
 
+/* Sidebar styling */
 .sidebar {
   width: 235px;
-  background-color: #151515;
+  background-color: var(--sidebar-bg);
   padding: 0.5rem;
 }
 
-.header {
+.sidebar .header {
   padding: 1rem;
-  color: rgb(72, 72, 72);
-  border-bottom: 1px solid #4d4d4f;
+  color: var(--header-text);
+  border-bottom: 1px solid var(--header-border);
 }
 
+.new-chat-button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.new-chat-button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Chat list items */
+.chat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.chat-button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.chat-button.active,
+.chat-button:hover {
+  background-color: var(--button-active);
+}
+
+.delete-chat-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.delete-chat-button:hover {
+  color: var(--delete-hover);
+}
+
+/* Chat container area */
 .chat-container {
   flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 
+/* Welcome message styling */
+.welcome-message {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-top: 20%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Message list */
 .messages {
   flex: 1;
   overflow-y: auto;
@@ -59,13 +148,14 @@
 }
 
 .message.bot {
-  background-color: #444654;
+  background-color: var(--bot-bg);
 }
 
+/* Avatar styling */
 .avatar {
   width: 30px;
   height: 30px;
-  background-color: #2200ff;
+  background-color: var(--avatar-bg);
   border-radius: 2px;
   display: flex;
   justify-content: center;
@@ -73,12 +163,14 @@
   font-size: 0.8rem;
 }
 
+/* Message text styling */
 .text {
   flex: 1;
   padding-top: 2px;
   white-space: pre-wrap;
 }
 
+/* Input area styling */
 .input-area {
   position: fixed;
   bottom: 0;
@@ -98,8 +190,8 @@ input {
   width: 100%;
   padding: 1rem;
   padding-right: 3rem;
-  background-color: #40414f;
-  border: 1px solid #565869;
+  background-color: var(--chat-bg);
+  border: 1px solid var(--input-border);
   border-radius: 5px;
   color: white;
   font-size: 1rem;
@@ -107,9 +199,10 @@ input {
 }
 
 input:focus {
-  border-color: #707184;
+  border-color: var(--input-focus);
 }
 
+/* Send button styling */
 .send-button {
   position: absolute;
   right: 0.5rem;
@@ -125,6 +218,7 @@ input:focus {
   color: #ffffff;
 }
 
+/* Disclaimer */
 .disclaimer {
   text-align: center;
   color: #8e8ea0;
@@ -138,105 +232,52 @@ input:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #343541;
+  background: var(--scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #565869;
+  background: var(--scroll-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #707184;
+  background: var(--scroll-thumb-hover);
 }
 
-.new-chat-button {
-  background-color: #202123;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-}
-
-.new-chat-button:hover {
-  background-color: #4d4d4f;
-}
-
-.chat-item {
-  display: flex;
-  align-items: center;
-}
-
-.chat-button {
-  background-color: #202123;
-  color: white;
-  padding: 10px 20px;
-  margin: 5px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.chat-button.active {
-  background-color: #4d4d4f;
-}
-
-.chat-button:hover {
-  background-color: #2a2a2a;
-}
-
-.delete-chat-button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 25px;
-  margin-left: 10px;
-}
-
-.delete-chat-button:hover {
-  color: red;
-}
-
-.welcome-message {
-  font-size: 3rem;
-  color: white;
-  text-align: center;
-  margin-top: 20%;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
-
-
-/* Send Button */
+/* Paperplane send button effects */
 .card {
   position: relative;
   display: inline-block;
   cursor: pointer;
 }
 
-.card:hover::before {
-  content: none; 
-}
-
 .card:hover .paperplane {
-  transform: scale(0.9) translateY(-10%) rotate(15deg); /* Adjusted size and rotation */
+  transform: scale(0.9) translateY(-10%) rotate(15deg);
 }
 
 .paperplane {
   fill: #888;
-  width: 30px; /* Size of button*/
+  width: 30px;
   transition: 0.71s all;
 }
 
 @keyframes animate {
   50% {
     filter: hue-rotate(350deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+  .input-area {
+    left: 60px;
+  }
+  .chat-button,
+  .new-chat-button {
+    font-size: 12px;
+    padding: 8px 10px;
   }
 }
