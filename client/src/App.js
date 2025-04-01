@@ -59,7 +59,7 @@ function MainApp() {
       setTimeout(() => {
         setChats(prevChats => prevChats.map(chat => 
           chat.id === currentChatId 
-            ? { ...chat, messages: [...chat.messages, { text: "Hi ", sender: "bot" }] }
+            ? { ...chat, messages: [...chat.messages, { text: "Whats up brother ", sender: "bot" }] }
             : chat
         ));
       }, 1000);

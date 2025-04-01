@@ -3,6 +3,8 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #000;
+  color: #fff;
 }
 
 /* Navbar */
@@ -11,15 +13,16 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #10a37f;
-  color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #FFD700;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav-logo {
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
+  color: black;
 }
 
 .nav-links {
@@ -36,13 +39,14 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  transition: color 0.9s ease;
 }
 
 .nav-links a:hover {
-  color: #f0f0f0;
+  color: white;
 }
 
 /* Split Container */
@@ -53,7 +57,7 @@ body {
 
 .left-panel {
   flex: 1;
-  background-color: #f5f5f0;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,47 +66,49 @@ body {
 
 .right-panel {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #FFD700;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  color: black;
 }
 
 .content-wrapper {
   max-width: 400px;
   animation: fadeIn 0.8s ease-out;
+  text-align: center;
 }
 
 .logo {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #2d2d2d;
+  color: white;
   margin-bottom: 1rem;
 }
 
 .tagline {
   font-size: 1.4rem;
-  color: #666;
+  color: #ccc;
   font-weight: 300;
   line-height: 1.4;
 }
 
 .welcome-title {
   font-size: 2.2rem;
-  color: #2d2d2d;
+  color: black;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
 .brand {
-  color: #10a37f;
+  color: white;
   font-weight: 700;
 }
 
 .description {
   font-size: 1.1rem;
-  color: #666;
+  color: #222;
   line-height: 1.6;
   margin-bottom: 2.5rem;
 }
@@ -111,22 +117,22 @@ body {
 .start-button {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  color: white;
-  background-color: #10a37f;
-  border: none;
+  color: black;
+  background-color: white;
+  border: 2px solid #FFD700;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .start-button:hover {
-  background-color: #0e8a6c;
+  background-color: #FFD700;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .button-icon {
