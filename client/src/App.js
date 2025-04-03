@@ -110,7 +110,7 @@ function MainApp() {
       {/* Sidebar for chat selection and creating new chats */}
       <div className="sidebar">
         <div className="header">
-          <h1 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>PennAI</h1>
+          <h1 onClick={() => navigate("/intro")} style={{ cursor: "pointer" }}>PennAI</h1> {/* Redirect to intro */}
           <button onClick={handleNewChat} className="new-chat-button">New Chat</button>
         </div>
         <div className="chat-list">
@@ -180,6 +180,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/intro" element={<Intro />} /> {/* Add route for intro */}
           <Route path="/app" element={<MainApp />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

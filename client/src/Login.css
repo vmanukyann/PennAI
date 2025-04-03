@@ -5,10 +5,12 @@ body {
   padding: 0;
   background-color: #000000; /* Primary black */
   color: #ffd700; /* Primary gold */
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  overflow: hidden; /* Prevent scrollbars */
 }
 
 /* Login Container */
@@ -17,9 +19,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw; /* Add full width */
+  width: 100vw; /* Ensure full width */
   background-color: #000000; /* Primary black */
-  overflow: hidden; /* Prevent scrollbars */
 }
 
 .login-box {
@@ -28,7 +29,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   text-align: center;
-  width: 300px;
+  width: 100%; /* Ensure it adjusts to screen size */
+  max-width: 400px; /* Set a maximum width */
 }
 
 .login-title {
@@ -72,4 +74,24 @@ body {
 .login-button:hover {
   background-color: #ffd700; /* Primary gold */
   color: #000000; /* Primary black */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-box {
+    padding: 1.5rem;
+    width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+  .login-input {
+    font-size: 0.9rem;
+  }
+
+  .login-button {
+    font-size: 0.9rem;
+  }
 }
