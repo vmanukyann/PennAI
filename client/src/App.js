@@ -5,6 +5,7 @@ import { FaTrash } from "react-icons/fa"; // Import trash icon
 import Intro from "./Intro";
 import About from "./About";
 import Contact from "./Contact";
+import Login from "./Login";
 
 function MainApp() {
   const navigate = useNavigate();
@@ -175,14 +176,16 @@ function MainApp() {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Intro />} />
-        <Route path="/app" element={<MainApp />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+    <div className="app-container"> {/* Add a container for consistent layout */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/app" element={<MainApp />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

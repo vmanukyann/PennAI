@@ -30,12 +30,14 @@
 .app {
   display: flex;
   height: 100vh;
+  width: 100vw; /* Add full width */
+  overflow: hidden; /* Prevent scrollbars from appearing */
   background-color: var(--primary-bg);
 }
 
 /* Sidebar styling */
 .sidebar {
-  width: 235px;
+  width: 250px; /* Adjust width for better spacing */
   background-color: var(--sidebar-bg);
   padding: 0.5rem;
 }
@@ -174,7 +176,7 @@
 .input-area {
   position: fixed;
   bottom: 0;
-  left: 235px;
+  left: 0; /* Reset to 0 to span the full width */
   right: 0;
   padding: 2rem;
   background: linear-gradient(to bottom, rgba(52,53,65,0) 0%, #343541 100%);
