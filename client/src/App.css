@@ -206,11 +206,14 @@ textarea {
   color: white;
   font-size: 1rem;
   outline: none;
-  resize: none; /* Prevent resizing */
-  overflow: hidden; /* Hide scrollbars */
-  line-height: 1.5rem; /* Adjust line height for better readability */
-  height: auto; /* Allow height to adjust dynamically */
-  max-height: 4.5rem; /* Limit to 3 lines */
+  resize: none;
+  overflow: hidden;
+  line-height: 1.5rem;
+  height: auto;
+  max-height: 6rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-sizing: border-box;
 }
 
 textarea::placeholder {

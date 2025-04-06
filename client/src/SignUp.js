@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignUp.css";
-import "./Login.js";
 
 function SignUp() {
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
@@ -12,11 +13,17 @@ function SignUp() {
   const handleSignUp = () => {
     if (email.endsWith("@phm.k12.in.us")) {
       const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-      if (existingUsers.includes(email)) {
+      if (existingUsers.some(user => user.email === email)) {
         setError("This email is already registered. Please log in.");
         setSuccess("");
       } else {
-        existingUsers.push(email); // Add new user to the list
+        const newUser = {
+          firstName,
+          lastName,
+          email,
+          timestamp: new Date().toLocaleString(),
+        };
+        existingUsers.push(newUser); // Add new user to the list
         localStorage.setItem("users", JSON.stringify(existingUsers));
         setError("");
         setSuccess("Account created successfully! You can now log in.");
@@ -37,6 +44,20 @@ function SignUp() {
     <div className="signup-container">
       <div className="signup-box">
         <h1 className="signup-title">Sign Up</h1>
+        <input
+          type="text"
+          placeholder="Enter your first name"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          className="signup-input"
+        />
+        <input
+          type="text"
+          placeholder="Enter your last name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          className="signup-input"
+        />
         <input
           type="email"
           placeholder="Enter your email"

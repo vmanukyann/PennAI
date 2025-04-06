@@ -8,13 +8,28 @@ function Admin() {
   return (
     <div style={{ padding: "2rem" }}>
       <h1>Admin Panel</h1>
-      <h2>Signed-up Emails</h2>
+      <h2>Signed-up Users</h2>
       {users.length > 0 ? (
-        <ul>
-          {users.map((email, index) => (
-            <li key={index}>{email}</li>
-          ))}
-        </ul>
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>First Name</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Last Name</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Email</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={index}>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.firstName}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.lastName}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.email}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.timestamp}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
         <p>No users have signed up yet.</p>
       )}
