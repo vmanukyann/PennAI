@@ -5,7 +5,7 @@ import "./Intro.css";
 function NavBar() {
   return (
     <nav className="navbar">
-      <div className="nav-logo">PennAI</div>
+      <div className="nav-logo">Penn Chatbot</div>
       <ul className="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/about">Our Mission</a></li>
@@ -28,15 +28,15 @@ function Intro() {
       <div className="split-container">
         <div className="left-panel">
           <div className="content-wrapper">
-            <div className="logo">PennAI</div>
-            <h2 className="tagline">Intelligent Academic Support</h2>
+            <div className="logo">Penn Chatbot</div>
+            <h2 className="tagline">Academic Support</h2>
           </div>
         </div>
         
         <div className="right-panel">
           <div className="content-wrapper">
             <h1 className="welcome-title">
-              Welcome to <span className="brand">PennAI</span>
+              Welcome to <span className="brand">Penn Chatbot</span>
             </h1>
             <p className="description">
               Your personalized academic assistant from Penn High School

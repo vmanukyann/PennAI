@@ -7,7 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Admin from "./Admin"; 
+import Admin from "./Admin"; // Import Admin component
 
 function NavBar() {
   const navigate = useNavigate();
@@ -18,6 +18,7 @@ function NavBar() {
       <ul className="nav-links">
         <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
+        <li><button onClick={() => navigate("/admin")} className="nav-button">Admin</button></li> {/* Add Admin button */}
       </ul>
     </nav>
   );
@@ -201,7 +202,7 @@ function App() {
           <Route path="/app" element={<MainApp />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} /> {/* Add admin route */}
+          <Route path="/admin" element={<Admin />} /> {/* Add route for admin */}
         </Routes>
       </Router>
     </div>
