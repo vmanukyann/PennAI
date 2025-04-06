@@ -176,48 +176,64 @@
 .input-area {
   position: fixed;
   bottom: 0;
-  left: 0; /* Reset to 0 to span the full width */
+  left: 250px; /* Align with the sidebar width */
   right: 0;
-  padding: 2rem;
-  background: linear-gradient(to bottom, rgba(52,53,65,0) 0%, #343541 100%);
+  padding: 1rem;
+  background: linear-gradient(to bottom, rgba(52, 53, 65, 0) 0%, #343541 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .input-wrapper {
   max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-input {
   width: 100%;
-  padding: 1rem;
-  padding-right: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background-color: var(--chat-bg);
   border: 1px solid var(--input-border);
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+textarea {
+  flex: 1;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: none;
   color: white;
   font-size: 1rem;
   outline: none;
+  resize: none; /* Prevent resizing */
+  overflow: hidden; /* Hide scrollbars */
+  line-height: 1.5rem; /* Adjust line height for better readability */
+  height: auto; /* Allow height to adjust dynamically */
+  max-height: 4.5rem; /* Limit to 3 lines */
 }
 
-input:focus {
-  border-color: var(--input-focus);
+textarea::placeholder {
+  color: #8e8ea0;
 }
 
-/* Send button styling */
+textarea:focus {
+  border: none;
+}
+
 .send-button {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  background: none;
+  background-color: var(--button-bg);
   border: none;
   color: #8e8ea0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   cursor: pointer;
-  padding: 0.25rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .send-button:hover {
-  color: #ffffff;
+  background-color: var(--button-hover);
+  color: white;
 }
 
 /* Disclaimer */
@@ -292,8 +308,23 @@ input:focus {
     width: 60px;
   }
   .input-area {
-    left: 60px;
+    left: 0; /* Remove alignment with sidebar on smaller screens */
+    padding: 1rem;
   }
+
+  .input-wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .send-button {
+    width: 100%;
+  }
+
   .chat-button,
   .new-chat-button {
     font-size: 12px;

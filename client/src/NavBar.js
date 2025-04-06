@@ -7,7 +7,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Admin from "./Admin"; // Import Admin component
+import Admin from "./Admin"; 
 
 function NavBar() {
   const navigate = useNavigate();
