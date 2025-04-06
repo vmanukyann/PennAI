@@ -6,6 +6,21 @@ import Intro from "./Intro";
 import About from "./About";
 import Contact from "./Contact";
 import Login from "./Login";
+import SignUp from "./SignUp";
+
+function NavBar() {
+  const navigate = useNavigate();
+
+  return (
+    <nav className="navbar">
+      <div className="nav-logo" onClick={() => navigate("/intro")}>PennAI</div>
+      <ul className="nav-links">
+        <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
+        <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
+      </ul>
+    </nav>
+  );
+}
 
 function MainApp() {
   const navigate = useNavigate();
@@ -180,6 +195,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/intro" element={<Intro />} /> {/* Add route for intro */}
           <Route path="/app" element={<MainApp />} />
           <Route path="/about" element={<About />} />

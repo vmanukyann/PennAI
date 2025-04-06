@@ -269,6 +269,23 @@ input:focus {
   }
 }
 
+/* Navbar buttons styling */
+.nav-links button {
+  background-color: transparent;
+  border: 1px solid #ffd700; /* Primary gold */
+  color: #ffd700; /* Primary gold */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links button:hover {
+  background-color: #ffd700; /* Primary gold */
+  color: #000000; /* Primary black */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .sidebar {

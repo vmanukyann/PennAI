@@ -19,7 +19,7 @@ function Intro() {
   const navigate = useNavigate();
 
   const handleStart = () => {
-    navigate("/app");
+    navigate("/signup"); // Redirect to the SignUp page
   };
 
   return (

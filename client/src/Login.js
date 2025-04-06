@@ -8,11 +8,17 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
     if (email.endsWith("@phm.k12.in.us")) {
-      setError("");
-      navigate("/app"); // Redirect to the chatbot page
+      if (existingUsers.includes(email)) {
+        setError("");
+        localStorage.setItem("currentUser", email); // Track the currently logged-in user
+        navigate("/app"); // Redirect to the chatbot page
+      } else {
+        setError("No account found. Please sign up.");
+      }
     } else {
-      setError("Only emails ending with '@phm.k12.in.us' are allowed.");
+      setError("Only PHM email addresses are allowed.");
     }
   };
 
