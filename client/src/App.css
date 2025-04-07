@@ -137,46 +137,65 @@
 
 .message {
   display: flex;
-  justify-content: center;
-  color: white;
-  padding: 1rem;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.message.user {
+  justify-content: flex-end; /* Align user messages to the right */
+}
+
+.message.bot {
+  justify-content: flex-start; /* Align bot messages to the left */
 }
 
 .message-content {
   max-width: 800px;
-  width: 100%;
+  width: auto;
   display: flex;
   gap: 1rem;
 }
 
-.message.bot {
-  background-color: var(--bot-bg);
+.message.user .text {
+  background-color: transparent; /* Match the app background */
+  border: 1px solid var(--button-bg); /* Add a subtle border for visibility */
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  max-width: 70%;
+  align-self: flex-end;
+  font-weight: bold; /* Make user text bold */
+  color: white; /* Set text color to white */
 }
 
-/* Avatar styling */
+.message.bot .text {
+  background-color: transparent; /* Match the app background */
+  border: 1px solid var(--bot-bg); /* Add a subtle border for visibility */
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  max-width: 70%;
+  align-self: flex-start;
+  margin-left: 110px; /* Move AI text slightly to the left */
+  font-weight: bold; /* Make AI text bold */
+  color: white; /* Set text color to white */
+}
+
 .avatar {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-color: var(--avatar-bg);
-  border-radius: 2px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.8rem;
-}
-
-/* Message text styling */
-.text {
-  flex: 1;
-  padding-top: 2px;
-  white-space: pre-wrap;
+  font-size: 1rem;
+  color: white;
 }
 
 /* Input area styling */
 .input-area {
   position: fixed;
   bottom: 0;
-  left: 250px; /* Align with the sidebar width */
+  left: 250px; /* Ensure alignment with the bot text */
   right: 0;
   padding: 1rem;
   background: linear-gradient(to bottom, rgba(52, 53, 65, 0) 0%, #343541 100%);
