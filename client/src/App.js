@@ -196,6 +196,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/intro" element={<Intro />} /> {/* Add route for intro */}
           <Route path="/app" element={<MainApp />} />

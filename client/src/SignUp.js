@@ -75,7 +75,7 @@ function SignUp() {
         <p className="redirect-login">
           Already have an account?{" "}
           <span onClick={() => navigate("/login")} className="redirect-link">
-            Log in here
+            Log in 
           </span>
         </p>
       </div>
