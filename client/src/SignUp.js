@@ -42,6 +42,7 @@ function SignUp() {
 
   return (
     <div className="signup-container">
+      <div className="container"></div> {/* Add the container for the background */}
       <div className="signup-box">
         <h1 className="signup-title">Sign Up</h1>
         <input
