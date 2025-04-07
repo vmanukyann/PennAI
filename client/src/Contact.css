@@ -1,4 +1,12 @@
 /* General Styles */
+/* Ensure the body takes full height and width */
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden; 
+}
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -62,8 +70,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure it spans the full height */
-  padding: 2rem;
+  height: 100vh; /* Ensure the container spans the full height */
+  width: 100vw;
   background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
   box-sizing: border-box; /* Include padding in width/height calculations */
 }
