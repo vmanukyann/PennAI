@@ -88,6 +88,21 @@
   background-color: var(--button-active);
 }
 
+.chat-name {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add "..." for truncated text */
+  font-size: 1rem;
+  color: white;
+  transition: opacity 0.3s ease; /* Fade-out effect */
+}
+
+.chat-button:hover .chat-name {
+  opacity: 0.8; /* Slightly fade out on hover */
+}
+
 .delete-chat-button {
   background-color: transparent;
   color: white;

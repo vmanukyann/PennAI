@@ -135,6 +135,14 @@ function MainApp() {
     e.target.style.height = `${e.target.scrollHeight}px`; // Adjust height dynamically
   };
 
+  // Function to truncate chat names
+  const truncateChatName = (name) => {
+    if (name.length > 18) {
+      return name.substring(0, 18) + "...";
+    }
+    return name;
+  };
+
   return (
     <div className="app">
       {/* Sidebar for chat selection and creating new chats */}
@@ -150,7 +158,7 @@ function MainApp() {
                 onClick={() => handleSwitchChat(chat.id)} 
                 className={`chat-button ${chat.id === currentChatId ? 'active' : ''}`}
               >
-                {chat.name}
+                <span className="chat-name">{truncateChatName(chat.name)}</span>
               </button>
               <button 
                 onClick={() => handleDeleteChat(chat.id)} 
