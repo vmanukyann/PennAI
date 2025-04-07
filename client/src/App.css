@@ -37,55 +37,75 @@
 
 /* Sidebar styling */
 .sidebar {
-  width: 250px; /* Adjust width for better spacing */
+  width: 300px; /* Increase width for better spacing */
   background-color: var(--sidebar-bg);
-  padding: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
 }
 
 .sidebar .header {
-  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: var(--header-text);
-  border-bottom: 1px solid var(--header-border);
+  margin-bottom: 1rem;
+  text-align: center; /* Center-align the header */
 }
 
 .new-chat-button {
   background-color: var(--button-bg);
   color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
+  padding: 0.8rem 1rem;
   border: none;
+  border-radius: 8px; /* Add rounded corners */
   cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
 }
 
 .new-chat-button:hover {
   background-color: var(--button-hover);
+  transform: translateY(-2px); /* Add hover lift effect */
 }
 
-/* Chat list items */
+.chat-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem; /* Add padding for scrollbar spacing */
+}
+
 .chat-item {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px; /* Add rounded corners */
+  transition: background-color 0.3s ease;
+}
+
+.chat-item:hover {
+  background-color: var(--button-hover); /* Highlight on hover */
 }
 
 .chat-button {
-  background-color: var(--button-bg);
+  background-color: transparent;
   color: white;
-  padding: 10px 20px;
+  padding: 0.8rem 1rem;
   border: none;
   cursor: pointer;
-  width: 100%;
+  flex: 1;
   text-align: left;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  border-radius: 8px; /* Add rounded corners */
+  transition: background-color 0.3s ease;
 }
 
-.chat-button.active,
-.chat-button:hover {
-  background-color: var(--button-active);
+.chat-button.active {
+  background-color: var(--button-active); /* Highlight active chat */
 }
 
 .chat-name {
@@ -96,11 +116,6 @@
   text-overflow: ellipsis; /* Add "..." for truncated text */
   font-size: 1rem;
   color: white;
-  transition: opacity 0.3s ease; /* Fade-out effect */
-}
-
-.chat-button:hover .chat-name {
-  opacity: 0.8; /* Slightly fade out on hover */
 }
 
 .delete-chat-button {
@@ -108,13 +123,30 @@
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 25px;
-  margin-left: 10px;
-  transition: color 0.3s;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .delete-chat-button:hover {
   color: var(--delete-hover);
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.chat-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-list::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+.chat-list::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 4px;
+}
+
+.chat-list::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
 }
 
 /* Chat container area */
@@ -214,7 +246,7 @@
 .input-area {
   position: fixed;
   bottom: 0;
-  left: 250px; /* Ensure alignment with the bot text */
+  left: 300px; /* Ensure alignment with the bot text */
   right: 0;
   padding: 1rem;
   background: linear-gradient(to bottom, rgba(52, 53, 65, 0) 0%, #343541 100%);
