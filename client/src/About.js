@@ -20,7 +20,7 @@ function About() {
       <NavBar />
       <div className="about-container">
         <div className="about-card">
-          <h1>About</h1>
+          <h1>Our Mission</h1>
           <p>
             Welcome to <span className="brand">Penn Chatbot</span>, your ultimate academic companion. We’re dedicated to revolutionizing learning at Penn High School by harnessing cutting-edge AI technology. Our mission is to deliver smart, dependable support that makes education more efficient, engaging, and accessible for everyone.
           </p>

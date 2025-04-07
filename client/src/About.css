@@ -7,9 +7,16 @@
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-heavy: rgba(0, 0, 0, 0.15);
   --transition-speed: 0.3s;
+  --card-bg: #ffffff; /* Card background */
+  --card-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Card shadow */
 }
 
 /* General Styles */
+html, body {
+  height: 100%; /* Ensure the parent elements span the full height */
+  overflow: hidden; /* Prevent unwanted overflow */
+}
+
 body {
   font-family: 'Montserrat', 'Arial', sans-serif;
   margin: 0;
@@ -70,55 +77,76 @@ body {
 
 /* About Us Page */
 .about-container {
-  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  height: 100%; /* Ensure the container spans the full height */
+  width: 100vw; /* Ensure it spans the full width */
+  padding: 4rem 2rem; /* Add top padding to create spacing from the navbar */
   background: var(--bg-gradient);
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  margin: 0; /* Remove any default margin */
+  margin-top: 10rem; /* Add space between the card and the navbar */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.about-card {
+  background: var(--card-bg); /* Card background color */
   color: var(--text-color);
-  line-height: 1.6;
-  max-width: 100%; /* Set to full width */
-  width: 100%; /* Ensure it spans the full width */
-  height: 100vh; /* Ensure it spans the full height */
-  margin: 0; /* Remove margin to make it fullscreen */
-  box-shadow: none; /* Remove box-shadow for fullscreen layout */
-  border-radius: 0; /* Remove border-radius for fullscreen layout */
+  padding: 3rem;
+  border-radius: 16px; /* Rounded corners */
+  box-shadow: var(--card-shadow); /* Card shadow */
+  max-width: 900px; /* Set a maximum width */
+  width: 100%; /* Ensure it adjusts to screen size */
+  box-sizing: border-box; /* Include padding in width/height calculations */
   animation: fadeIn 0.8s ease-in-out;
+  text-align: center; /* Center-align text */
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.about-card:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
-.about-container h1 {
-  font-size: 2.5rem;
+.about-card h1 {
+  font-size: 3rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
-  text-align: center;
+  margin-bottom: 1.5rem;
   font-family: 'Playfair Display', serif;
+  text-transform: uppercase; /* Make the title uppercase */
+  letter-spacing: 1px; /* Add spacing between letters */
 }
 
-.about-container h2 {
-  font-size: 1.8rem;
+.about-card h2 {
+  font-size: 2rem;
   color: var(--primary-color);
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
+  text-transform: capitalize; /* Capitalize each word */
 }
 
-.about-container p {
+.about-card p {
   font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: justify;
+  line-height: 1.8; /* Improve readability */
 }
 
 .brand {
   font-weight: bold;
-  color: var(--primary-color);
+  color: var(--secondary-color); /* Highlight brand name */
+}
+
+/* Decorative Divider */
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary-color);
+  margin: 1.5rem auto;
+  border-radius: 2px;
 }
 
 /* Fancy Button Example */
@@ -146,13 +174,16 @@ body {
   .about-container {
     padding: 1.5rem;
   }
-  .about-container h1 {
-    font-size: 2rem;
+  .about-card {
+    padding: 2rem;
   }
-  .about-container h2 {
-    font-size: 1.5rem;
+  .about-card h1 {
+    font-size: 2.2rem;
   }
-  .about-container p {
+  .about-card h2 {
+    font-size: 1.6rem;
+  }
+  .about-card p {
     font-size: 1rem;
   }
   .navbar {
@@ -162,5 +193,16 @@ body {
   .nav-links {
     flex-direction: column;
     gap: 1rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
