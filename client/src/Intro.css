@@ -46,9 +46,22 @@ body {
   font-size: 1rem;
   font-weight: bold;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-links a:hover {
+  color: #ffffff; /* Secondary white */
+}
+
+.nav-icon {
+  font-size: 1.2rem; /* Adjust icon size */
+  color: #ffd700; /* Primary gold */
+  transition: color 0.3s ease;
+}
+
+.nav-icon:hover {
   color: #ffffff; /* Secondary white */
 }
 
