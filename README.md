@@ -94,7 +94,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 For any inquiries or feedback, please contact us at:
 - **Email**: support@pennai.com
-- **Website**: [www.pennai.com](https://www.pennai.com)
+- **Website**: [www.pennai.com](http://localhost:3000/intro)
 
 ---
 
