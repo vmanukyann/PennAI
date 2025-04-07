@@ -125,7 +125,7 @@
 .messages {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem;
+  padding: 1rem 2rem; /* Add horizontal padding for better spacing */
   padding-bottom: 150px;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
@@ -146,6 +146,9 @@
 }
 
 .message.bot {
+  display: flex;
+  align-items: center; /* Align avatar and text vertically */
+  gap: 0.5rem; /* Add spacing between avatar and text */
   justify-content: flex-start; /* Align bot messages to the left */
 }
 
@@ -157,10 +160,10 @@
 }
 
 .message.user .text {
-  background-color: transparent; /* Match the app background */
-  border: 1px solid var(--button-bg); /* Add a subtle border for visibility */
+  background-color: var(--button-bg); /* Add a bubble background for user messages */
+  border: none; /* Remove the white outline */
   padding: 0.8rem 1rem;
-  border-radius: 12px;
+  border-radius: 16px; /* Rounded bubble shape */
   max-width: 70%;
   align-self: flex-end;
   font-weight: bold; /* Make user text bold */
@@ -168,13 +171,13 @@
 }
 
 .message.bot .text {
-  background-color: transparent; /* Match the app background */
-  border: 1px solid var(--bot-bg); /* Add a subtle border for visibility */
+  background-color: var(--bot-bg); /* Add a bubble background for AI messages */
+  border: none; /* Remove the white outline */
   padding: 0.8rem 1rem;
-  border-radius: 12px;
+  border-radius: 16px; /* Rounded bubble shape */
   max-width: 70%;
   align-self: flex-start;
-  margin-left: 110px; /* Move AI text slightly to the left */
+  margin-left: 0; /* Remove extra left margin */
   font-weight: bold; /* Make AI text bold */
   color: white; /* Set text color to white */
 }
@@ -183,12 +186,13 @@
   width: 40px;
   height: 40px;
   background-color: var(--avatar-bg);
-  border-radius: 50%;
+  border-radius: 50%; /* Circular avatar */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   color: white;
+  flex-shrink: 0; /* Prevent avatar from shrinking */
 }
 
 /* Input area styling */
