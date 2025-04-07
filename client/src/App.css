@@ -18,6 +18,31 @@
   --scroll-thumb-hover: #707184;
 }
 
+/* Light and Dark Mode Themes */
+body.light-mode {
+  --primary-bg: #ffffff;
+  --sidebar-bg: #f5f5f5;
+  --header-text: #000000;
+  --button-bg: #e0e0e0;
+  --button-hover: #d5d5d5;
+  --button-active: #c0c0c0;
+  --avatar-bg: #007bff;
+  --bot-bg: #f0f0f0;
+  --text-color: #000000;
+}
+
+body.dark-mode {
+  --primary-bg: #282828;
+  --sidebar-bg: #151515;
+  --header-text: #ffffff;
+  --button-bg: #202123;
+  --button-hover: #4d4d4f;
+  --button-active: #4d4d4f;
+  --avatar-bg: #2200ff;
+  --bot-bg: #444654;
+  --text-color: #ffffff;
+}
+
 /* Global reset and fonts */
 * {
   margin: 0;
@@ -311,6 +336,34 @@ textarea:focus {
 .send-button:hover {
   background-color: var(--button-hover);
   color: white;
+}
+
+/* Settings Button */
+.settings-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--button-bg);
+  color: var(--header-text);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.settings-button:hover {
+  background-color: var(--button-hover);
+  transform: scale(1.1);
+}
+
+.settings-button svg {
+  font-size: 1.5rem;
 }
 
 /* Disclaimer */
