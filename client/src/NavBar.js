@@ -16,6 +16,7 @@ function NavBar() {
     <nav className="navbar">
       <div className="nav-logo" onClick={() => navigate("/intro")}>Penn Chatbot</div>
       <ul className="nav-links">
+        <li><button onClick={() => navigate("/intro")} className="nav-button">Home</button></li> {/* Redirect to intro */}
         <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
         <li><button onClick={() => navigate("/admin")} className="nav-button">Admin</button></li> {/* Add Admin button */}

@@ -7,7 +7,7 @@ function NavBar() {
     <nav className="navbar">
       <div className="nav-logo">Penn Chatbot</div>
       <ul className="nav-links">
-        <li><a href="/">Home</a></li>
+        <li><a href="/intro">Home</a></li>
         <li><a href="/about">Our Mission</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -36,7 +36,7 @@ function Intro() {
         <div className="right-panel">
           <div className="content-wrapper">
             <h1 className="welcome-title">
-              Welcome to <span className="brand">Penn Chatbot</span>
+              Welcome to the <span className="brand">Penn Chatbot</span>
             </h1>
             <p className="description">
               Your personalized academic assistant from Penn High School
