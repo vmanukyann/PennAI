@@ -1,0 +1,39 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000; /* Primary black */
+  color: #ffd700; /* Primary gold */
+}
+
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logout-box {
+  text-align: center;
+  background-color: #ffffff; /* Secondary white */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logout-title {
+  font-size: 2rem;
+  color: #000000; /* Primary black */
+  margin-bottom: 1rem;
+}
+
+.logout-message {
+  font-size: 1rem;
+  color: #666666;
+}

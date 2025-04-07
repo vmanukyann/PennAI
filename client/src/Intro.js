@@ -14,7 +14,7 @@ function NavBar() {
         <li><a href="/about">Our Mission</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/admin">Admin</a></li>
-
+        <li><a href="/logout">Log Out</a></li> {/* Add Admin button */}
 
       </ul>
     </nav>

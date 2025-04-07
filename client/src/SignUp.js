@@ -12,8 +12,8 @@ function SignUp() {
 
   const handleSignUp = () => {
     if (email.endsWith("@phm.k12.in.us")) {
-      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-      if (existingUsers.some(user => user.email === email)) {
+      const universalUsers = JSON.parse(localStorage.getItem("universalUsers")) || [];
+      if (universalUsers.some(user => user.email === email)) {
         setError("This email is already registered. Please log in.");
         setSuccess("");
       } else {
@@ -22,11 +22,12 @@ function SignUp() {
           lastName,
           email,
           timestamp: new Date().toLocaleString(),
+          approved: false, // Mark as not approved by default
         };
-        existingUsers.push(newUser); // Add new user to the list
-        localStorage.setItem("users", JSON.stringify(existingUsers));
+        universalUsers.push(newUser); // Add new user to the universal list
+        localStorage.setItem("universalUsers", JSON.stringify(universalUsers));
         setError("");
-        setSuccess("Account created successfully! You can now log in.");
+        setSuccess("Account created successfully! Please wait for admin approval.");
       }
     } else {
       setError("Only PHM email addresses are allowed.");

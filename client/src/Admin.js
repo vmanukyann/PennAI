@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Admin() {
   const navigate = useNavigate();
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const universalUsers = JSON.parse(localStorage.getItem("universalUsers")) || [];
+    setUsers(universalUsers);
+  }, []);
+
+  const handleApprove = (email) => {
+    const updatedUsers = users.map(user =>
+      user.email === email ? { ...user, approved: true } : user
+    );
+    setUsers(updatedUsers);
+    localStorage.setItem("universalUsers", JSON.stringify(updatedUsers));
+  };
 
   return (
     <div style={{ padding: "2rem" }}>
@@ -17,6 +30,8 @@ function Admin() {
               <th style={{ border: "1px solid #ddd", padding: "8px" }}>Last Name</th>
               <th style={{ border: "1px solid #ddd", padding: "8px" }}>Email</th>
               <th style={{ border: "1px solid #ddd", padding: "8px" }}>Timestamp</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Approved</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -26,6 +41,14 @@ function Admin() {
                 <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.lastName}</td>
                 <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.email}</td>
                 <td style={{ border: "1px solid #ddd", padding: "8px" }}>{user.timestamp}</td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                  {user.approved ? "Yes" : "No"}
+                </td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                  {!user.approved && (
+                    <button onClick={() => handleApprove(user.email)}>Approve</button>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

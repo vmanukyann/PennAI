@@ -12,12 +12,19 @@ import Admin from "./Admin";
 function NavBar() {
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    localStorage.removeItem("currentUser"); // Clear the current user
+    localStorage.removeItem("lastLoginTime"); // Clear the login timestamp
+    navigate("/login"); // Redirect to the login page
+  };
+
   return (
     <nav className="navbar">
       <div className="nav-logo" onClick={() => navigate("/intro")}>Penn Chatbot</div>
       <ul className="nav-links">
         <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
+        <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
       </ul>
     </nav>
   );

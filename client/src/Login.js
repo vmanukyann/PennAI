@@ -18,13 +18,18 @@ function Login() {
   }, [navigate]);
 
   const handleLogin = () => {
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const universalUsers = JSON.parse(localStorage.getItem("universalUsers")) || [];
     if (email.endsWith("@phm.k12.in.us")) {
-      if (existingUsers.some(user => user.email === email)) {
-        setError("");
-        localStorage.setItem("currentUser", email); // Track the currently logged-in user
-        localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
-        navigate("/app"); // Redirect to the chatbot page
+      const user = universalUsers.find(user => user.email === email);
+      if (user) {
+        if (user.approved) {
+          setError("");
+          localStorage.setItem("currentUser", email); // Track the currently logged-in user
+          localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
+          navigate("/app"); // Redirect to the chatbot page
+        } else {
+          setError("Your account is not approved yet. Please wait for admin approval.");
+        }
       } else {
         setError("No account found. Please sign up.");
       }

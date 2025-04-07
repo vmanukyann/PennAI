@@ -20,6 +20,8 @@ function NavBar() {
         <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
         <li><button onClick={() => navigate("/admin")} className="nav-button">Admin</button></li> {/* Add Admin button */}
+        <li><button onClick={() => navigate("/logout")} className="nav-button">Log Out</button></li> {/* Add Admin button */}
+
       </ul>
     </nav>
   );

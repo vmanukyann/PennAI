@@ -6,9 +6,14 @@ function NavBar() {
     <nav className="navbar">
       <div className="nav-logo">Penn Chatbot</div>
       <ul className="nav-links">
-        <li><a href="/intro">Home</a></li> {/* Redirect to intro */}
+      <li><a href="/intro">Home</a></li>
+        <li><a href="/app">Chatbot</a></li>
+        <li><a href="/Login">Login</a></li>
+        <li><a href="/SignUp">Register</a></li>
         <li><a href="/about">Our Mission</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/admin">Admin</a></li>
+
       </ul>
     </nav>
   );
