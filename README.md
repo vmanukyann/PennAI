@@ -1,93 +1,101 @@
-# PennAI
+# Penn Chatbot
 
-Welcome to **PennAI**, your personalized academic assistant designed to revolutionize learning at Penn High School. With cutting-edge AI technology, PennAI provides intelligent, reliable, and efficient support to students and educators, making education more engaging and accessible.
+Welcome to **Penn Chabot**, designed to provide personalized academic assistance for students at Penn High School. This project is built to increase organization of students, answer specific questions for conseling, and help with language translations. 
 
+--
 ## Features
 
-- **Intelligent Chat**: Engage in meaningful conversations with PennAI to get academic assistance.
-- **User-Friendly Interface**: A clean and intuitive design for seamless navigation.
-- **Customizable Chats**: Create, switch, and delete chat sessions effortlessly.
-- **Responsive Design**: Optimized for both desktop and mobile devices.
-- **Contact and Support**: Easily reach out to the PennAI team for assistance or feedback.
+- **Chatbot**: Engage with an AI-powered chatbot for academic support.
+- **Admin Panel**: Manage user approvals and monitor activity.
+- **User Authentication**: Secure login and signup system with email verification.
+- **Responsive Design**: Optimized for all devices.
+- **Modern UI**: Clean and professional interface with animations.
 
-## Pages
+---
 
-### 1. **Home Page**
-The landing page introduces PennAI and provides a "Get Started" button to navigate to the main application.
+## Screenshots
 
-### 2. **About Us**
-Learn about PennAI's mission, vision, and the team behind this innovative project.
+### Home Page
+![Screenshot 2025-04-07 161804](https://github.com/user-attachments/assets/6ad73a42-5f2d-4a2f-88fa-b9910f65cf41)
 
-### 3. **Contact Us**
-Reach out to the PennAI team via email, phone, or social media for support or inquiries.
 
-### 4. **Chat Application**
-Interact with PennAI through a chat interface designed for academic assistance.
+### Chatbot
+![Screenshot 2025-04-07 162132](https://github.com/user-attachments/assets/afaaa82c-2d7d-4e26-84dd-a053ad6f87e2)
+
+
+---
 
 ## Technologies Used
 
-- **Frontend**: React.js
-- **Styling**: CSS3 with responsive design principles
-- **Routing**: React Router DOM
-- **Icons**: React Icons
-- **Deployment**: GitHub Pages
+- **Frontend**: React.js, CSS (with animations)
+- **Backend**: LocalStorage (for demo purposes)
+- **Routing**: React Router
+- **Icons**: FontAwesome
+
+---
 
 ## Installation
 
-To run PennAI locally, follow these steps:
-
 1. Clone the repository:
    ```bash
-   git clone https://github.com/vmanukyann/PennAI.git
-   cd PennAI/client
+   git clone https://github.com/your-repo/pennai.git
    ```
-
-2. Install dependencies:
+2. Navigate to the project directory:
+   ```bash
+   cd pennai
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
-
-3. Start the development server:
+4. Start the development server:
    ```bash
    npm start
    ```
 
-4. Open your browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
+---
 
-## Deployment
+## Image Credits
 
-PennAI is deployed on GitHub Pages. Visit the live application at:
-[https://vmanukyann.github.io/PennAI/](https://vmanukyann.github.io/PennAI/)
-
-To deploy updates, run:
-```bash
-npm run deploy
-```
-
-## Contact
-
-For questions, feedback, or support, please contact us:
-
-- **Email**: [penncomputerclub@phm.k12.in.us](mailto:penncomputerclub@phm.k12.in.us)
-- **Phone**: +1 (574) 855-7065
-- **Instagram**: [@pennaiclub](https://instagram.com/pennaiclub)
-
-## Credits
-
-This project was made possible with the help of the following resources:
-
-- [FreeCodeCamp](https://www.freecodecamp.org/) - For providing excellent tutorials and resources on web development.
-- [Tech With Tim](https://www.techwithtim.net/) - For insightful programming tutorials and guidance.
-- [React Documentation](https://reactjs.org/docs/getting-started.html) - For comprehensive documentation on React.js.
-- [ChatGPT](https://openai.com/chatgpt) - For assisting with code suggestions and explanations.
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+- **Background Animations**: [Unsplash](https://unsplash.com) and [Pexels](https://pexels.com)
+- **Icons**: [FontAwesome](https://fontawesome.com)
+- **Illustrations**: [Freepik](https://freepik.com)
 
 ---
 
-Thank you for using PennAI. Together, let's transform education with technology!
+## Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
+5. Open a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+---
+
+## Contact
+
+For any inquiries or feedback, please contact us at:
+- **Email**: support@pennai.com
+- **Website**: [www.pennai.com](https://www.pennai.com)
+
+---
+
+Thank you for using **PennAI**! 🚀
