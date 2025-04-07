@@ -36,7 +36,7 @@ function NavBar() {
           </a>
         </li>
         <li>
-          <a href="/logout">
+          <a onClick={() => navigate("/logout")}>
             <FaSignOutAlt className="nav-icon" /> {/* Logout icon */}
           </a>
         </li>

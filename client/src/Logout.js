@@ -9,8 +9,14 @@ function Logout() {
     // Clear session data
     localStorage.removeItem("currentUser");
     localStorage.removeItem("lastLoginTime");
-    // Redirect to login page
-    navigate("/login");
+
+    // Redirect to login page after a short delay
+    const timer = setTimeout(() => {
+      navigate("/login");
+    }, 1000);
+
+    // Cleanup the timer on component unmount
+    return () => clearTimeout(timer);
   }, [navigate]);
 
   return (

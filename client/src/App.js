@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Admin from "./Admin"; 
+import Logout from "./Logout"; // Import Logout component
 
 function NavBar() {
   const navigate = useNavigate();
@@ -210,6 +211,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} /> {/* Add admin route */}
+          <Route path="/logout" element={<Logout />} /> {/* Add logout route */}
         </Routes>
       </Router>
     </div>
