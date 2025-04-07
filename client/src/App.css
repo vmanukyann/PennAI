@@ -20,15 +20,21 @@
 
 /* Light and Dark Mode Themes */
 body.light-mode {
-  --primary-bg: #ffffff;
-  --sidebar-bg: #f5f5f5;
-  --header-text: #000000;
-  --button-bg: #e0e0e0;
-  --button-hover: #d5d5d5;
-  --button-active: #c0c0c0;
-  --avatar-bg: #007bff;
-  --bot-bg: #f0f0f0;
-  --text-color: #000000;
+  --primary-bg: #f8f9fa; /* Soft light gray background */
+  --sidebar-bg: #ffffff; /* Clean white sidebar */
+  --header-text: #212529; /* Dark gray for text */
+  --button-bg: #e9ecef; /* Light gray buttons */
+  --button-hover: #dee2e6; /* Slightly darker gray for hover */
+  --button-active: #ced4da; /* Even darker gray for active state */
+  --avatar-bg: #0d6efd; /* Bright blue for avatars */
+  --bot-bg: #f1f3f5; /* Very light gray for bot message bubbles */
+  --text-color: #212529; /* Dark gray text for readability */
+  --input-border: #adb5bd; /* Medium gray input border */
+  --input-focus: #0d6efd; /* Bright blue for input focus */
+  --delete-hover: #dc3545; /* Bright red for delete hover */
+  --scroll-track: #e9ecef; /* Light gray scrollbar track */
+  --scroll-thumb: #adb5bd; /* Medium gray scrollbar thumb */
+  --scroll-thumb-hover: #868e96; /* Darker gray scrollbar thumb on hover */
 }
 
 body.dark-mode {
@@ -41,6 +47,104 @@ body.dark-mode {
   --avatar-bg: #2200ff;
   --bot-bg: #444654;
   --text-color: #ffffff;
+  --input-border: #565869;
+  --input-focus: #707184;
+  --delete-hover: red;
+  --scroll-track: #343541;
+  --scroll-thumb: #565869;
+  --scroll-thumb-hover: #707184;
+}
+
+/* Adjustments for Light Mode */
+.navbar {
+  background-color: var(--sidebar-bg); /* White navbar */
+  color: var(--header-text); /* Dark gray text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.nav-links a {
+  color: var(--header-text); /* Dark gray links */
+}
+
+.nav-links a:hover {
+  color: var(--avatar-bg); /* Bright blue on hover */
+}
+
+.chat-container {
+  background-color: var(--primary-bg); /* Soft light gray background */
+}
+
+.message.user .text {
+  background-color: var(--button-bg); /* Light gray bubble for user messages */
+  color: var(--text-color); /* Dark gray text */
+  border-radius: 16px; /* Rounded bubble shape */
+  padding: 0.8rem 1rem;
+  max-width: 70%;
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.message.bot .text {
+  background-color: var(--bot-bg); /* Very light gray bubble for bot messages */
+  color: var(--text-color); /* Dark gray text */
+  border-radius: 16px; /* Rounded bubble shape */
+  padding: 0.8rem 1rem;
+  max-width: 70%;
+  align-self: flex-start;
+}
+
+.input-wrapper {
+  background-color: var(--sidebar-bg); /* White input area */
+  border: 1px solid var(--input-border); /* Medium gray border */
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--input-focus); /* Bright blue border on focus */
+}
+
+.send-button {
+  background-color: var(--button-bg); /* Light gray button */
+  color: var(--header-text); /* Dark gray text */
+}
+
+.send-button:hover {
+  background-color: var(--button-hover); /* Slightly darker gray on hover */
+  color: var(--header-text); /* Keep text dark gray */
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg); /* White sidebar */
+  color: var(--header-text); /* Dark gray text */
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.chat-button {
+  background-color: var(--button-bg); /* Light gray chat button */
+  color: var(--header-text); /* Dark gray text */
+}
+
+.chat-button.active {
+  background-color: var(--button-active); /* Darker gray for active chat */
+}
+
+.chat-button:hover {
+  background-color: var(--button-hover); /* Slightly darker gray on hover */
+}
+
+.delete-chat-button:hover {
+  color: var(--delete-hover); /* Bright red for delete hover */
+}
+
+.scrollbar {
+  background-color: var(--scroll-track); /* Light gray scrollbar track */
+}
+
+.scrollbar-thumb {
+  background-color: var(--scroll-thumb); /* Medium gray scrollbar thumb */
+}
+
+.scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover); /* Darker gray on hover */
 }
 
 /* Global reset and fonts */
@@ -139,8 +243,9 @@ body.dark-mode {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; /* Add "..." for truncated text */
-  font-size: 1rem;
-  color: white;
+  font-size: 1.1rem; /* Increase font size for better readability */
+  color: var(--header-text); /* Use dark gray for better contrast */
+  font-weight: 500; /* Slightly bold for emphasis */
 }
 
 .delete-chat-button {
@@ -231,26 +336,22 @@ body.dark-mode {
 }
 
 .message.user .text {
-  background-color: var(--button-bg); /* Add a bubble background for user messages */
-  border: none; /* Remove the white outline */
-  padding: 0.8rem 1rem;
+  background-color: var(--bot-bg); /* Black bubble for user messages */
+  color: var(--text-color); /* Black text */
   border-radius: 16px; /* Rounded bubble shape */
+  padding: 0.8rem 1rem;
   max-width: 70%;
   align-self: flex-end;
-  font-weight: bold; /* Make user text bold */
-  color: white; /* Set text color to white */
+  font-weight: bold;
 }
 
 .message.bot .text {
-  background-color: var(--bot-bg); /* Add a bubble background for AI messages */
-  border: none; /* Remove the white outline */
-  padding: 0.8rem 1rem;
+  background-color: var(--bot-bg); /* Black bubble for bot messages */
+  color: var(--text-color); /* Black text */
   border-radius: 16px; /* Rounded bubble shape */
+  padding: 0.8rem 1rem;
   max-width: 70%;
   align-self: flex-start;
-  margin-left: 0; /* Remove extra left margin */
-  font-weight: bold; /* Make AI text bold */
-  color: white; /* Set text color to white */
 }
 
 .avatar {
@@ -291,10 +392,14 @@ body.dark-mode {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--chat-bg);
-  border: 1px solid var(--input-border);
+  background-color: var(--sidebar-bg); /* White input area */
+  border: 1px solid var(--input-border); /* Light gray border */
   border-radius: 8px;
   padding: 0.5rem;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--input-focus); /* Blue border on focus */
 }
 
 textarea {
@@ -324,9 +429,9 @@ textarea:focus {
 }
 
 .send-button {
-  background-color: var(--button-bg);
+  background-color: var(--button-bg); /* Light gray button */
   border: none;
-  color: #8e8ea0;
+  color: var(--header-text); /* Dark gray text */
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
@@ -334,8 +439,8 @@ textarea:focus {
 }
 
 .send-button:hover {
-  background-color: var(--button-hover);
-  color: white;
+  background-color: var(--button-hover); /* Slightly darker gray on hover */
+  color: var(--header-text); /* Keep text dark gray */
 }
 
 /* Settings Button */
