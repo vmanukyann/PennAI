@@ -190,13 +190,12 @@
 
 .message.user {
   justify-content: flex-end; /* Align user messages to the right */
+  flex-direction: row; /* Position avatar to the left of the message */
 }
 
 .message.bot {
-  display: flex;
-  align-items: center; /* Align avatar and text vertically */
-  gap: 0.5rem; /* Add spacing between avatar and text */
   justify-content: flex-start; /* Align bot messages to the left */
+  flex-direction: row; /* Position avatar to the left of the message */
 }
 
 .message-content {
@@ -232,14 +231,19 @@
 .avatar {
   width: 40px;
   height: 40px;
-  background-color: var(--avatar-bg);
+  background-color: var(--avatar-bg); /* Blue for AI and user avatars */
   border-radius: 50%; /* Circular avatar */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   color: white;
+  font-weight: bold; /* Bold text for the avatar */
   flex-shrink: 0; /* Prevent avatar from shrinking */
+}
+
+.message.user .avatar {
+  background-color: #ffd700; /* Gold for user avatar */
 }
 
 /* Input area styling */

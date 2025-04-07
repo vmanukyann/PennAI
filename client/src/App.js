@@ -33,6 +33,12 @@ function NavBar() {
 
 function MainApp() {
   const navigate = useNavigate();
+  const currentUser = localStorage.getItem("currentUser") || ""; // Get the current user's email
+
+  // Function to extract the first two letters of the email
+  const getUserAvatarText = (email) => {
+    return email.slice(0, 2).toUpperCase(); // Take the first two letters and convert to uppercase
+  };
 
   // State to manage chat sessions
   const [chats, setChats] = useState(() => {
@@ -179,6 +185,11 @@ function MainApp() {
             <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
                 {msg.sender === 'bot' && <div className="avatar">AI</div>}
+                {msg.sender === 'user' && (
+                  <div className="avatar">
+                    {getUserAvatarText(currentUser)}
+                  </div>
+                )}
                 <div className="text">{msg.text}</div>
               </div>
             </div>
