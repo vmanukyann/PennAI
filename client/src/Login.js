@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = () => {
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
     if (email.endsWith("@phm.k12.in.us")) {
-      if (existingUsers.includes(email)) {
+      if (existingUsers.some(user => user.email === email)) {
         setError("");
         localStorage.setItem("currentUser", email); // Track the currently logged-in user
         navigate("/app"); // Redirect to the chatbot page
@@ -30,8 +30,9 @@ function Login() {
 
   return (
     <div className="login-container">
+      <div className="container"></div> {/* Add the container for the background */}
       <div className="login-box">
-        <h1 className="login-title">PennAI Login</h1>
+        <h1 className="login-title">Login</h1>
         <input
           type="email"
           placeholder="Enter your email"
