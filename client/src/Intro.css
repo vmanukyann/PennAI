@@ -64,9 +64,10 @@ body {
   flex: 1;
   background-color: #000000; /* Primary black */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align content to the left */
   align-items: center;
   padding: 3rem; /* Increase padding for better spacing */
+  padding-left: 4rem; /* Add padding to position content properly */
   color: #ffd700; /* Primary gold */
   animation: slideInLeft 1s ease-in-out; /* Add slide-in animation */
 }
@@ -155,12 +156,13 @@ body {
 /* Animated Text Effect */
 .card {
   background-color: transparent; /* Make the card background transparent */
-  padding: 1rem 2rem;
-  border-radius: 1.25rem;
+  padding: 1rem 1rem;
+  border-radius: 2rem; /* Round the corners */
   text-align: center;
-  font-size: 2rem; /* Increase overall size */
+  font-size: 2rem; 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-  border: 2px solid #ffd700; /* Add a gold border */
+  border: 3px solid #ffd700; /* Add a gold border */
+  margin: 0 auto; /* Center the card horizontally */
 }
 
 .loader {
@@ -169,11 +171,12 @@ body {
   font-weight: bold; /* Make "Chatbot is" bold */
   font-size: 2.5rem; /* Increase font size */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align text to the left */
   align-items: center;
   width: 100%; /* Ensure the text spans the full width */
   text-align: center; /* Center-align the text */
   white-space: nowrap; /* Prevent text wrapping */
+  margin-left: 0; /* Remove unnecessary left margin */
 }
 
 .words {
@@ -181,20 +184,7 @@ body {
   position: relative;
   display: inline-block;
   height: 1.5em; /* Slightly increase height for better visibility */
-  margin-left: 10px;
-}
-
-.words::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    #000000 10%,
-    transparent 30%,
-    transparent 70%,
-    #000000 90%
-  );
-  z-index: 20;
+  margin-left: 0; /* Align words directly next to "Chatbot is" */
 }
 
 .word {
@@ -202,7 +192,7 @@ body {
   height: 100%;
   line-height: 1.5em; /* Adjust line height for better alignment */
   color: #ffd700; /* Gold color for the animated words */
-  animation: spin_4991 6s cubic-bezier(0.25, 1, 0.5, 1) infinite; /* Add easing for smoother animation */
+  animation: spin_4991 10s cubic-bezier(0.25, 1, 0.5, 1.25) infinite; /* Add easing for smoother animation */
 }
 
 @keyframes spin_4991 {

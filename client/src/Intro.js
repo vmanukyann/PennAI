@@ -8,8 +8,14 @@ function NavBar() {
       <div className="nav-logo">Penn Chatbot</div>
       <ul className="nav-links">
         <li><a href="/intro">Home</a></li>
+        <li><a href="/app">Chatbot</a></li>
+        <li><a href="/Login">Login</a></li>
+        <li><a href="/SignUp">Register</a></li>
         <li><a href="/about">Our Mission</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/admin">Admin</a></li>
+
+
       </ul>
     </nav>
   );
@@ -32,9 +38,10 @@ function Intro() {
               <div className="loader">
                 Chatbot is
                 <div className="words">
-                  <span className="word">Amazing</span>
+                  <span className="word">Empowering</span>
                   <span className="word">Helpful</span>
                   <span className="word">Innovative</span>
+                  <span className="word">Student-driven</span>
                   <span className="word">Supportive</span>
                 </div>
               </div>
@@ -50,7 +57,7 @@ function Intro() {
               Your personalized academic assistant from Penn High School.
             </p>
             <button className="start-button" onClick={handleStart}>
-              Get Started
+              Register
               <span className="button-icon">→</span>
             </button>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
@@ -7,12 +7,23 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const lastLoginTime = localStorage.getItem("lastLoginTime");
+    if (lastLoginTime) {
+      const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+      if (Date.now() - new Date(lastLoginTime).getTime() < oneHour) {
+        navigate("/app"); // Redirect to the chatbot if within 1 hour
+      }
+    }
+  }, [navigate]);
+
   const handleLogin = () => {
     const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
     if (email.endsWith("@phm.k12.in.us")) {
       if (existingUsers.some(user => user.email === email)) {
         setError("");
         localStorage.setItem("currentUser", email); // Track the currently logged-in user
+        localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
         navigate("/app"); // Redirect to the chatbot page
       } else {
         setError("No account found. Please sign up.");
