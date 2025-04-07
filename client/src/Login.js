@@ -45,6 +45,12 @@ function Login() {
         <button onClick={handleLogin} className="login-button">
           Login
         </button>
+        <p className="redirect-signup">
+          Don't have an account?{" "}
+          <span onClick={() => navigate("/signup")} className="redirect-link">
+            Sign Up
+          </span>
+        </p>
       </div>
     </div>
   );

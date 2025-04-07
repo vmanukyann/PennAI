@@ -277,6 +277,22 @@ body {
   color: #000000; /* Primary black */
 }
 
+.redirect-signup {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.redirect-link {
+  color: #ffd700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.redirect-link:hover {
+  color: #ffd700;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .login-box {

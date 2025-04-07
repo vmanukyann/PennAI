@@ -1,10 +1,10 @@
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Update font for a modern look */
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* Secondary color */
-  color: #333;
+  background-color: #000000; /* Set background to black */
+  color: #ffffff; /* Set text color to white */
   height: 100vh;
   width: 100vw;
   overflow: hidden; /* Prevent scrollbars */
@@ -57,6 +57,7 @@ body {
   display: flex;
   height: 100vh; /* Ensure full height */
   width: 100vw; /* Ensure full width */
+  gap: 2rem; /* Add spacing between panels */
 }
 
 .left-panel {
@@ -65,8 +66,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem; /* Increase padding for better spacing */
   color: #ffd700; /* Primary gold */
+  animation: slideInLeft 1s ease-in-out; /* Add slide-in animation */
 }
 
 .right-panel {
@@ -75,7 +77,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem; /* Increase padding for better spacing */
+  animation: slideInRight 1s ease-in-out; /* Add slide-in animation */
 }
 
 .content-wrapper {
@@ -119,8 +122,8 @@ body {
 
 /* Start Button */
 .start-button {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  padding: 1.2rem 3rem; /* Increase padding for a larger button */
+  font-size: 1.2rem; /* Increase font size */
   color: #ffffff; /* Secondary white */
   background-color: #000000; /* Primary black */
   border: none;
@@ -130,13 +133,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
 }
 
 .start-button:hover {
   background-color: #ffd700; /* Primary gold */
   color: #000000; /* Primary black */
-  transform: translateY(-2px);
+  transform: translateY(-4px); /* Enhance hover effect */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -147,6 +150,77 @@ body {
 
 .start-button:hover .button-icon {
   transform: translateX(3px);
+}
+
+/* Animated Text Effect */
+.card {
+  background-color: transparent; /* Make the card background transparent */
+  padding: 1rem 2rem;
+  border-radius: 1.25rem;
+  text-align: center;
+  font-size: 2rem; /* Increase overall size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  border: 2px solid #ffd700; /* Add a gold border */
+}
+
+.loader {
+  color: #ffffff; /* Set text color to white */
+  font-family: "Poppins", sans-serif;
+  font-weight: bold; /* Make "Chatbot is" bold */
+  font-size: 2.5rem; /* Increase font size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure the text spans the full width */
+  text-align: center; /* Center-align the text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.words {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  height: 1.5em; /* Slightly increase height for better visibility */
+  margin-left: 10px;
+}
+
+.words::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    #000000 10%,
+    transparent 30%,
+    transparent 70%,
+    #000000 90%
+  );
+  z-index: 20;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  line-height: 1.5em; /* Adjust line height for better alignment */
+  color: #ffd700; /* Gold color for the animated words */
+  animation: spin_4991 6s cubic-bezier(0.25, 1, 0.5, 1) infinite; /* Add easing for smoother animation */
+}
+
+@keyframes spin_4991 {
+  0%, 20% {
+    transform: translateY(0); /* Show the first word */
+  }
+  25%, 45% {
+    transform: translateY(-100%); /* Show the second word */
+  }
+  50%, 70% {
+    transform: translateY(-200%); /* Show the third word */
+  }
+  75%, 95% {
+    transform: translateY(-300%); /* Show the fourth word */
+  }
+  100% {
+    transform: translateY(-400%); /* Loop back to the first word */
+  }
 }
 
 /* Responsive Design */
@@ -177,5 +251,27 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
