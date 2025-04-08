@@ -1,6 +1,34 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaHome, FaSignInAlt, FaUserCircle } from "react-icons/fa"; // Import icons
 import "./SignUp.css";
+
+function NavBar() {
+  const navigate = useNavigate();
+
+  return (
+    <nav className="navbar">
+      <div className="nav-logo" onClick={() => navigate("/intro")}>Penn Chatbot</div>
+      <ul className="nav-links">
+        <li>
+          <a href="/intro">
+            <FaHome className="nav-icon" /> {/* Home icon */}
+          </a>
+        </li>
+        <li>
+          <a href="/login">
+            <FaSignInAlt className="nav-icon" /> {/* Login icon */}
+          </a>
+        </li>
+        <li>
+          <a onClick={() => navigate("/account")}>
+            <FaUserCircle className="nav-icon" /> {/* Account icon */}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -43,6 +71,7 @@ function SignUp() {
 
   return (
     <div className="signup-container">
+      <NavBar /> {/* Add the navbar */}
       <div className="container"></div> {/* Add the container for the background */}
       <div className="signup-box">
         <h1 className="signup-title">Sign Up</h1>

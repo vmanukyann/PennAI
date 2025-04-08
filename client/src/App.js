@@ -9,9 +9,20 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import Admin from "./Admin"; 
 import Logout from "./Logout"; // Import Logout component
+import Account from "./Account"; // Import Account component
 
 function NavBar() {
   const navigate = useNavigate();
+  const [userIcon, setUserIcon] = useState(null);
+
+  useEffect(() => {
+    const currentUser = localStorage.getItem("currentUser");
+    const universalUsers = JSON.parse(localStorage.getItem("universalUsers")) || [];
+    const user = universalUsers.find((user) => user.email === currentUser);
+    if (user) {
+      setUserIcon(user.icon || `${user.firstName[0].toUpperCase()}${user.lastName[0].toUpperCase()}`);
+    }
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser"); // Clear the current user
@@ -25,6 +36,19 @@ function NavBar() {
       <ul className="nav-links">
         <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
+        <li>
+          <div className="account-icon" onClick={() => navigate("/account")}>
+            {userIcon ? (
+              typeof userIcon === "string" && userIcon.startsWith("data:image") ? (
+                <img src={userIcon} alt="Profile" className="nav-profile-img" />
+              ) : (
+                <div className="nav-default-icon">{userIcon}</div>
+              )
+            ) : (
+              <div className="nav-default-icon">?</div>
+            )}
+          </div>
+        </li>
         <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
       </ul>
     </nav>
@@ -244,6 +268,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} /> {/* Add admin route */}
           <Route path="/logout" element={<Logout />} /> {/* Add logout route */}
+          <Route path="/account" element={<Account />} /> {/* Add Account route */}
         </Routes>
       </Router>
       <button className="settings-button" onClick={toggleTheme}>
