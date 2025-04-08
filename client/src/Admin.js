@@ -30,8 +30,9 @@ function Admin() {
               <th style={{ border: "1px solid #ddd", padding: "8px" }}>Last Name</th>
               <th style={{ border: "1px solid #ddd", padding: "8px" }}>Email</th>
               <th style={{ border: "1px solid #ddd", padding: "8px" }}>Timestamp</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Approved</th>
-              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Actions</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Disapprove</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Approve</th>
+              <th style={{ border: "1px solid #ddd", padding: "8px" }}>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -45,8 +46,16 @@ function Admin() {
                   {user.approved ? "Yes" : "No"}
                 </td>
                 <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                  {user.disapproved ? "Yes" : "No"}
+                </td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>
                   {!user.approved && (
                     <button onClick={() => handleApprove(user.email)}>Approve</button>
+                  )}
+                </td>
+                <td style={{ border: "1px solid #ddd", padding: "8px" }}>
+                  {!user.disapproved && (
+                    <button onClick={() => handleApprove(user.email)}>Disapprove</button>
                   )}
                 </td>
               </tr>
