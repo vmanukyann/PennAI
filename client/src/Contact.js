@@ -1,19 +1,45 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { FaHome, FaSignInAlt, FaSignOutAlt } from "react-icons/fa"; 
 import "./Contact.css";
 
 function NavBar() {
+  const navigate = useNavigate();
+
   return (
     <nav className="navbar">
       <div className="nav-logo">Penn Chatbot</div>
       <ul className="nav-links">
-      <li><a href="/intro">Home</a></li>
-        <li><a href="/app">Chatbot</a></li>
-        <li><a href="/Login">Login</a></li>
-        <li><a href="/SignUp">Register</a></li>
-        <li><a href="/about">Our Mission</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/admin">Admin</a></li>
-
+        <li>
+          <a href="/intro">
+            <FaHome className="nav-icon" /> {/* Home icon */}
+          </a>
+        </li>
+        <li>
+          <a href="/app">Chatbot</a>
+        </li>
+        <li>
+          <a href="/about">Our Mission</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+        <li>
+          <a href="/admin">Admin</a>
+        </li>
+        <li>
+          <a href="/signup">Register</a>
+        </li>
+        <li>
+          <a href="/login">
+            <FaSignInAlt className="nav-icon" /> {/* Login icon */}
+          </a>
+        </li>
+        <li>
+          <a onClick={() => navigate("/logout")}>
+            <FaSignOutAlt className="nav-icon" /> {/* Logout icon */}
+          </a>
+        </li>
       </ul>
     </nav>
   );
