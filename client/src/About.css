@@ -80,28 +80,30 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Align content to the top */
-  height: 100%; /* Ensure the container spans the full height */
+  height: 100vh; /* Set the container height to the full viewport */
   width: 100vw; /* Ensure it spans the full width */
-  padding: 4rem 2rem; /* Add top padding to create spacing from the navbar */
+  padding: 2rem; /* Reduce padding to fit the card within the viewport */
   background: var(--bg-gradient);
   box-sizing: border-box; /* Include padding in width/height calculations */
   margin: 0; /* Remove any default margin */
-  margin-top: 10rem; /* Add space between the card and the navbar */
-  overflow-y: scroll; /* Enable vertical scrolling */
+  overflow: hidden; /* Prevent scrolling */
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 .about-card {
   background: var(--card-bg); /* Card background color */
   color: var(--text-color);
-  padding: 3rem;
-  border-radius: 16px; /* Rounded corners */
-  box-shadow: var(--card-shadow); /* Card shadow */
-  max-width: 900px; /* Set a maximum width */
+  padding: 2rem; /* Match the padding of the Contact page card */
+  border-radius: 12px; /* Match the rounded corners of the Contact page card */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Match the shadow style of the Contact page card */
+  max-width: 800px; /* Match the maximum width of the Contact page card */
   width: 100%; /* Ensure it adjusts to screen size */
+  max-height: 90%; /* Ensure the card fits within the container */
+  overflow-y: auto; /* Add scrolling inside the card if content overflows */
   box-sizing: border-box; /* Include padding in width/height calculations */
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
   text-align: center; /* Center-align text */
+  margin: auto; /* Center the card vertically and horizontally */
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
 }
 

@@ -69,36 +69,60 @@ body {
 .contact-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh; /* Ensure the container spans the full height */
-  width: 100vw;
-  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  align-items: flex-start; /* Align content to the top */
+  height: 100vh; /* Set the container height to the full viewport */
+  width: 100vw; /* Ensure it spans the full width */
+  padding: 2rem; /* Match the padding of the About page */
+  background: var(--bg-gradient); /* Use the same gradient as the About page */
   box-sizing: border-box; /* Include padding in width/height calculations */
+  margin: 0; /* Remove any default margin */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 .contact-card {
-  background: #ffffff; /* Card background color */
-  color: #2d2d2d;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px; /* Set a maximum width */
+  background: var(--card-bg); /* Match the card background color */
+  color: var(--text-color); /* Match the text color */
+  padding: 2rem; /* Match the padding of the About page card */
+  border-radius: 12px; /* Match the rounded corners of the About page card */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Match the shadow style of the About page card */
+  max-width: 800px; /* Match the maximum width of the About page card */
   width: 100%; /* Ensure it adjusts to screen size */
+  max-height: 90%; /* Ensure the card fits within the container */
+  overflow-y: auto; /* Add scrolling inside the card if content overflows */
   box-sizing: border-box; /* Include padding in width/height calculations */
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+  text-align: center; /* Center-align text */
+  margin: auto; /* Center the card vertically and horizontally */
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 .contact-card h1,
 .contact-card h2 {
-  text-align: center;
+  font-size: 2rem; /* Match the font size of the About page */
+  color: var(--primary-color); /* Match the title color */
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif; /* Match the font family */
 }
 
 .contact-card p {
+  font-size: 1.2rem; /* Match the font size of the About page */
   text-align: justify;
+  line-height: 1.8; /* Improve readability */
+  margin-bottom: 1.5rem;
 }
 
 .contact-card ul {
   padding-left: 1.5rem;
+}
+
+.brand {
+  font-weight: bold;
+  color: var(--secondary-color); /* Highlight brand name */
 }
 
 /* Responsive Design */
@@ -107,23 +131,15 @@ body {
     padding: 1.5rem;
   }
   .contact-card {
-    padding: 1.5rem;
+    padding: 2rem; /* Match the responsive padding of the About page */
   }
   .contact-card h1 {
-    font-size: 2rem;
+    font-size: 2.2rem; /* Match the responsive font size of the About page */
   }
   .contact-card h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem; /* Match the responsive font size of the About page */
   }
   .contact-card p {
-    font-size: 1rem;
-  }
-  .navbar {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
+    font-size: 1rem; /* Match the responsive font size of the About page */
   }
 }
