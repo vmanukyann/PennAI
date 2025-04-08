@@ -169,7 +169,7 @@ body {
 /* Animated Text Effect */
 .card {
   background-color: transparent; /* Make the card background transparent */
-  padding: 1rem 1rem;
+  padding: 1rem 2rem;
   border-radius: 2rem; /* Round the corners */
   text-align: center;
   font-size: 2rem; 
@@ -205,7 +205,7 @@ body {
   height: 100%;
   line-height: 1.5em; /* Adjust line height for better alignment */
   color: #ffd700; /* Gold color for the animated words */
-  animation: spin_4991 10s cubic-bezier(0.25, 1, 0.5, 1.25) infinite; /* Add easing for smoother animation */
+  animation: spin_4991 8s cubic-bezier(0, 1, 1, 1) infinite; /* Add easing for smoother animation */
 }
 
 @keyframes spin_4991 {
@@ -218,10 +218,10 @@ body {
   50%, 70% {
     transform: translateY(-200%); /* Show the third word */
   }
-  75%, 95% {
+  75%, 100% {
     transform: translateY(-300%); /* Show the fourth word */
   }
-  100% {
+  115% {
     transform: translateY(-400%); /* Loop back to the first word */
   }
 }

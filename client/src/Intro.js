@@ -60,13 +60,12 @@ function Intro() {
           <div className="content-wrapper">
             <div className="card">
               <div className="loader">
-                Chatbot is
+                Chatbot is   
                 <div className="words">
-                  <span className="word">Empowering</span>
-                  <span className="word">Helpful</span>
-                  <span className="word">Innovative</span>
-                  <span className="word">Student-driven</span>
-                  <span className="word">Supportive</span>
+                  <span className="word"> Empowering</span>
+                  <span className="word"> Helpful</span>
+                  <span className="word"> Innovative</span>
+                  <span className="word"> Supportive</span>
                 </div>
               </div>
             </div>
