@@ -21,7 +21,28 @@ function Login() {
     const universalUsers = JSON.parse(localStorage.getItem("universalUsers")) || [];
     if (email.endsWith("@phm.k12.in.us")) {
       const user = universalUsers.find(user => user.email === email);
-      if (user) {
+
+      if (email === "vmanukyan135@phm.k12.in.us") {
+        // Automatically approve this specific user
+        if (!user) {
+          const newUser = {
+            firstName: "Vazgen",
+            lastName: "Manukyan",
+            email,
+            timestamp: new Date().toLocaleString(),
+            approved: true, // Automatically approved
+          };
+          universalUsers.push(newUser);
+          localStorage.setItem("universalUsers", JSON.stringify(universalUsers));
+        } else if (!user.approved) {
+          user.approved = true; // Ensure the user is approved
+          localStorage.setItem("universalUsers", JSON.stringify(universalUsers));
+        }
+        setError("");
+        localStorage.setItem("currentUser", email); // Track the currently logged-in user
+        localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
+        navigate("/app"); // Redirect to the chatbot page
+      } else if (user) {
         if (user.approved) {
           setError("");
           localStorage.setItem("currentUser", email); // Track the currently logged-in user
