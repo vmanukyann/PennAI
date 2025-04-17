@@ -70,12 +70,22 @@ body {
   display: flex;
   height: 100vh; /* Ensure full height */
   width: 100vw; /* Ensure full width */
-  gap: 2rem; /* Add spacing between panels */
+  gap: 0; /* Remove the gap between panels */
 }
 
 .left-panel {
-  flex: 1;
-  background-color: #000000; /* Primary black */
+  flex: 1 1 50%; /* Ensure the left panel takes up half the width */
+  background: radial-gradient(
+      25% 25% at 25% 25%,
+      #000000 99%,
+      rgba(0, 0, 0, 0) 101%
+    )
+    60px 60px / calc(2 * 60px) calc(2 * 60px),
+    radial-gradient(25% 25% at 25% 25%, #000000 99%, rgba(0, 0, 0, 0) 101%)
+    0 0 / calc(2 * 60px) calc(2 * 60px),
+    radial-gradient(50% 50%, #ffd700 98%, rgba(0, 0, 0, 0)) 0 0 / 60px 60px,
+    repeating-conic-gradient(#ffd700 0 50%, #000000 0 100%)
+    calc(0.5 * 60px) 0 / calc(2 * 60px) 60px;
   display: flex;
   justify-content: flex-start; /* Align content to the left */
   align-items: center;
@@ -86,7 +96,7 @@ body {
 }
 
 .right-panel {
-  flex: 1;
+  flex: 1 1 50%; /* Ensure the right panel takes up half the width */
   background-color: #ffffff; /* Secondary white */
   display: flex;
   justify-content: center;
