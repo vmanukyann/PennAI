@@ -57,7 +57,7 @@ body.dark-mode {
 
 /* Adjustments for Light Mode */
 .navbar {
-  background-color: var(--sidebar-bg); /* White navbar */
+  background-color: #000000; /* Set navbar background to black */
   color: var(--header-text); /* Dark gray text */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
@@ -67,7 +67,23 @@ body.dark-mode {
 }
 
 .nav-links a:hover {
-  color: var(--avatar-bg); /* Bright blue on hover */
+  color: var(--avatar-bg); /* Bright blue on ho ver */
+}
+
+.nav-links button {
+  background-color: transparent;
+  border: 1px solid #ffd700; /* Primary gold */
+  color: #ffd700; /* Set button text color to gold */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links button:hover {
+  background-color: #ffd700; /* Primary gold */
+  color: #000000; /* Set button text color to black on hover */
 }
 
 .chat-container {
@@ -529,7 +545,7 @@ textarea:focus {
 .nav-links button {
   background-color: transparent;
   border: 1px solid #ffd700; /* Primary gold */
-  color: #ffd700; /* Primary gold */
+  color: #ffd700; /* Set button text color to gold */
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -539,7 +555,7 @@ textarea:focus {
 
 .nav-links button:hover {
   background-color: #ffd700; /* Primary gold */
-  color: #000000; /* Primary black */
+  color: #000000; /* Set button text color to black on hover */
 }
 
 /* Logout button styling */
