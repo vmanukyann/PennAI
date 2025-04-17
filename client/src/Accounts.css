@@ -1,0 +1,200 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #355c7d, #6c5b7b, #c06c84); /* Gradient background */
+  color: #ffffff; /* White text color */
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Allow stacking of navbar and content */
+}
+
+.navbar {
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Stretch the navbar fully across the screen */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000000; /* Primary black */
+  color: #ffd700; /* Primary gold */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure the navbar stays above other content */
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffd700; /* Primary gold */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffd700; /* Primary gold */
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff; /* Secondary white */
+}
+
+.accounts-page {
+  margin-top: 4rem; /* Add spacing to account for the fixed navbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.accounts-container {
+  background-color: #1a1a1a; /* Dark gray container */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  margin-top: 2rem; /* Add spacing below the navbar */
+}
+
+.accounts-title {
+  font-size: 2rem;
+  color: #ffd700; /* Gold color for the title */
+  margin-bottom: 1.5rem;
+}
+
+.accounts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.accounts-list li {
+  background-color: #333333; /* Slightly lighter gray for list items */
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.accounts-list li:hover {
+  background-color: #ffd700; /* Gold hover effect */
+  color: #000000; /* Black text on hover */
+}
+
+.account-button {
+  background-color: #ffd700; /* Gold button */
+  color: #000000; /* Black text */
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.account-button:hover {
+  background-color: #e6b800; /* Slightly darker gold */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #333333; /* Slightly lighter gray for list items */
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.account-item:hover {
+  background-color: #ffd700; /* Gold hover effect */
+  color: #000000; /* Black text on hover */
+}
+
+.account-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffd700; /* Gold background */
+  color: #000000; /* Black text */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.account-details {
+  flex-grow: 1;
+}
+
+.account-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.account-email {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.account-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.account-input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.account-input:focus {
+  border-color: #ffd700; /* Gold border on focus */
+}
+
+.account-edit-button,
+.account-save-button {
+  padding: 0.5rem 1rem;
+  background-color: #ffd700; /* Gold button */
+  color: #000000; /* Black text */
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.account-edit-button:hover,
+.account-save-button:hover {
+  background-color: #e6b800; /* Slightly darker gold */
+}

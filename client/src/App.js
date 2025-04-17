@@ -9,6 +9,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import Admin from "./Admin"; 
 import Logout from "./Logout"; // Import Logout component
+import Accounts from "./Accounts"; // Import Accounts component
 
 function NavBar() {
   const navigate = useNavigate();
@@ -247,6 +248,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} /> {/* Add admin route */}
           <Route path="/logout" element={<Logout />} /> {/* Add logout route */}
+          <Route path="/accounts" element={<Accounts />} /> {/* Add Accounts route */}
         </Routes>
       </Router>
       <button className="settings-button" onClick={toggleTheme}>
