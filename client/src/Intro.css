@@ -74,33 +74,44 @@ body {
 
 .left-panel {
   flex: 1 1 50%; /* Ensure the left panel takes up half the width */
+  --s: 100px; /* Control the size */
+  --c1: #f8b195;
+  --c2: #ffd700;
+
+  --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
+    var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
+    var(--c1) 76% 86%, var(--c2) 86% 96%;
   background: radial-gradient(
-      25% 25% at 25% 25%,
-      #000000 99%,
-      rgba(0, 0, 0, 0) 101%
-    )
-    60px 60px / calc(2 * 60px) calc(2 * 60px),
-    radial-gradient(25% 25% at 25% 25%, #000000 99%, rgba(0, 0, 0, 0) 101%)
-    0 0 / calc(2 * 60px) calc(2 * 60px),
-    radial-gradient(50% 50%, #ffd700 98%, rgba(0, 0, 0, 0)) 0 0 / 60px 60px,
-    repeating-conic-gradient(#ffd700 0 50%, #000000 0 100%)
-    calc(0.5 * 60px) 0 / calc(2 * 60px) 60px;
+      100% 100% at 50% 50%,
+      var(--c1) 4%,
+      var(--_g),
+      #0008 96%,
+      #0000
+    ),
+    radial-gradient(
+      100% 100% at 50% 50%,
+      #0000,
+      #0008 4%,
+      var(--_g),
+      var(--c1) 96%
+    );
+  background-size: var(--s) var(--s);
+  background-position: 0 0, 0 0; /* Unified animation */
   display: flex;
   justify-content: flex-start; /* Align content to the left */
   align-items: center;
   padding: 3rem; /* Increase padding for better spacing */
   padding-left: 4rem; /* Add padding to position content properly */
   color: #ffd700; /* Primary gold */
-  animation: slideInLeft 1s ease-in-out; /* Add slide-in animation */
-  animation: movePatternUp 10s linear infinite; /* Change animation to move up */
+  animation: moveUnifiedPattern 10s linear infinite; /* Unified animation */
 }
 
-@keyframes movePatternUp {
+@keyframes moveUnifiedPattern {
   0% {
-    background-position: 0 0, 0 0, 0 0, 0 0; /* Initial position */
+    background-position: 0 0, 0 0; /* Initial position */
   }
   100% {
-    background-position: 0 -200px, 0 -200px, 0 -200px, 0 -200px; /* Move pattern up */
+    background-position: 0 -300px, 0 -300px; /* Move the entire pattern up */
   }
 }
 

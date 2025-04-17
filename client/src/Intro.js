@@ -40,6 +40,9 @@ function NavBar() {
             <FaSignOutAlt className="nav-icon" /> {/* Logout icon */}
           </a>
         </li>
+        <li>
+          <a href="/accounts">Accounts</a> {/* Add Accounts button */}
+        </li>
       </ul>
     </nav>
   );

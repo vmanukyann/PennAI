@@ -26,6 +26,9 @@ function NavBar() {
         <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
         <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
+        <li>
+          <button onClick={() => navigate("/accounts")} className="nav-button">Accounts</button> {/* Add Accounts button */}
+        </li>
       </ul>
     </nav>
   );
