@@ -90,7 +90,7 @@ function MainApp() {
       setTimeout(() => {
         setChats(prevChats => prevChats.map(chat => 
           chat.id === currentChatId 
-            ? { ...chat, messages: [...chat.messages, { text: "Mrs. Tippett is the current teacher of AP Computer Science Principles", sender: "bot" }] }
+            ? { ...chat, messages: [...chat.messages, { text: "Mr. Marsh is the current teacher for the following courses: AP Computer Science Principles, Topics in Computer Science, and AP Computer Science A ", sender: "bot" }] }
             : chat
         ));
       }, 1000);

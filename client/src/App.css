@@ -328,31 +328,36 @@ body.dark-mode {
   flex-direction: row; /* Position avatar to the left of the message */
 }
 
+
 .message-content {
-  max-width: 800px;
-  width: auto;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  max-width: 70%;
+}
+
+.message .text {
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .message.user .text {
-  background-color: var(--bot-bg); /* Black bubble for user messages */
-  color: var(--text-color); /* Black text */
-  border-radius: 16px; /* Rounded bubble shape */
-  padding: 0.8rem 1rem;
-  max-width: 70%;
+  background-color: var(--button-bg);
+  color: var(--text-color);
   align-self: flex-end;
-  font-weight: bold;
+  text-align: right;
 }
 
 .message.bot .text {
-  background-color: var(--bot-bg); /* Black bubble for bot messages */
-  color: var(--text-color); /* Black text */
-  border-radius: 16px; /* Rounded bubble shape */
-  padding: 0.8rem 1rem;
-  max-width: 70%;
+  background-color: var(--bot-bg);
+  color: var(--text-color);
   align-self: flex-start;
+  text-align: left;
 }
+
 
 .avatar {
   width: 40px;
