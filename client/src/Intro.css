@@ -7,7 +7,6 @@ body {
   color: #ffffff; /* Set text color to white */
   height: 100vh;
   width: 100vw;
-  overflow: hidden; /* Prevent scrollbars */
 }
 
 /* Navbar */
@@ -93,6 +92,16 @@ body {
   padding-left: 4rem; /* Add padding to position content properly */
   color: #ffd700; /* Primary gold */
   animation: slideInLeft 1s ease-in-out; /* Add slide-in animation */
+  animation: movePatternUp 10s linear infinite; /* Change animation to move up */
+}
+
+@keyframes movePatternUp {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0; /* Initial position */
+  }
+  100% {
+    background-position: 0 -200px, 0 -200px, 0 -200px, 0 -200px; /* Move pattern up */
+  }
 }
 
 .right-panel {
