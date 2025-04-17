@@ -40,12 +40,14 @@ function Login() {
         }
         setError("");
         localStorage.setItem("currentUser", email); // Track the currently logged-in user
+        localStorage.setItem("currentUserDetails", JSON.stringify(user || newUser)); // Save user details
         localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
         navigate("/app"); // Redirect to the chatbot page
       } else if (user) {
         if (user.approved) {
           setError("");
           localStorage.setItem("currentUser", email); // Track the currently logged-in user
+          localStorage.setItem("currentUserDetails", JSON.stringify(user)); // Save user details
           localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
           navigate("/app"); // Redirect to the chatbot page
         } else {

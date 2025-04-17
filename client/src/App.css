@@ -86,6 +86,27 @@ body.dark-mode {
   color: #000000; /* Set button text color to black on hover */
 }
 
+.nav-account-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #ffd700; /* Gold background */
+  color: #000000; /* Black text */
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Circular shape */
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-account-icon:hover {
+  background-color: #e6b800; /* Slightly darker gold on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
 .chat-container {
   background-color: var(--primary-bg); /* Soft light gray background */
 }

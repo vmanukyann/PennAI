@@ -13,9 +13,18 @@ import Accounts from "./Accounts"; // Import Accounts component
 
 function NavBar() {
   const navigate = useNavigate();
+  const currentUser = JSON.parse(localStorage.getItem("currentUserDetails")) || null;
+
+  const getUserInitials = (user) => {
+    if (user && user.firstName && user.lastName) {
+      return `${user.firstName[0].toUpperCase()}${user.lastName[0].toUpperCase()}`;
+    }
+    return "??"; // Default initials if user details are missing
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("currentUser"); // Clear the current user
+    localStorage.removeItem("currentUserDetails"); // Clear user details
     localStorage.removeItem("lastLoginTime"); // Clear the login timestamp
     navigate("/login"); // Redirect to the login page
   };
@@ -28,7 +37,9 @@ function NavBar() {
         <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
         <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
         <li>
-          <button onClick={() => navigate("/accounts")} className="nav-button">Accounts</button> {/* Add Accounts button */}
+          <button onClick={() => navigate("/accounts")} className="nav-account-icon">
+            {getUserInitials(currentUser)} {/* Display user initials */}
+          </button>
         </li>
       </ul>
     </nav>
