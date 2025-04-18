@@ -9,6 +9,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Prevent scrollbars */
+  background-color: #000000; /* Default to dark mode */
+  color: #ffffff; /* White text for dark mode */
 }
 
 /* CSS Rain Background Animation */

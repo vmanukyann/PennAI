@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import "./App.css";
-import { FaTrash, FaCog } from "react-icons/fa"; // Import trash and settings icons
+import { FaTrash } from "react-icons/fa"; // Import trash icon
 import Intro from "./Intro";
 import About from "./About";
 import Contact from "./Contact";
@@ -233,19 +233,6 @@ function MainApp() {
 }
 
 function App() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark"; // Load theme from localStorage
-  });
-
-  useEffect(() => {
-    document.body.className = darkMode ? "dark-mode" : "light-mode"; // Apply theme class to body
-    localStorage.setItem("theme", darkMode ? "dark" : "light"); // Save theme to localStorage
-  }, [darkMode]);
-
-  const toggleTheme = () => {
-    setDarkMode((prevMode) => !prevMode); // Toggle theme
-  };
-
   return (
     <div className="app-container"> {/* Add a container for consistent layout */}
       <Router>
@@ -262,9 +249,6 @@ function App() {
           <Route path="/accounts" element={<Accounts />} /> {/* Add Accounts route */}
         </Routes>
       </Router>
-      <button className="settings-button" onClick={toggleTheme}>
-        <FaCog />
-      </button>
     </div>
   );
 }

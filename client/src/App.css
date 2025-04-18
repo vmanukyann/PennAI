@@ -18,25 +18,6 @@
   --scroll-thumb-hover: #707184;
 }
 
-/* Light and Dark Mode Themes */
-body.light-mode {
-  --primary-bg: #f8f9fa; /* Soft light gray background */
-  --sidebar-bg: #ffffff; /* Clean white sidebar */
-  --header-text: #212529; /* Dark gray for text */
-  --button-bg: #e9ecef; /* Light gray buttons */
-  --button-hover: #dee2e6; /* Slightly darker gray for hover */
-  --button-active: #ced4da; /* Even darker gray for active state */
-  --avatar-bg: #0d6efd; /* Bright blue for avatars */
-  --bot-bg: #f1f3f5; /* Very light gray for bot message bubbles */
-  --text-color: #212529; /* Dark gray text for readability */
-  --input-border: #adb5bd; /* Medium gray input border */
-  --input-focus: #0d6efd; /* Bright blue for input focus */
-  --delete-hover: #dc3545; /* Bright red for delete hover */
-  --scroll-track: #e9ecef; /* Light gray scrollbar track */
-  --scroll-thumb: #adb5bd; /* Medium gray scrollbar thumb */
-  --scroll-thumb-hover: #868e96; /* Darker gray scrollbar thumb on hover */
-}
-
 body.dark-mode {
   --primary-bg: #282828;
   --sidebar-bg: #151515;
@@ -625,3 +606,11 @@ textarea:focus {
     padding: 8px 10px;
   }
 }
+
+/* Remove light mode-specific styles */
+body {
+  background-color: #000000; /* Default to dark mode */
+  color: #ffffff; /* White text for dark mode */
+}
+
+/* Remove light-mode-specific classes */
