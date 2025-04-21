@@ -90,11 +90,12 @@ body.dark-mode {
 
 .chat-container {
   background-color: var(--primary-bg); /* Soft light gray background */
+  color: #ffffff; /* Ensure all text in the chat container is white */
 }
 
 .message.user .text {
   background-color: var(--button-bg); /* Light gray bubble for user messages */
-  color: var(--text-color); /* Dark gray text */
+  color: #ffffff; /* Ensure all chat message text is white */
   border-radius: 16px; /* Rounded bubble shape */
   padding: 0.8rem 1rem;
   max-width: 70%;
@@ -104,7 +105,7 @@ body.dark-mode {
 
 .message.bot .text {
   background-color: var(--bot-bg); /* Very light gray bubble for bot messages */
-  color: var(--text-color); /* Dark gray text */
+  color: #ffffff; /* Ensure all chat message text is white */
   border-radius: 16px; /* Rounded bubble shape */
   padding: 0.8rem 1rem;
   max-width: 70%;
@@ -120,6 +121,32 @@ body.dark-mode {
   border-color: var(--input-focus); /* Bright blue border on focus */
 }
 
+textarea {
+  flex: 1;
+  padding: 0.8rem;
+  background-color: transparent;
+  border: none;
+  color: #ffffff; /* Ensure input text is white */
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.5rem;
+  height: auto;
+  max-height: 6rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+textarea::placeholder {
+  color: #cccccc; /* Light gray placeholder text */
+}
+
+textarea:focus {
+  border: none;
+}
+
 .send-button {
   background-color: var(--button-bg); /* Light gray button */
   color: var(--header-text); /* Dark gray text */
@@ -132,13 +159,13 @@ body.dark-mode {
 
 .sidebar {
   background-color: var(--sidebar-bg); /* White sidebar */
-  color: var(--header-text); /* Dark gray text */
+  color: #ffffff; /* Ensure all text in the sidebar is white */
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .chat-button {
   background-color: var(--button-bg); /* Light gray chat button */
-  color: var(--header-text); /* Dark gray text */
+  color: #ffffff; /* Ensure button text is white */
 }
 
 .chat-button.active {
@@ -203,7 +230,7 @@ body.dark-mode {
 
 .new-chat-button {
   background-color: var(--button-bg);
-  color: white;
+  color: #ffffff; /* Ensure button text is white */
   padding: 0.8rem 1rem;
   border: none;
   border-radius: 8px; /* Add rounded corners */
@@ -240,7 +267,7 @@ body.dark-mode {
 
 .chat-button {
   background-color: transparent;
-  color: white;
+  color: #ffffff; /* Ensure button text is white */
   padding: 0.8rem 1rem;
   border: none;
   cursor: pointer;
@@ -262,7 +289,7 @@ body.dark-mode {
   overflow: hidden;
   text-overflow: ellipsis; /* Add "..." for truncated text */
   font-size: 1.1rem; /* Increase font size for better readability */
-  color: var(--header-text); /* Use dark gray for better contrast */
+  color: #ffffff; /* Ensure chat names are white */
   font-weight: 500; /* Slightly bold for emphasis */
 }
 
@@ -304,12 +331,13 @@ body.dark-mode {
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  color: #ffffff; /* Ensure all text in the chat container is white */
 }
 
 /* Welcome message styling */
 .welcome-message {
   font-size: 3rem;
-  color: white;
+  color: #ffffff; /* Ensure welcome message text is white */
   text-align: center;
   margin-top: 20%;
   opacity: 1;
@@ -360,18 +388,19 @@ body.dark-mode {
   white-space: pre-wrap;
   font-size: 1rem;
   line-height: 1.4;
+  color: #ffffff; /* Ensure all chat message text is white */
 }
 
 .message.user .text {
   background-color: var(--button-bg);
-  color: var(--text-color);
+  color: #ffffff; /* Ensure all chat message text is white */
   align-self: flex-end;
   text-align: right;
 }
 
 .message.bot .text {
   background-color: var(--bot-bg);
-  color: var(--text-color);
+  color: #ffffff; /* Ensure all chat message text is white */
   align-self: flex-start;
   text-align: left;
 }
@@ -430,7 +459,7 @@ textarea {
   padding: 0.8rem;
   background-color: transparent;
   border: none;
-  color: white;
+  color: #ffffff; /* Ensure input text is white */
   font-size: 1rem;
   outline: none;
   resize: none;
@@ -444,7 +473,7 @@ textarea {
 }
 
 textarea::placeholder {
-  color: #8e8ea0;
+  color: #cccccc; /* Light gray placeholder text */
 }
 
 textarea:focus {
@@ -564,7 +593,7 @@ textarea:focus {
 .nav-button {
   background-color: transparent;
   border: 1px solid #ffd700; /* Primary gold */
-  color: #ffd700; /* Primary gold */
+  color: #ffffff; /* Ensure button text is white */
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;

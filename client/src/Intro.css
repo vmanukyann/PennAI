@@ -75,7 +75,7 @@ body {
 .left-panel {
   flex: 1 1 50%; /* Ensure the left panel takes up half the width */
   --s: 100px; /* Control the size */
-  --c1: #f8b195;
+  --c1: #000000;
   --c2: #ffd700;
 
   --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
@@ -209,7 +209,7 @@ body {
 }
 
 .loader {
-  color: #ffffff; /* Set text color to white */
+  color: #ffd700; /* Set text color to white */
   font-family: "Poppins", sans-serif;
   font-weight: bold; /* Make "Chatbot is" bold */
   font-size: 2.5rem; /* Increase font size */
