@@ -78,6 +78,9 @@ body {
 /* Left Panel */
 .left-panel {
   flex: 1 1 50%; /* Ensure the left panel takes up half the width */
+  display: flex; /* Enable flexbox for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
   --s: 100px; /* Control the size */
   --c1: rgba(0, 0, 0, 0.8); /* Add opacity to black */
   --c2: rgba(255, 215, 0, 0.6); /* Add opacity to gold */
@@ -101,11 +104,6 @@ body {
     );
   background-size: var(--s) var(--s);
   background-position: 0 0, 0 0; /* Unified animation */
-  display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  align-items: center;
-  padding: 3rem; /* Increase padding for better spacing */
-  padding-left: 4rem; /* Add padding to position content properly */
   color: #ffd700; /* Primary gold */
   animation: moveUnifiedPattern 10s linear infinite; /* Unified animation */
   backdrop-filter: brightness(0.9); /* Reduce intensity */
@@ -210,15 +208,19 @@ body {
 /* Card with Subtle Shadow */
 .card {
   background-color: black; /* Keep the card background black */
-  padding: 1rem 2rem;
-  border-radius: 2rem; /* Round the corners */
-  text-align: center;
-  font-size: 2rem;
+  color: white; /* White text */
+  font-size: 2rem; /* Adjust font size */
+  padding: 1.5rem 2rem; /* Add padding for spacing */
+  border-radius: 1rem; /* Rounded corners */
+  text-align: center; /* Center-align text */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
   border: 3px solid #ffd700; /* Add a gold border */
-  margin: 0 auto; /* Center the card horizontally */
-  overflow: hidden; /* Ensure no overflow from the animation */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card span {
+  color: #ffd700; /* Highlight "Empowering" in gold */
+  font-weight: bold;
 }
 
 .card:hover {
