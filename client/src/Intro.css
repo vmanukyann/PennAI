@@ -39,19 +39,22 @@ body {
   display: inline;
 }
 
+/* Navbar Links with Icons */
 .nav-links a {
   text-decoration: none;
   color: #ffd700; /* Primary gold */
   font-size: 1rem;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem; /* Add spacing between text and icon */
 }
 
 .nav-links a:hover {
   color: #ffffff; /* Secondary white */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .nav-icon {
@@ -72,11 +75,12 @@ body {
   gap: 0; /* Remove the gap between panels */
 }
 
+/* Left Panel */
 .left-panel {
   flex: 1 1 50%; /* Ensure the left panel takes up half the width */
   --s: 100px; /* Control the size */
-  --c1: #000000;
-  --c2: #ffd700;
+  --c1: rgba(0, 0, 0, 0.8); /* Add opacity to black */
+  --c2: rgba(255, 215, 0, 0.6); /* Add opacity to gold */
 
   --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
     var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
@@ -104,6 +108,7 @@ body {
   padding-left: 4rem; /* Add padding to position content properly */
   color: #ffd700; /* Primary gold */
   animation: moveUnifiedPattern 10s linear infinite; /* Unified animation */
+  backdrop-filter: brightness(0.9); /* Reduce intensity */
 }
 
 @keyframes moveUnifiedPattern {
@@ -164,12 +169,13 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* Start Button */
+/* Start Button with Interaction */
 .start-button {
-  padding: 1.2rem 3rem; /* Increase padding for a larger button */
+  padding: 1.5rem 3rem; /* Increase padding for a larger button */
+  margin-top: 1.5rem; /* Add margin for breathing room */
   font-size: 1.2rem; /* Increase font size */
   color: #ffffff; /* Secondary white */
-  background-color: #000000; /* Primary black */
+  background: linear-gradient(135deg, #000000, #333333); /* Subtle gradient */
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -181,10 +187,15 @@ body {
 }
 
 .start-button:hover {
-  background-color: #ffd700; /* Primary gold */
+  background: linear-gradient(135deg, #ffd700, #e6b800); /* Gold gradient on hover */
   color: #000000; /* Primary black */
-  transform: translateY(-4px); /* Enhance hover effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05); /* Slight scale-up effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.start-button:active {
+  transform: scale(0.98); /* Slight press effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow on press */
 }
 
 .button-icon {
@@ -196,7 +207,7 @@ body {
   transform: translateX(3px);
 }
 
-/* Animated Text Effect */
+/* Card with Subtle Shadow */
 .card {
   background-color: black; /* Keep the card background black */
   padding: 1rem 2rem;
@@ -207,8 +218,15 @@ body {
   border: 3px solid #ffd700; /* Add a gold border */
   margin: 0 auto; /* Center the card horizontally */
   overflow: hidden; /* Ensure no overflow from the animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.card:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Animated Text Effect */
 .loader {
   color: #ffffff; /* Set text color to white */
   font-family: "Poppins", sans-serif;
@@ -236,6 +254,8 @@ body {
   height: 100%;
   line-height: 1.5em; /* Adjust line height for better alignment */
   color: #ffd700; /* Gold color for the animated words */
+  letter-spacing: normal; /* Ensure consistent spacing */
+  text-shadow: none; /* Remove unnecessary shadow */
   animation: smoothFlip 6s cubic-bezier(0.25, 1, 0.5, 1) infinite; /* Keep smooth flipping */
 }
 
@@ -265,7 +285,7 @@ body {
 
   .left-panel,
   .right-panel {
-    padding: 4rem 2rem;
+    padding: 2rem 1rem; /* Reduce padding for smaller screens */
   }
 
   .logo {
@@ -274,6 +294,15 @@ body {
 
   .welcome-title {
     font-size: 1.8rem;
+  }
+
+  .nav-links a {
+    gap: 0.3rem; /* Adjust spacing for smaller screens */
+  }
+
+  .start-button {
+    padding: 1rem 2rem; /* Adjust button size for smaller screens */
+    font-size: 1rem;
   }
 }
 

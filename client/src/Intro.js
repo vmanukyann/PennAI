@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaSignInAlt, FaSignOutAlt } from "react-icons/fa"; // Import icons
+import { FaHome, FaSignInAlt, FaSignOutAlt, FaEnvelope, FaUserShield, FaUserPlus, FaUsers } from "react-icons/fa"; // Import additional icons
 import "./Intro.css";
 
 function NavBar() {
@@ -12,7 +12,7 @@ function NavBar() {
       <ul className="nav-links">
         <li>
           <a href="/intro">
-            <FaHome className="nav-icon" /> {/* Home icon */}
+            <FaHome className="nav-icon" /> Home
           </a>
         </li>
         <li>
@@ -22,26 +22,34 @@ function NavBar() {
           <a href="/about">Our Mission</a>
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="/contact">
+            <FaEnvelope className="nav-icon" /> Contact
+          </a>
         </li>
         <li>
-          <a href="/admin">Admin</a>
+          <a href="/admin">
+            <FaUserShield className="nav-icon" /> Admin
+          </a>
         </li>
         <li>
-          <a href="/signup">Register</a>
+          <a href="/signup">
+            <FaUserPlus className="nav-icon" /> Register
+          </a>
         </li>
         <li>
           <a href="/login">
-            <FaSignInAlt className="nav-icon" /> {/* Login icon */}
+            <FaSignInAlt className="nav-icon" /> Login
           </a>
         </li>
         <li>
           <a onClick={() => navigate("/logout")}>
-            <FaSignOutAlt className="nav-icon" /> {/* Logout icon */}
+            <FaSignOutAlt className="nav-icon" /> Logout
           </a>
         </li>
         <li>
-          <a href="/accounts">Accounts</a> {/* Add Accounts button */}
+          <a href="/accounts">
+            <FaUsers className="nav-icon" /> Accounts
+          </a>
         </li>
       </ul>
     </nav>
