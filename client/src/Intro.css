@@ -198,26 +198,27 @@ body {
 
 /* Animated Text Effect */
 .card {
-  background-color: transparent; /* Make the card background transparent */
+  background-color: black; /* Keep the card background black */
   padding: 1rem 2rem;
   border-radius: 2rem; /* Round the corners */
   text-align: center;
-  font-size: 2rem; 
+  font-size: 2rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
   border: 3px solid #ffd700; /* Add a gold border */
   margin: 0 auto; /* Center the card horizontally */
+  overflow: hidden; /* Ensure no overflow from the animation */
 }
 
 .loader {
-  color: #ffd700; /* Set text color to white */
+  color: #ffffff; /* Set text color to white */
   font-family: "Poppins", sans-serif;
   font-weight: bold; /* Make "Chatbot is" bold */
   font-size: 2.5rem; /* Increase font size */
   display: flex;
-  justify-content: flex-start; /* Align text to the left */
+  justify-content: center; /* Center-align the text */
   align-items: center;
   width: 100%; /* Ensure the text spans the full width */
-  text-align: center; /* Center-align the text */
+  text-align: center;
   white-space: nowrap; /* Prevent text wrapping */
   margin-left: 0; /* Remove unnecessary left margin */
 }
@@ -227,7 +228,7 @@ body {
   position: relative;
   display: inline-block;
   height: 1.5em; /* Slightly increase height for better visibility */
-  margin-left: 0; /* Align words directly next to "Chatbot is" */
+  margin-left: 0.5rem; /* Add spacing between "Chatbot is" and words */
 }
 
 .word {
@@ -235,10 +236,10 @@ body {
   height: 100%;
   line-height: 1.5em; /* Adjust line height for better alignment */
   color: #ffd700; /* Gold color for the animated words */
-  animation: spin_4991 8s cubic-bezier(0, 1, 1, 1) infinite; /* Add easing for smoother animation */
+  animation: smoothFlip 6s cubic-bezier(0.25, 1, 0.5, 1) infinite; /* Keep smooth flipping */
 }
 
-@keyframes spin_4991 {
+@keyframes smoothFlip {
   0%, 20% {
     transform: translateY(0); /* Show the first word */
   }
@@ -248,11 +249,11 @@ body {
   50%, 70% {
     transform: translateY(-200%); /* Show the third word */
   }
-  75%, 100% {
+  75%, 95% {
     transform: translateY(-300%); /* Show the fourth word */
   }
-  115% {
-    transform: translateY(-400%); /* Loop back to the first word */
+  100% {
+    transform: translateY(0); /* Loop back to the first word */
   }
 }
 
