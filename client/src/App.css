@@ -99,6 +99,46 @@ body.dark-mode {
   align-self: flex-start;
 }
 
+/* Message Container */
+.message-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 6px; /* Add spacing between messages */
+}
+
+/* User Messages */
+.user-message {
+  align-self: flex-end; /* Align to the right */
+  background-color: #ffd700; /* Light yellow bubble */
+  color: #1a1a1a; /* Dark text */
+  border-radius: 16px 16px 4px 16px; /* Rounded corners */
+  padding: 10px 16px; /* Inner padding */
+  margin: 6px 0; /* Spacing between messages */
+  max-width: 35%; /* Limit bubble width to 35% of the screen */
+  width: auto; /* Allow dynamic width */
+  word-wrap: break-word; /* Handle long words */
+  white-space: pre-wrap; /* Preserve line breaks */
+  line-height: 1.5; /* Improve readability */
+  transition: width 0.2s ease, height 0.2s ease; /* Smooth expansion */
+}
+
+/* Bot Messages */
+.bot-message {
+  align-self: flex-start; /* Align to the left */
+  background-color: #2c2c54; /* Dark navy bubble */
+  color: #f1f1f1; /* Light text */
+  border-radius: 16px 16px 16px 4px; /* Rounded corners */
+  padding: 10px 16px; /* Inner padding */
+  margin: 6px 0; /* Spacing between messages */
+  max-width: 35%; /* Limit bubble width to 35% of the screen */
+  width: auto; /* Allow dynamic width */
+  word-wrap: break-word; /* Handle long words */
+  white-space: pre-wrap; /* Preserve line breaks */
+  line-height: 1.5; /* Improve readability */
+  transition: width 0.2s ease, height 0.2s ease; /* Smooth expansion */
+}
+
 .input-wrapper {
   background-color: var(--sidebar-bg); /* White input area */
   border: 1px solid var(--input-border); /* Medium gray border */
