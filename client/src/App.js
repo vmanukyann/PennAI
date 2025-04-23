@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-import "./App.css";
 import { FaTrash } from "react-icons/fa"; // Import trash icon
+import "./App.css";
 import Intro from "./Intro";
 import About from "./About";
 import Contact from "./Contact";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import Admin from "./Admin"; 
-import Logout from "./Logout"; // Import Logout component
-import Accounts from "./Accounts"; // Import Accounts component
+import Admin from "./Admin";
+import Logout from "./Logout";
+import Accounts from "./Accounts";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -184,8 +184,9 @@ function MainApp() {
               <button 
                 onClick={() => handleDeleteChat(chat.id)} 
                 className="delete-chat-button"
+                aria-label="Delete Chat"
               >
-                <FaTrash />
+                <FaTrash /> {/* Replace text with trash icon */}
               </button>
             </div>
           ))}
@@ -199,12 +200,6 @@ function MainApp() {
           {currentChat && currentChat.messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
               <div className="message-content">
-                {msg.sender === 'bot' && <div className="avatar">AI</div>}
-                {msg.sender === 'user' && (
-                  <div className="avatar">
-                    {getUserAvatarText(currentUser)}
-                  </div>
-                )}
                 <div className="text">{msg.text}</div>
               </div>
             </div>
