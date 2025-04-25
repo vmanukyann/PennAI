@@ -1,6 +1,4 @@
 /* Define CSS variables for theme */
-
-
 body {
   --primary-bg: #282828;
   --sidebar-bg: #151515;
@@ -61,6 +59,8 @@ body {
   font-weight: 500;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+
+/* === Message Styling === */
 .input-wrapper {
   background-color: var(--sidebar-bg); /* White input area */
   border: 1px solid var(--input-border); /* Medium gray border */
