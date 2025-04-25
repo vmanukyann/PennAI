@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaSignInAlt, FaSignOutAlt, FaEnvelope, FaUserShield, FaUserPlus, FaUsers } from "react-icons/fa"; // Import additional icons
-import "./About.css";
+import './About.css'; 
 
 function NavBar() {
   const navigate = useNavigate();
@@ -55,9 +55,6 @@ function NavBar() {
     </nav>
   );
 }
-
-
-
 function About() {
   return (
     <div>

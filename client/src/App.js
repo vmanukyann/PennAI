@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import { FaTrash } from "react-icons/fa"; // Import trash icon
 import "./App.css";
-import Intro from "./Intro";
-import About from "./About";
+import Intro from "./Home Page/Intro";
+import About from "./About Page/About";
 import Contact from "./Contact";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Admin from "./Admin";
 import Logout from "./Logout";
-import Accounts from "./Accounts";
+import Accounts from "./Account Page/Accounts";
 
 function NavBar() {
   const navigate = useNavigate();
