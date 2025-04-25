@@ -11,44 +11,10 @@ import Admin from "./Admin";
 import Logout from "./Logout";
 import Accounts from "./Account Page/Accounts";
 
-function NavBar() {
-  const navigate = useNavigate();
-  const currentUser = JSON.parse(localStorage.getItem("currentUserDetails")) || null;
-
-  const getUserInitials = (user) => {
-    if (user && user.firstName && user.lastName) {
-      return `${user.firstName[0].toUpperCase()}${user.lastName[0].toUpperCase()}`;
-    }
-    return "??"; // Default initials if user details are missing
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("currentUser"); // Clear the current user
-    localStorage.removeItem("currentUserDetails"); // Clear user details
-    localStorage.removeItem("lastLoginTime"); // Clear the login timestamp
-    navigate("/login"); // Redirect to the login page
-  };
-
-  return (
-    <nav className="navbar">
-      <div className="nav-logo" onClick={() => navigate("/intro")}>Penn Chatbot</div>
-      <ul className="nav-links">
-        <li><button onClick={() => navigate("/login")} className="nav-button">Login</button></li>
-        <li><button onClick={() => navigate("/signup")} className="nav-button">Sign Up</button></li>
-        <li><button onClick={handleLogout} className="nav-button">Logout</button></li>
-        <li>
-          <button onClick={() => navigate("/accounts")} className="nav-account-icon">
-            {getUserInitials(currentUser)} {/* Display user initials */}
-          </button>
-        </li>
-      </ul>
-    </nav>
-  );
-}
 
 function MainApp() {
   const navigate = useNavigate();
-  const currentUser = localStorage.getItem("currentUser") || ""; // Get the current user's email
+  const currentUser = localStorage.getItem("currentUser") || ""; //  Get the current user's email
 
   // Function to extract the first two letters of the email
   const getUserAvatarText = (email) => {
