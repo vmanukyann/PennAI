@@ -1,8 +1,8 @@
 # Penn Chatbot
-
+![penn chat bot](https://github.com/user-attachments/assets/8b557e14-9ef3-4f49-aa05-49cf99ca5e4a)
 Welcome to **Penn Chabot**, designed to provide personalized academic assistance for students at Penn High School. This project is built to increase organization of students, answer specific questions for conseling, and help with language translations. 
 
---
+
 ## Features
 
 - **Chatbot**: Engage with an AI-powered chatbot for academic support.
@@ -16,7 +16,7 @@ Welcome to **Penn Chabot**, designed to provide personalized academic assistance
 ## Screenshots
 
 ### Home Page
-![Screenshot 2025-04-07 161804](https://github.com/user-attachments/assets/6ad73a42-5f2d-4a2f-88fa-b9910f65cf41)
+![Screenshot 2025-04-25 180014](https://github.com/user-attachments/assets/b918977b-ce95-415e-b1e6-6417bb081679)
 
 
 ### Chatbot
