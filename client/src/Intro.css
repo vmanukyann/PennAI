@@ -134,7 +134,7 @@ body {
 
 .left-panel .content-wrapper {
   max-width: 400px;
-  animation: fadeIn 0.8s ease-out;
+  animation: fadeIn 0.0s ease-out;
   text-align: center;
   transform: translateX(-57px); /* Moves only the left panel content to the left, why 57px you ask? BECAUSE IT WORKS DONT TOUCH IT */
 }
