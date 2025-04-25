@@ -4,11 +4,11 @@ import { FaTrash } from "react-icons/fa"; // Import trash icon
 import "./App.css";
 import Intro from "./Home Page/Intro";
 import About from "./About Page/About";
-import Contact from "./Contact";
-import Login from "./Login";
-import SignUp from "./SignUp";
+import Contact from "./Contact Page/Contact";
+import Login from "./Login/Login";
+import SignUp from "./Sign Up Page/SignUp";
 import Admin from "./Admin";
-import Logout from "./Logout";
+import Logout from "./Logout Page/Logout";
 import Accounts from "./Account Page/Accounts";
 
 

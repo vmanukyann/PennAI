@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #000000; /* Default to dark mode */
-  color: #ffffff; /* White text for dark mode */
+  color: #000000; /* White text for dark mode */
 }
 
 /* Navbar */
