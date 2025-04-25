@@ -52,7 +52,7 @@ function NavBar() {
         </li>
         <li>
           <a href="/accounts">
-            <FaUsers className="nav-icon" /> Accounts
+            <FaUsers className="nav-icon" /> Account
           </a>
         </li>
       </ul>

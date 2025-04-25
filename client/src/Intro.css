@@ -84,7 +84,6 @@ body {
   --s: 100px; /* Control the size */
   --c1: rgba(0, 0, 0, 0.8); /* Add opacity to black */
   --c2: rgba(255, 215, 0, 0.6); /* Add opacity to gold */
-
   --_g: var(--c2) 4% 14%, var(--c1) 14% 24%, var(--c2) 22% 34%,
     var(--c1) 34% 44%, var(--c2) 44% 56%, var(--c1) 56% 66%, var(--c2) 66% 76%,
     var(--c1) 76% 86%, var(--c2) 86% 96%;
@@ -125,13 +124,19 @@ body {
   justify-content: center;
   align-items: center;
   padding: 3rem; /* Increase padding for better spacing */
-  animation: slideInRight 1s ease-in-out; /* Add slide-in animation */
 }
 
 .content-wrapper {
   max-width: 400px;
   animation: fadeIn 0.8s ease-out;
   text-align: center;
+}
+
+.left-panel .content-wrapper {
+  max-width: 400px;
+  animation: fadeIn 0.8s ease-out;
+  text-align: center;
+  transform: translateX(-57px); /* Moves only the left panel content to the left, why 57px you ask? BECAUSE IT WORKS DONT TOUCH IT */
 }
 
 .logo {
