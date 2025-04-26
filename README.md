@@ -35,11 +35,11 @@ Welcome to **Penn Chabot**, designed to provide personalized academic assistance
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/pennai.git
+   git clone https://github.com/your-repo/penn chatbot.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd pennai
+   cd penn chatbot
    ```
 3. Install dependencies:
    ```bash
@@ -90,9 +90,9 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 ## Contact
 
 For any inquiries or feedback, please contact us at:
-- **Email**: support@pennai.com
-- **Website**: [www.pennai.com](http://localhost:3000/intro)
+- **Email**: penncomuputerclub@gmail.com
+- **Website**: [www.pennchatbot.com](http://localhost:3000/intro)
 
 ---
 
-Thank you for using **PennAI**! 🚀
+Thank you for using **Penn Chatbot**! 🚀
