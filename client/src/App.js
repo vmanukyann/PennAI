@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaArrowUp } from "react-icons/fa";
 import "./App.css";
 import Intro from "./Home Page/Intro";
 import About from "./About Page/About";
@@ -158,7 +158,9 @@ function MainApp() {
               onKeyDown={handleKeyPress}
               placeholder="Enter Message..."
             />
-            <button onClick={handleSend} className="send-button">Send</button>
+            <button onClick={handleSend} className="send-button">
+              <FaArrowUp size={20} />
+            </button>
           </div>
         </div>
       </div>

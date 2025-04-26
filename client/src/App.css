@@ -104,7 +104,15 @@
   display: flex; align-items: center;
   padding: 0.5rem;
 }
-
+.message-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 1rem;
+  background: transparent;
+  padding: 0.5rem;
+}
 textarea {
   width: 100%; /* Full width */
   background-color: transparent; border: none;
@@ -503,18 +511,26 @@ textarea:focus {
 }
 
 .send-button {
-  background-color: var(--button-bg); /* Light gray button */
+  background-color: #191b1923;
   border: none;
-  color: var(--header-text); /* Dark gray text */
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
 .send-button:hover {
-  background-color: var(--button-hover); /* Slightly darker gray on hover */
-  color: var(--header-text); /* Keep text dark gray */
+  background-color: #3a343427;
+}
+
+.send-button svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Disclaimer */
