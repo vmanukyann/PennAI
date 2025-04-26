@@ -17,6 +17,7 @@
   --container-padding-mobile: 1.5rem;
   --card-padding: 2rem;
   --gap-links: 1.5rem;
+  --sidebar-width: 300px;
   /* Shadows & Transitions */
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-heavy: rgba(0, 0, 0, 0.15);
@@ -88,7 +89,7 @@
 /* === Message Styling === */
 /* Input Area at Bottom */
 .input-area {
-  position: fixed; bottom: 0; left: 300px; right: 0;
+  position: fixed; bottom: 0; left: var(--sidebar-width); right: 0;
   height: 80px; padding: 1rem;
   background-color: #000000; /* Solid black background */
   display: flex; align-items: center; justify-content: center;
@@ -217,6 +218,35 @@ background-color: var(--button-hover);
   text-align: center; /* Center-align the header */
 }
 
+/* 1) the toggle button itself */
+.toggle-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 40px; height: 40px;
+  background: var(--button-bg);
+  color: var(--secondary-color);
+  border: none; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 200;
+}
+
+/* 2) what “collapsed” means for the sidebar */
+.sidebar {
+  transition: transform 0.3s ease;
+}
+.sidebar.collapsed {
+  transform: translateX(calc(-1 * var(--sidebar-width)));
+}
+
+/* 3) what “collapsed” means for the main area & input */
+.app.sidebar-collapsed .chat-container {
+  margin-left: 0;  /* slide content over */
+}
+.app.sidebar-collapsed .input-area {
+  left: 0;         /* push input all the way left */
+}
+
 .new-chat-button {
   background-color: var(--button-bg);
   color: #ffffff; /* Ensure button text is white */
@@ -339,7 +369,7 @@ background-color: var(--button-hover);
 /* Welcome message styling */
 .welcome-message {
   position: absolute;
-  bottom: 90px; /* Just above the input area */
+  bottom: center; /* Just above the input area */
   left: 0;
   right: 0;
   text-align: center;
