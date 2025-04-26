@@ -66,13 +66,13 @@ function NavBar() {
 function Accounts() {
   const accounts = JSON.parse(localStorage.getItem("universalUsers")) || [];
   
-  // Assume the current user's email is stored as "currentUserEmail" in localStorage
-  const currentUserEmail = localStorage.getItem("currentUserEmail");
+  // Assume the current user's email is stored as "currentUser" in localStorage
+  const currentUser = localStorage.getItem("currentUser");
   console.log("Accounts:", accounts);
-  console.log("Current User Email:", currentUserEmail);
+  console.log("Current User Email:", currentUser);
   
   // Find the account corresponding to the currently logged in user
-  const account = accounts.find(acc => acc.email === currentUserEmail);
+  const account = accounts.find(acc => acc.email === currentUser);
   
   const [editing, setEditing] = useState(false);
   const [editedFirstName, setEditedFirstName] = useState("");
@@ -86,7 +86,7 @@ function Accounts() {
 
   const handleSave = () => {
     const updatedAccounts = accounts.map(acc => {
-      if(acc.email === currentUserEmail) {
+      if(acc.email === currentUser) {
         return { ...acc, firstName: editedFirstName, lastName: editedLastName };
       }
       return acc;

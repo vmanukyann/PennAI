@@ -1,14 +1,37 @@
+:root {
+  --color-primary: #ffd700;
+  --color-accent: #e6b800;
+  --color-bg: #ffffff;
+  --color-dark: #1a1a1a;
+  --color-text-dark: #000000;
+  --color-text-light: #ffffff;
+  --color-muted: #cccccc;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --transition-fast: 200ms;
+  --font-base: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-base);
   margin: 0;
   padding: 0;
-  background:#ffffff;
+  background: var(--color-bg);
   height: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -17,9 +40,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #000000;
-  color: #ffd700;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-text-dark);
+  color: var(--color-primary);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -28,7 +51,7 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
-  color: #ffd700;
+  color: var(--color-primary);
 }
 
 .nav-links {
@@ -45,42 +68,43 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #ffd700;
+  color: var(--color-primary);
   font-size: 1rem;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color var(--transition-fast) ease;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: var(--color-text-light);
 }
 
+/* Accounts Page */
 .accounts-page {
   margin-top: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: calc(100vh - 4rem);
-  padding: 2rem;
+  min-height: calc(100vh - 6rem);
+  padding: var(--space-md);
   overflow-y: auto;
 }
 
 .accounts-container {
-  background-color: #1a1a1a;
-  padding: 3rem; /* More padding */
-  border-radius: 30px; /* Softer corners */
+  background-color: var(--color-dark);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   text-align: center;
-  width: 95%;
-  max-width: 1000px; /* Bigger container */
-  margin-top: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: var(--space-md);
 }
 
 .accounts-title {
-  font-size: 3rem; /* Bigger title */
-  color: #ffd700;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
   letter-spacing: 1px;
   line-height: 1.3;
 }
@@ -91,64 +115,54 @@ body {
   margin: 0;
 }
 
-.accounts-list li {
+/* Individual Account Items */
+.account-item, .accounts-list li {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--space-md);
   background-color: #333333;
-  margin: 1.5rem 0;
-  padding: 2rem;
-  border-radius: 16px;
-  color: #ffffff;
+  margin: var(--space-sm) 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-light);
   font-size: 1.2rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color var(--transition-fast) ease, transform var(--transition-fast) ease;
 }
 
+.account-item:hover,
 .accounts-list li:hover {
-  background-color: #ffd700;
-  color: #000000;
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
   transform: translateY(-3px);
 }
 
-.account-button {
-  background-color: #ffd700;
-  color: #000000;
+/* Button */
+.account-button,
+.account-edit-button,
+.account-save-button {
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
   border: none;
-  border-radius: 8px;
-  padding: 1rem 2rem;
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color var(--transition-fast) ease, transform var(--transition-fast) ease;
 }
 
-.account-button:hover {
-  background-color: #e6b800;
+.account-button:hover,
+.account-edit-button:hover,
+.account-save-button:hover {
+  background-color: var(--color-accent);
   transform: scale(1.05);
 }
 
-.account-item {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background-color: #333333;
-  margin: 1rem 0;
-  padding: 1.5rem;
-  border-radius: 12px;
-  color: #ffffff;
-  font-size: 1.2rem; /* Larger font size */
-  transition: background-color 0.3s ease;
-}
-
-.account-item:hover {
-  background-color: #ffd700;
-  color: #000000;
-}
-
+/* Account Icon */
 .account-icon {
   width: 90px;
   height: 90px;
-  background-color: #ffd700;
-  color: #000000;
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
   font-size: 2.5rem;
   font-weight: bold;
   display: flex;
@@ -159,23 +173,25 @@ body {
   text-transform: uppercase;
 }
 
+/* Account Details */
 .account-details {
   flex-grow: 1;
   text-align: left;
 }
 
 .account-name {
-  font-size: 1.8rem; /* Bigger name */
+  font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .account-email {
   font-size: 1.2rem;
-  color: #cccccc;
+  color: var(--color-muted);
   line-height: 1.4;
 }
 
+/* Edit Form */
 .account-edit {
   display: flex;
   flex-direction: column;
@@ -183,32 +199,40 @@ body {
 }
 
 .account-input {
-  padding: 1rem;
+  padding: var(--space-sm);
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-size: 1.1rem;
   outline: none;
 }
 
 .account-input:focus {
-  border-color: #ffd700;
-  box-shadow: 0 0 5px #ffd700;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-primary);
 }
 
-.account-edit-button,
-.account-save-button {
-  padding: 1rem 2rem;
-  background-color: #ffd700;
-  color: #000000;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+/* Focus Accessibility */
+.account-edit-button:focus-visible,
+.account-save-button:focus-visible,
+.account-button:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
-.account-edit-button:hover,
-.account-save-button:hover {
-  background-color: #e6b800;
-  transform: scale(1.05);
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .accounts-container {
+    padding: var(--space-md);
+  }
+  
+  .account-item, .accounts-list li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .account-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
 }
