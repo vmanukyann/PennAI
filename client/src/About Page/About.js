@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaSignInAlt, FaSignOutAlt, FaEnvelope, FaUserShield, FaUserPlus, FaUsers } from "react-icons/fa"; // Import additional icons
+import { FaHome, FaRobot, FaBullseye, FaEnvelope, FaUserShield, FaUserPlus, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa"; // Import icons
 import './About.css'; 
 
 function NavBar() {
@@ -16,10 +16,14 @@ function NavBar() {
           </a>
         </li>
         <li>
-          <a href="/app">Chatbot</a>
+          <a href="/app">
+            <FaRobot className="nav-icon" /> Chatbot
+          </a>
         </li>
         <li>
-          <a href="/about">Our Mission</a>
+          <a href="/about">
+            <FaBullseye className="nav-icon" /> Our Mission
+          </a>
         </li>
         <li>
           <a href="/contact">
@@ -48,13 +52,14 @@ function NavBar() {
         </li>
         <li>
           <a href="/accounts">
-            <FaUsers className="nav-icon" /> Accounts
+            <FaUsers className="nav-icon" /> Account
           </a>
         </li>
       </ul>
     </nav>
   );
 }
+
 function About() {
   return (
     <div>

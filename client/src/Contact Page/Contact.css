@@ -1,6 +1,5 @@
 /* General Styles */
 /* Ensure the body takes full height and width */
-
 html, body {
   height: 100%;
   width: 100%;
@@ -11,9 +10,11 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffffff; /* Secondary color */
-  color: #2d2d2d;
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text */
+
 }
+
 
 /* Navbar */
 .navbar {
@@ -22,7 +23,7 @@ body {
   align-items: center;
   padding: 1rem 2rem;
   background-color: #000000; /* Primary black */
-  color: #ffd700; /* Primary gold */
+  color: #000000; /* Black text (adjusted from gold) */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -33,7 +34,7 @@ body {
   font-size: 1.8rem;
   font-weight: bold;
   cursor: pointer;
-  color: #ffd700; /* Primary gold */
+  color: #000000; /* Black text */
   transition: transform 0.3s ease;
 }
 
@@ -55,13 +56,13 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #ffd700; /* Primary gold */
+  color: #000000; /* Black text */
   font-size: 1rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ffffff; /* Secondary white */
+  color: #333333; /* Slightly lighter black for hover */
   transform: translateY(-2px);
 }
 
@@ -69,50 +70,50 @@ body {
 .contact-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align content to the top */
-  height: 100vh; /* Set the container height to the full viewport */
-  width: 100vw; /* Ensure it spans the full width */
-  padding: 2rem; /* Match the padding of the About page */
-  background: var(--bg-gradient); /* Use the same gradient as the About page */
-  box-sizing: border-box; /* Include padding in width/height calculations */
-  margin: 0; /* Remove any default margin */
-  overflow: hidden; /* Prevent scrolling */
+  align-items: flex-start;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  background: #ffffff; /* Solid white background */
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
 }
 
 .contact-card {
-  background: var(--card-bg); /* Match the card background color */
-  color: var(--text-color); /* Match the text color */
-  padding: 2rem; /* Match the padding of the About page card */
-  border-radius: 12px; /* Match the rounded corners of the About page card */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Match the shadow style of the About page card */
-  max-width: 800px; /* Match the maximum width of the About page card */
-  width: 100%; /* Ensure it adjusts to screen size */
-  max-height: 90%; /* Ensure the card fits within the container */
-  overflow-y: auto; /* Add scrolling inside the card if content overflows */
-  box-sizing: border-box; /* Include padding in width/height calculations */
+  background: #f5f5f5; /* Light gray background for contrast */
+  color: #000000; /* Black text */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90%;
+  overflow-y: auto;
+  box-sizing: border-box;
   animation: fadeIn 1s ease-in-out;
-  text-align: center; /* Center-align text */
-  margin: auto; /* Center the card vertically and horizontally */
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  text-align: center;
+  margin: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
-  transform: translateY(-5px); /* Subtle hover effect */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .contact-card h1,
 .contact-card h2 {
-  font-size: 2rem; /* Match the font size of the About page */
-  color: var(--primary-color); /* Match the title color */
+  font-size: 2rem;
+  color: #000000; /* Black title text */
   margin-bottom: 1.5rem;
-  font-family: 'Playfair Display', serif; /* Match the font family */
+  font-family: 'Playfair Display', serif;
 }
 
 .contact-card p {
-  font-size: 1.2rem; /* Match the font size of the About page */
+  font-size: 1.2rem;
   text-align: justify;
-  line-height: 1.8; /* Improve readability */
+  line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
@@ -122,7 +123,7 @@ body {
 
 .brand {
   font-weight: bold;
-  color: var(--secondary-color); /* Highlight brand name */
+  color: #000000; /* Black brand text */
 }
 
 /* Responsive Design */
@@ -130,16 +131,20 @@ body {
   .contact-container {
     padding: 1.5rem;
   }
+
   .contact-card {
-    padding: 2rem; /* Match the responsive padding of the About page */
+    padding: 2rem;
   }
+
   .contact-card h1 {
-    font-size: 2.2rem; /* Match the responsive font size of the About page */
+    font-size: 2.2rem;
   }
+
   .contact-card h2 {
-    font-size: 1.6rem; /* Match the responsive font size of the About page */
+    font-size: 1.6rem;
   }
+
   .contact-card p {
-    font-size: 1rem; /* Match the responsive font size of the About page */
+    font-size: 1rem;
   }
 }
