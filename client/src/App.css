@@ -1,21 +1,42 @@
-/* Define CSS variables for theme */
-body {
+/* Define CSS Variables for Consistency */
+:root {
+  /* Colors */
+  --primary-color: #000000; /* Black */
+  --secondary-color: #ffffff; /* White */
+  --bg-gradient: linear-gradient(180deg, #000000 0%, #f5f5f5 100%);
+  /* Typography Scale */
+  --h1-size: 3rem;
+  --h2-size: 2rem;
+  --p-size: 1.2rem;
+  /* Mobile Typography */
+  --h1-mobile-size: 2.2rem;
+  --h2-mobile-size: 1.6rem;
+  --p-mobile-size: 1rem;
+  /* Spacing & Layout */
+  --container-padding: 4rem;
+  --container-padding-mobile: 1.5rem;
+  --card-padding: 2rem;
+  --gap-links: 1.5rem;
+  /* Shadows & Transitions */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-heavy: rgba(0, 0, 0, 0.15);
+  --transition-speed: 0.3s;
+  /* Card */
+  --card-bg: #ffffff;
+  /* Chat theme */
   --primary-bg: #282828;
   --sidebar-bg: #151515;
-  --header-text: #ffffff;
   --button-bg: #202123;
   --button-hover: #4d4d4f;
   --button-active: #4d4d4f;
-  --avatar-bg: #2200ff;
   --bot-bg: #444654;
-  --text-color: #ffffff;
   --input-border: #565869;
   --input-focus: #707184;
-  --delete-hover: red;
   --scroll-track: #343541;
   --scroll-thumb: #565869;
   --scroll-thumb-hover: #707184;
 }
+
 
 .chat-container {
   background-color: var(--primary-bg); /* Soft light gray background */
@@ -61,45 +82,47 @@ body {
 }
 
 /* === Message Styling === */
-.input-wrapper {
-  background-color: var(--sidebar-bg); /* White input area */
-  border: 1px solid var(--input-border); /* Medium gray border */
+/* Input Area at Bottom */
+.input-area {
+  position: fixed; bottom: 0; left: 300px; right: 0;
+  height: 80px; padding: 1rem;
+  background-color: #000000; /* Solid black background */
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.input-wrapper:focus-within {
-  border-color: var(--input-focus); /* Bright blue border on focus */
+.input-wrapper {
+  background-color: var(--sidebar-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  flex: 1; /* Expand to full width */
+  display: flex; align-items: center;
+  padding: 0.5rem;
 }
 
 textarea {
-  flex: 1;
-  padding: 0.8rem;
-  background-color: transparent;
-  border: none;
-  color: #ffffff; /* Ensure input text is white */
-  font-size: 1rem;
-  outline: none;
-  resize: none;
-  overflow: hidden;
-  line-height: 1.5rem;
-  height: auto;
+  width: 100%; /* Full width */
+  background-color: transparent; border: none;
+  color: var(--secondary-color);
+  font-size: 1rem; line-height: 1.5rem;
+  resize: none; outline: none; box-sizing: border-box;
   max-height: 6rem;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  box-sizing: border-box;
 }
 
-textarea::placeholder {
-  color: #cccccc; /* Light gray placeholder text */
-}
-
-textarea:focus {
-  border: none;
-}
+textarea::placeholder { color: #cccccc; }
+textarea:focus { border: none; }
 
 .send-button {
-  background-color: var(--button-bg); /* Light gray button */
-  color: var(--header-text); /* Dark gray text */
+  background-color: var(--button-bg);
+  color: var(--secondary-color);
+  border: none; padding: 0.5rem 1rem;
+  margin-left: 0.5rem; border-radius: 6px;
+  cursor: pointer; transition: background-color 0.3s ease;
 }
+.send-button:hover { 
+background-color: var(--button-hover);
+ }
+
 
 .send-button:hover {
   background-color: var(--button-hover); /* Slightly darker gray on hover */
