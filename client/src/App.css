@@ -94,6 +94,7 @@
   background-color: #000000; /* Solid black background */
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .input-wrapper {
@@ -104,6 +105,7 @@
   display: flex; align-items: center;
   padding: 0.5rem;
 }
+
 .message-input {
   flex: 1;
   border: none;
@@ -112,7 +114,8 @@
   font-size: 1rem;
   background: transparent;
   padding: 0.5rem;
-}
+  }
+
 textarea {
   width: 100%; /* Full width */
   background-color: transparent; border: none;
@@ -120,6 +123,7 @@ textarea {
   font-size: 1rem; line-height: 1.5rem;
   resize: none; outline: none; box-sizing: border-box;
   max-height: 6rem;
+  border-radius: 20px; 
 }
 
 textarea::placeholder { color: #cccccc; }
@@ -488,7 +492,7 @@ background-color: var(--button-hover);
 }
 
 .input-wrapper {
-  border-radius: 12px;
+  border-radius: 50px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   padding: 0.5rem;
 }
@@ -612,8 +616,5 @@ textarea:focus {
   }
 }
 
-/* Remove light mode-specific styles */
-body {
-  background-color: #000000; /* Default to dark mode */
-}
+
 
