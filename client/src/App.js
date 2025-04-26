@@ -160,7 +160,7 @@ function MainApp() {
       </div>
       
       {/* Chat container where messages are displayed */}
-      <div className="chat-container">
+      <div className={`chat-container ${currentChat && currentChat.messages && currentChat.messages.length > 0 ? 'messages-sent' : 'new-chat'}`}>
         {showWelcome && <div className="welcome-message">Penn Chatbot</div>}
         <div className="messages">
           {currentChat && currentChat.messages.map((msg, index) => (
@@ -180,12 +180,10 @@ function MainApp() {
               onChange={handleInputChange}
               onKeyDown={handleKeyPress}
               placeholder="Enter Message..."
-              rows="1" // Start with one row
+              rows="1"
               className="message-input"
             />
-            <button onClick={handleSend} className="send-button">
-              Send
-            </button>
+            <button onClick={handleSend} className="send-button">Send</button>
           </div>
         </div>
       </div>

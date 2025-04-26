@@ -39,9 +39,13 @@
 
 
 .chat-container {
-  background-color: var(--primary-bg); /* Soft light gray background */
-  color: #ffffff; /* Ensure all text in the chat container is white */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center when no messages */
+  transition: justify-content 0.5s ease;
+  height: 100vh; /* or appropriate height */
 }
+
 
 .message.user .text {
   font-size: 1rem;
@@ -311,22 +315,41 @@ background-color: var(--button-hover);
 
 /* Chat container area */
 .chat-container {
-  flex: 1;
-  display: flex;
+  flex: 50;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  color: #ffffff; /* Ensure all text in the chat container is white */
+  /* Default to top alignment so that messages render naturally */
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  color: #ffffff;
+}
+
+/* New chat state: center vertically */
+.chat-container.new-chat {
+  /* Adjust the translateY value as needed so content appears centered */
+  transform: translateY(-40%);
+}
+
+/* Existing messages: aligned normally at the top */
+.chat-container.messages-sent {
+  transform: translateY(0);
 }
 
 /* Welcome message styling */
 .welcome-message {
-  font-size: 3rem;
-  color: #ffffff; /* Ensure welcome message text is white */
+  position: absolute;
+  bottom: 90px; /* Just above the input area */
+  left: 0;
+  right: 0;
   text-align: center;
-  margin-top: 20%;
+  font-family: 'Garamond', Serif; /* Elegant, improved font */
+  font-size: 3.5rem; /* Slightly larger size for emphasis */
+  letter-spacing: 0.05em; /* Adds breathing room between letters */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Subtle shadow for depth */
+  color: #ffffff; /* White text */
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease;
 }
 
 /* Message list */
@@ -414,11 +437,12 @@ background-color: var(--button-hover);
 .input-area {
   position: fixed;
   bottom: 0;
-  left: 300px;
+  left: 0; /* Allow the input area to start from the very left */
   right: 0;
-  padding: 4rem;
-  height: 80px; /* Increase height to extend the input area */
-  background: linear-gradient(to bottom, rgba(52, 53, 65, 0) 0%, #343541 100%);
+  padding: 1rem; /* Adjust padding as desired */
+  height: 80px; /* Maintain the desired height */
+  
+  background: linear-gradient(to bottom, rgba(52, 53, 65, 0) 0%, #00000015 100%);
   display: flex;
   justify-content: center;
   align-items: center;
