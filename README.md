@@ -13,17 +13,14 @@ Welcome to **Penn Chabot**, designed to provide personalized academic assistance
 
 ---
 
-## Screenshots
+## User Experience
 
 ### Home Page
 ![Screenshot 2025-04-25 180014](https://github.com/user-attachments/assets/b918977b-ce95-415e-b1e6-6417bb081679)
 
 
-### Chatbot
-![Screenshot 2025-04-07 162132](https://github.com/user-attachments/assets/afaaa82c-2d7d-4e26-84dd-a053ad6f87e2)
-
-
----
+### Chat messaging
+![Screenshot 2025-04-26 141930](https://github.com/user-attachments/assets/7fdd655f-0731-42cf-a55b-a074fac16944)
 
 ## Technologies Used
 
