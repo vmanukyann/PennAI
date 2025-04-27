@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaHome, FaRobot, FaBullseye, FaEnvelope, FaUserShield, FaUserPlus, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa"; // Import icons
 import "./Intro.css";
+import { FaUser } from "react-icons/fa"; // Import the user icon
+
 
 function NavBar() {
   const navigate = useNavigate();
@@ -111,7 +113,7 @@ function Intro() {
       {/* Black screen + stats section */}
       <section className="stats-section">
         <div className="stats-content">
-          <h2>Penn Chatbot Stats</h2>
+          <h2>What has Chatbot done?</h2>
           <div className="stats-grid">
             <div className="stat-card">
               <h3>5,000+</h3>
@@ -122,6 +124,7 @@ function Intro() {
               <p>Accuracy Rate</p>
             </div>
             <div className="stat-card">
+            <FaUser className="stat-icon" />
               <h3>1,200+</h3>
               <p>Active Users</p>
             </div>

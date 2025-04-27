@@ -286,13 +286,15 @@ body {
   padding: 4rem 2rem;
   animation: fadeIn 2s ease-in;
 }
-
 .stats-title {
-  font-size: 3rem;
-  margin-bottom: 3rem;
-  font-weight: 700;
+  font-size: 4rem; /* Adjusted to a more reasonable size for clarity */
+  margin-bottom: 2rem; /* Reduced margin for better spacing */
+  font-weight: 900; /* Use a valid and bold font weight */
+  text-transform: uppercase; /* Make the text uppercase for emphasis */
+  letter-spacing: 0.1rem; /* Add spacing between letters for clarity */
+  color: #ffd700; /* Ensure it matches the gold theme */
+  text-align: center; /* Center-align the title */
 }
-
 .stats-grid {
   display: flex;
   gap: 2rem;
@@ -321,6 +323,12 @@ body {
 .stat-card p {
   font-size: 1.2rem;
   color: #cccccc;
+}
+
+.stat-icon {
+  font-size: 2.5rem; /* Adjust the size of the icon */
+  color: #ffd700; /* Gold color to match the theme */
+  margin-bottom: 0.5rem; /* Add spacing below the icon */
 }
 
 /* Fade In Animation */
