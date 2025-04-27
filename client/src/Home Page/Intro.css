@@ -5,8 +5,9 @@ body {
   padding: 0;
   background-color: #000000; /* Set background to black */
   color: #ffffff; /* Set text color to white */
-  height: 100vh;
-  width: 100vw;
+
+  overflow-y: auto; /* Enables scrolling for the entire page */
+
 }
 
 /* Navbar */
@@ -264,6 +265,87 @@ body {
   letter-spacing: normal; /* Ensure consistent spacing */
   text-shadow: none; /* Remove unnecessary shadow */
   animation: smoothFlip 6s cubic-bezier(0.25, 1, 0.5, 1) infinite; /* Keep smooth flipping */
+}
+
+/* Scroll Break: black screen after intro panels */
+.scroll-break {
+  height: 100vh;
+  background-color: #000000;
+}
+
+/* Stats Section Styles */
+.stats-section {
+  background-color: #000000; /* Black background */
+  color: #ffd700; /* Gold text */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  animation: fadeIn 2s ease-in;
+}
+
+.stats-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-card {
+  background: #1a1a1a;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.4);
+}
+
+.stat-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card p {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-container {
+  overflow-y: auto; /* Enables vertical scrolling */
+  height: 100vh; /* Ensures it takes the full viewport height */
+}
+
+.intro-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black; /* or any background you have */
 }
 
 @keyframes smoothFlip {
