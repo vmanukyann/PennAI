@@ -24,10 +24,10 @@ Welcome to **Penn Chabot**, designed to provide personalized academic assistance
 
 ## Technologies Used
 
-- **Frontend**: React.js, CSS (with animations)
-- **Backend**: LocalStorage (for demo purposes)
-- **Routing**: React Router
-- **Icons**: FontAwesome
+- **Frontend**: React.js
+- **Backend**: Docker 
+- **Database**: MongoDB 
+
 
 ---
 
@@ -95,4 +95,4 @@ For any inquiries or feedback, please contact us at:
 
 ---
 
-Thank you for using **Penn Chatbot**! 🚀
+**Penn Chatbot** 🚀

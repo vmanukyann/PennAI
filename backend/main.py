@@ -12,6 +12,14 @@ client = MongoClient(MONGO_URI)
 db = client["chatbotDB"]
 users = db["users"]
 
+@app.route('/')
+def home():
+    return "Backend is live!"
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({"message": "pong"})
+
 @app.route('/register', methods=['POST'])
 def register():
     data = request.json
