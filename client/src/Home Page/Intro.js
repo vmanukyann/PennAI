@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaRobot, FaBullseye, FaEnvelope, FaUserShield, FaUserPlus, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa"; // Import icons
+import { FaHome, FaRobot, FaBullseye, FaEnvelope, FaUserShield, FaUserPlus, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa";
 import "./Intro.css";
-import { FaUser } from "react-icons/fa"; // Import the user icon
-
+import { FaUser } from "react-icons/fa";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -62,9 +61,54 @@ function NavBar() {
   );
 }
 
+function WordCarousel({ words }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false); // Start fade out
+      
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+        setIsVisible(true); // Start fade in
+      }, 200); // Half of transition duration
+      
+    }, 2500); // Change word every 2.5 seconds
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+
+  // Find the longest word to set consistent width
+  const longestWord = words.reduce((a, b) => a.length > b.length ? a : b);
+
+  return (
+    <div className="loader">
+      Chatbot is   
+      <div className="words" style={{ 
+        minWidth: `${longestWord.length * 0.6}em`, // Consistent width based on longest word
+        display: 'inline-block',
+        textAlign: 'left'
+      }}>
+        <span 
+          className="word" 
+          style={{ 
+            opacity: isVisible ? 1 : 0,
+            transition: 'opacity 0.4s ease-in-out',
+            display: 'inline-block',
+            minWidth: '100%'
+          }}
+        >
+          {words[currentIndex]}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 function Intro() {
   const navigate = useNavigate();
+  const words = [" Empowering", " Helpful", " Innovative", " Supportive"];
 
   const handleStart = () => {
     navigate("/signup");
@@ -80,15 +124,7 @@ function Intro() {
           <div className="left-panel">
             <div className="content-wrapper">
               <div className="card">
-                <div className="loader">
-                  Chatbot is   
-                  <div className="words">
-                    <span className="word"> Empowering</span>
-                    <span className="word"> Helpful</span>
-                    <span className="word"> Innovative</span>
-                    <span className="word"> Supportive</span>
-                  </div>
-                </div>
+                <WordCarousel words={words} />
               </div>
             </div>
           </div>
@@ -124,7 +160,7 @@ function Intro() {
               <p>Accuracy Rate</p>
             </div>
             <div className="stat-card">
-            <FaUser className="stat-icon" />
+              <FaUser className="stat-icon" />
               <h3>1,200+</h3>
               <p>Active Users</p>
             </div>
