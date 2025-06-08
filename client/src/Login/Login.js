@@ -1,80 +1,71 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const lastLoginTime = localStorage.getItem("lastLoginTime");
-    if (lastLoginTime) {
-      const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
-      if (Date.now() - new Date(lastLoginTime).getTime() < oneHour) {
-        navigate("/app"); // Redirect to the chatbot if within 1 hour
-      }
-    }
-  }, [navigate]);
+  const handleLogin = async () => {
+    setError("");
 
-  const handleLogin = () => {
-    const universalUsers = JSON.parse(localStorage.getItem("universalUsers")) || [];
-    if (email.endsWith("@phm.k12.in.us")) {
-      const user = universalUsers.find(user => user.email === email);
-
-      if (email === "vmanukyan135@phm.k12.in.us") {
-        // Automatically approve this specific user
-        if (!user) {
-          const newUser = {
-            firstName: "Vazgen",
-            lastName: "Manukyan",
-            email,
-            timestamp: new Date().toLocaleString(),
-            approved: true, // Automatically approved
-          };
-          universalUsers.push(newUser);
-          localStorage.setItem("universalUsers", JSON.stringify(universalUsers));
-        } else if (!user.approved) {
-          user.approved = true; // Ensure the user is approved
-          localStorage.setItem("universalUsers", JSON.stringify(universalUsers));
-        }
-        setError("");
-        localStorage.setItem("currentUser", email); // Track the currently logged-in user
-        localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
-        navigate("/app"); // Redirect to the chatbot page
-      } else if (user) {
-        if (user.approved) {
-          setError("");
-          localStorage.setItem("currentUser", email); // Track the currently logged-in user
-          localStorage.setItem("lastLoginTime", new Date().toISOString()); // Save the login timestamp
-          navigate("/app"); // Redirect to the chatbot page
-        } else {
-          setError("Your account is not approved yet. Please wait for admin approval.");
-        }
-      } else {
-        setError("No account found. Please sign up.");
-      }
-    } else {
+    if (!email.endsWith("@phm.k12.in.us")) {
       setError("Only PHM email addresses are allowed.");
+      return;
+    }
+
+    try {
+      // Hash password using SHA-256 (same as in signup)
+      const encoder = new TextEncoder();
+      const data = encoder.encode(password);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+      const hashedArray = Array.from(new Uint8Array(hashBuffer));
+      const hashedPassword = hashedArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+      const response = await axios.post("http://localhost:5000/login", {
+        username: email,
+        password: hashedPassword
+      });
+
+      if (response.data.message === "Login successful") {
+        navigate("/app"); // Redirect to chatbot
+      } else {
+        setError("Unexpected response. Please try again.");
+      }
+    } catch (err) {
+      if (err.response && err.response.data.error) {
+        setError(err.response.data.error);
+      } else {
+        setError("Login failed. Please try again later.");
+      }
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleLogin();
-    }
+    if (e.key === "Enter") handleLogin();
   };
 
   return (
     <div className="login-container">
-      <div className="container"></div> {/* Add the container for the background */}
+      <div className="container"></div>
       <div className="login-box">
         <h1 className="login-title">Login</h1>
         <input
           type="email"
-          placeholder="Enter your email"
+          placeholder="PHM Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          onKeyDown={handleKeyPress}
+          className="login-input"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           onKeyDown={handleKeyPress}
           className="login-input"
         />

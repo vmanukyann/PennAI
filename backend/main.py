@@ -62,6 +62,21 @@ def register():
     except Exception as e:
         print("Registration error:", e)
         return jsonify({"error": str(e)}), 500
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    username = data.get("username")
+    hashed_password = data.get("password")
+
+    user = users.find_one({"username": username})
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+
+    if user["password"] != hashed_password:
+        return jsonify({"error": "Incorrect password"}), 401
+
+    return jsonify({"message": "Login successful"}), 200
+
 
 @app.errorhandler(404)
 def not_found(error):
