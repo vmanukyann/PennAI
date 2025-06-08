@@ -1,15 +1,17 @@
 # Penn Chatbot
 ![penn chat bot](https://github.com/user-attachments/assets/8b557e14-9ef3-4f49-aa05-49cf99ca5e4a)
-Welcome to **Penn Chabot**, designed to provide personalized academic assistance for students at Penn High School. This project is built to increase organization of students, answer specific questions for conseling, and help with language translations. 
 
+Welcome to **Penn Chatbot**, designed to provide personalized academic assistance for students at Penn High School. This project helps students stay organized, answers counseling questions, and supports language translations.
+
+---
 
 ## Features
 
-- **Chatbot**: Engage with an AI-powered chatbot for academic support.
+- **Chatbot**: AI-powered academic support.
 - **Admin Panel**: Manage user approvals and monitor activity.
-- **User Authentication**: Secure login and signup system with email verification.
-- **Responsive Design**: Optimized for all devices.
-- **Modern UI**: Clean and professional interface with animations.
+- **User Authentication**: Secure login and signup with email verification.
+- **Responsive Design**: Works on all devices.
+- **Modern UI**: Clean, professional interface with animations.
 
 ---
 
@@ -18,43 +20,55 @@ Welcome to **Penn Chabot**, designed to provide personalized academic assistance
 ### Home Page
 ![Screenshot 2025-04-25 180014](https://github.com/user-attachments/assets/b918977b-ce95-415e-b1e6-6417bb081679)
 
-
-### Chat messaging
+### Chat Messaging
 ![Screenshot 2025-04-26 141930](https://github.com/user-attachments/assets/7fdd655f-0731-42cf-a55b-a074fac16944)
+
+---
 
 ## Technologies Used
 
 - **Frontend**: React.js
-- **Backend**: Docker 
-- **Database**: MongoDB 
-
+- **Backend**: Flask (Dockerized)
+- **Database**: MongoDB
 
 ---
 
 ## Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-repo/penn chatbot.git
+   git clone https://github.com/your-repo/penn-chatbot.git
    ```
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
    ```bash
-   cd penn chatbot
+   cd penn-chatbot
    ```
-3. Install dependencies:
+3. **Install frontend dependencies:**
    ```bash
+   cd client
    npm install
    ```
-4. Start the development server:
+4. **Start the frontend development server:**
    ```bash
    npm start
+   ```
+5. **Start the backend (Docker recommended):**
+   ```bash
+   cd ../
+   docker-compose up --build
+   ```
+   Or, to run Flask backend locally:
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   python main.py
    ```
 
 ---
 
 ## Image Credits
 
-- **Background Animations**: [Unsplash](https://unsplash.com) and [Pexels](https://pexels.com)
+- **Background Animations**: [Unsplash](https://unsplash.com), [Pexels](https://pexels.com)
 - **Icons**: [FontAwesome](https://fontawesome.com)
 - **Illustrations**: [Freepik](https://freepik.com)
 

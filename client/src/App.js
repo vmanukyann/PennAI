@@ -6,7 +6,7 @@ import Intro from "./Home Page/Intro";
 import About from "./About Page/About";
 import Contact from "./Contact Page/Contact";
 import Login from "./Login/Login";
-import SignUp from "./Sign Up Page/SignUp";
+import SignUp from "./Sign Up Page/SignUp"; // This now holds RegisterForm
 import Admin from "./Admin";
 import Logout from "./Logout Page/Logout";
 import Accounts from "./Account Page/Accounts";
@@ -175,7 +175,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} /> {/* RegisterForm is shown here */}
           <Route path="/intro" element={<Intro />} />
           <Route path="/app" element={<MainApp />} />
           <Route path="/about" element={<About />} />
