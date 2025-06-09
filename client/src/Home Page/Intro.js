@@ -106,6 +106,18 @@ function WordCarousel({ words }) {
   );
 }
 
+// Matrix Animation Component
+function MatrixAnimation() {
+  return (
+    <div className="matrix-pattern">
+      {/* Generate 20 matrix columns */}
+      {Array.from({ length: 20 }, (_, index) => (
+        <div key={index} className="matrix-column"></div>
+      ))}
+    </div>
+  );
+}
+
 function Intro() {
   const navigate = useNavigate();
   const words = [" Empowering", " Helpful", " Innovative", " Supportive"];
@@ -147,14 +159,23 @@ function Intro() {
       </section>
 
       {/* Black screen + stats section */}
+      <section className="first-stat-panel">
+        <div className="first-stat-split">
+          <div className="first-stat-left">
+            <div className="first-stat-content">
+              <h3 className="first-stat-title">5,000+</h3>
+              <p className="first-stat-description">Questions Answered</p>
+            </div>
+          </div>
+          <div className="first-stat-right">
+            <MatrixAnimation />
+          </div>
+        </div>
+      </section>
       <section className="stats-section">
         <div className="stats-content">
           <h2>What has Chatbot done?</h2>
           <div className="stats-grid">
-            <div className="stat-card">
-              <h3>5,000+</h3>
-              <p>Questions Answered</p>
-            </div>
             <div className="stat-card">
               <h3>99%</h3>
               <p>Accuracy Rate</p>
