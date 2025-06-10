@@ -31,11 +31,6 @@ function NavBar() {
           </a>
         </li>
         <li>
-          <a href="/admin">
-            <FaUserShield className="nav-icon" /> Admin
-          </a>
-        </li>
-        <li>
           <a href="/signup">
             <FaUserPlus className="nav-icon" /> Register
           </a>

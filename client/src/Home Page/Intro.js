@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaRobot, FaBullseye, FaEnvelope, FaUserShield, FaUserPlus, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa";
+import { FaHome, FaRobot, FaBullseye, FaEnvelope, FaUserPlus, FaSignInAlt, FaSignOutAlt, FaUsers } from "react-icons/fa";
 import "./Intro.css";
 import { FaUser } from "react-icons/fa";
 
@@ -29,11 +29,6 @@ function NavBar() {
         <li>
           <a href="/contact">
             <FaEnvelope className="nav-icon" /> Contact
-          </a>
-        </li>
-        <li>
-          <a href="/admin">
-            <FaUserShield className="nav-icon" /> Admin
           </a>
         </li>
         <li>

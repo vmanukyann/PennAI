@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Logout.css";
 
 function Logout() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Clear session data
-    localStorage.removeItem("currentUser");
-    localStorage.removeItem("lastLoginTime");
+    // Call Flask logout route to clear session cookie
+    axios.post("http://localhost:5000/logout", {}, { withCredentials: true })
+      .then(() => {
+        console.log("Logged out from server");
+      })
+      .catch(err => {
+        console.error("Logout error:", err);
+      });
 
-    // Redirect to login page after a short delay
     const timer = setTimeout(() => {
       navigate("/login");
     }, 1000);
 
-    // Cleanup the timer on component unmount
     return () => clearTimeout(timer);
   }, [navigate]);
 
