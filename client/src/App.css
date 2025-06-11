@@ -368,29 +368,42 @@
 
 /* Welcome message styling */
 .welcome-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+  position: absolute; /* Allows precise positioning within its parent */
+  top: 50%; /* Aligns the top edge to the vertical center */
+  left: 50%; /* Aligns the left edge to the horizontal center */
+  transform: translate(-50%, -50%); /* Centers the element perfectly */
+  text-align: center; /* Centers text within the container */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; /* Modern font stack for better legibility */
+  color: #ffffff; /* White text for contrast */
+  opacity: 1; /* Initial opacity, useful for animations */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease; /* Smooth transitions for opacity and position */
+  width: 90%; /* Occupy a good portion of the width */
+  max-width: 800px; /* Limit maximum width for readability on large screens */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  padding: 1rem; /* Add some padding around the text */
 }
 
+/* Styling for the main heading within the welcome message */
 .welcome-message h2 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  margin-bottom: 1rem;
+  /* Responsive font size: minimum 2rem, preferred 7vw, maximum 3.5rem */
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 700; /* Bolder for prominence */
+  letter-spacing: 0.03em; /* Slightly tighter letter spacing for modern look */
+  line-height: 1.2; /* Improved line height for readability */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Softer, more refined text shadow */
+  margin-bottom: 0.8rem; /* Reduced bottom margin for tighter spacing */
 }
 
+/* Styling for the paragraph text within the welcome message */
 .welcome-message p {
-  font-size: 1.2rem;
-  color: var(--timestamp-color);
-  font-weight: 400;
+  /* Responsive font size: minimum 0.9rem, preferred 2.5vw, maximum 1.3rem */
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+  color: var(--timestamp-color, #c0c0c0); /* Fallback color for --timestamp-color */
+  font-weight: 400; /* Standard font weight */
+  line-height: 1.5; /* Good line height for paragraph readability */
+  max-width: 600px; /* Limit paragraph width for better readability */
+  margin-left: auto; /* Center the paragraph if it has a max-width */
+  margin-right: auto; /* Center the paragraph if it has a max-width */
 }
 
 /* Message list */
@@ -402,6 +415,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--message-spacing);
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+}
+
+.app.sidebar-collapsed .messages {
+  margin-left: 0;
 }
 
 .message {
@@ -411,11 +430,15 @@
   margin-bottom: 0.5rem;
 }
 
+/* User messages on the right */
 .message.user {
   justify-content: flex-end;
-  flex-direction: row-reverse;
+  flex-direction: row
+
+
 }
 
+/* Bot messages on the left */
 .message.bot {
   justify-content: flex-start;
   flex-direction: row;
@@ -561,6 +584,10 @@
   transition: left 0.3s ease;
 }
 
+.app.sidebar-collapsed .input-area {
+  left: 0;
+}
+
 .input-wrapper {
   background-color: var(--sidebar-bg);
   border: 1px solid var(--input-border);
@@ -658,8 +685,16 @@
     width: 280px;
   }
 
+  .messages {
+    margin-left: 0px;
+  }
+
+  .app.sidebar-collapsed .messages {
+    margin-left: 0;
+  }
+
   .input-area {
-    left: 0;
+    left: 0px;
     padding: 1rem;
     height: 80px;
   }
@@ -714,8 +749,23 @@
   }
 
   .messages {
+    margin-left: 260px;
     padding: 1rem;
     padding-bottom: 100px;
+  }
+
+  .app.sidebar-collapsed .messages {
+    margin-left: 0;
+  }
+
+  .input-area {
+    left: 0px;
+    height: 70px;
+    padding: 1rem;
+  }
+
+  .app.sidebar-collapsed .input-area {
+    left: 0;
   }
 
   .welcome-message h2 {
@@ -729,11 +779,6 @@
   .message .text {
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
-  }
-
-  .input-area {
-    height: 70px;
-    padding: 1rem;
   }
 
   .input-wrapper {

@@ -137,9 +137,61 @@ def save_chats(username):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/update-profile', methods=['PUT'])
+def update_profile():
+    """Update user's first and last name"""
+    try:
+        # Check if user is logged in
+        email = session.get("user_email")
+        if not email:
+            return jsonify({"error": "Not logged in"}), 401
+
+        # Get the data from request
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
+
+        first_name = data.get("first_name", "").strip()
+        last_name = data.get("last_name", "").strip()
+
+        # Validate input
+        if not first_name or not last_name:
+            return jsonify({"error": "First name and last name are required"}), 400
+
+        print(f"[DEBUG] Updating profile for {email}: {first_name} {last_name}")
+
+        # Update the user in database
+        result = users.update_one(
+            {"username": email},
+            {"$set": {
+                "first_name": first_name, 
+                "last_name": last_name,
+                "updated_at": datetime.utcnow()
+            }}
+        )
+
+        if result.matched_count == 0:
+            return jsonify({"error": "User not found"}), 404
+
+        if result.modified_count == 0:
+            return jsonify({"message": "No changes were made"}), 200
+
+        print(f"[DEBUG] Profile updated successfully for {email}")
+        return jsonify({"message": "Profile updated successfully"}), 200
+
+    except Exception as e:
+        print(f"[DEBUG] Profile update error: {e}")
+        return jsonify({"error": str(e)}), 500
+
+# Alternative route that matches the original function name
+@app.route('/change-names', methods=['PUT'])
+def change_names():
+    """Alternative endpoint for updating names (redirects to update_profile)"""
+    return update_profile()
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({"error": "Not found"}), 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=True)

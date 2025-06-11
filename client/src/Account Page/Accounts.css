@@ -38,7 +38,7 @@ body {
   flex-direction: column;
 }
 
-/* Enhanced backdrop for glass effect */
+/* backdrop for glass effect */
 body::before {
   content: '';
   position: fixed;
@@ -130,7 +130,7 @@ body::before {
   box-shadow: var(--glass-shadow);
   text-align: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 800px;
   margin-top: var(--space-md);
   position: relative;
   overflow: hidden;
@@ -166,7 +166,7 @@ body::before {
   gap: var(--space-md);
 }
 
-/* Enhanced Account Items with better organization */
+/* Account Items  */
 .account-item, .accounts-list li {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -240,6 +240,7 @@ body::before {
   text-transform: uppercase;
   position: relative;
   transition: all var(--transition-medium) ease;
+  cursor: pointer;
 }
 
 .account-icon::before {
@@ -260,10 +261,6 @@ body::before {
     0 12px 25px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.3),
     0 0 30px rgba(255, 215, 0, 0.5);
-}
-.account-icon {
-  position: relative;
-  cursor: pointer;
 }
 
 .image-overlay {
@@ -323,10 +320,11 @@ body::before {
   opacity: 0.9;
 }
 
-/* Enhanced Buttons */
+/* Button Base Styles */
 .account-button,
 .account-edit-button,
-.account-save-button {
+.account-save-button,
+.account-cancel-button {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
   color: var(--color-text-dark);
   border: none;
@@ -339,11 +337,21 @@ body::before {
   box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
   position: relative;
   overflow: hidden;
+  margin: 0 0.5rem;
 }
 
+/* Cancel Button Specific Styling */
+.account-cancel-button {
+  background: linear-gradient(135deg, #666666 0%, #555555 100%);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 15px rgba(102, 102, 102, 0.3);
+}
+
+/* Button Shine Effect */
 .account-button::before,
 .account-edit-button::before,
-.account-save-button::before {
+.account-save-button::before,
+.account-cancel-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -356,16 +364,24 @@ body::before {
 
 .account-button:hover::before,
 .account-edit-button:hover::before,
-.account-save-button:hover::before {
+.account-save-button:hover::before,
+.account-cancel-button:hover::before {
   left: 100%;
 }
 
+/* Button Hover Effects */
 .account-button:hover,
 .account-edit-button:hover,
 .account-save-button:hover {
   background: linear-gradient(135deg, var(--color-accent) 0%, #d4a017 100%);
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+}
+
+.account-cancel-button:hover {
+  background: linear-gradient(135deg, #555555 0%, #444444 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 102, 102, 0.4);
 }
 
 /* Edit Form Enhancements */
@@ -378,6 +394,14 @@ body::before {
   padding: var(--space-md);
   border-radius: var(--radius-md);
   border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+/* Button Container for Edit Actions */
+.edit-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .account-input {
@@ -399,6 +423,7 @@ body::before {
 /* Focus Accessibility */
 .account-edit-button:focus-visible,
 .account-save-button:focus-visible,
+.account-cancel-button:focus-visible,
 .account-button:focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 3px;
@@ -451,6 +476,18 @@ body::before {
   .account-email {
     font-size: 1.1rem;
   }
+
+  .edit-buttons {
+    justify-content: center;
+  }
+  
+  .account-button,
+  .account-edit-button,
+  .account-save-button,
+  .account-cancel-button {
+    font-size: 1rem;
+    padding: var(--space-xs) var(--space-md);
+  }
 }
 
 @media (max-width: 480px) {
@@ -461,5 +498,17 @@ body::before {
   .accounts-title {
     font-size: 2rem;
     margin-bottom: var(--space-md);
+  }
+  
+  .edit-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .account-button,
+  .account-edit-button,
+  .account-save-button,
+  .account-cancel-button {
+    margin: 0.25rem 0;
   }
 }

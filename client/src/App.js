@@ -181,7 +181,7 @@ const TypingIndicator = () => (
 const Message = ({ message, showTimestamp = true }) => (
   <div className={`message ${message.sender}`}>
     <div className="avatar">
-      <span>{message.sender === "user" ? "U" : "AI"}</span>
+      <span>{message.sender === "user" ? "User" : "AI"}</span>
     </div>
     <div className="message-content">
       <div className="text">{message.text}</div>
