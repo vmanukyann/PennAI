@@ -32,11 +32,12 @@ function Accounts() {
   const [editedFirstName, setEditedFirstName] = useState("");
   const [editedLastName, setEditedLastName] = useState("");
   const [profileImage, setProfileImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null); // Add preview state
+  const [imagePreview, setImagePreview] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null); // Add error state
+  const [error, setError] = useState(null);
   const fileInputRef = useRef(null);
 
+  // FIXED: Only one useEffect for fetching account data
   useEffect(() => {
     const fetchAccount = async () => {
       try {
@@ -50,7 +51,6 @@ function Accounts() {
         // Load existing profile image if available
         if (data.profile_image) {
           setProfileImage(data.profile_image);
-          // Set the full URL for existing images
           setImagePreview(`http://localhost:5000/uploads/${data.profile_image}`);
         }
       } catch (err) {
@@ -62,35 +62,7 @@ function Accounts() {
     fetchAccount();
   }, []);
 
-
-  useEffect(() => {
-    const updateProfile = async (firstName, lastName) => {
-      if (!firstName || !lastName) return;
-      try {
-        const { data } = await axios.put("http://localhost:5000/update-user", {
-          first_name: firstName.trim(),
-          last_name: lastName.trim()
-        }, {
-          withCredentials: true,
-        });
-        // Update the account state with the returned data
-        setAccount(prevAccount => ({
-          ...prevAccount,
-          first_name: data.first_name || firstName.trim(),
-          last_name: data.last_name || lastName.trim()
-        }));
-        console.log("Account updated successfully"); // Debug log
-      } catch (err) {
-        console.error("Update failed:", err);
-        setError("Failed to update account. Please try again.");
-      }
-    };
-    if (editing) {
-      updateProfile(editedFirstName, editedLastName);
-    }
-  }, [editing, editedFirstName, editedLastName]);
-  
-  
+  // FIXED: Single handleSave function with correct endpoint
   const handleSave = async () => {
     // Add validation
     if (!editedFirstName.trim() || !editedLastName.trim()) {
@@ -102,32 +74,44 @@ function Accounts() {
     setError(null);
     
     try {
-      const { data } = await axios.put("http://localhost:5000/update-user", {
+      // FIXED: Using correct endpoint "update-profile"
+      const response = await axios.put("http://localhost:5000/update-profile", {
         first_name: editedFirstName.trim(),
         last_name: editedLastName.trim()
       }, {
         withCredentials: true,
       });
       
-      // Update the account state with the returned data
+      console.log("Server response:", response.data); // Debug log
+      
+      // Update the account state with the new values
       setAccount(prevAccount => ({
         ...prevAccount,
-        first_name: data.first_name || editedFirstName.trim(),
-        last_name: data.last_name || editedLastName.trim()
+        first_name: editedFirstName.trim(),
+        last_name: editedLastName.trim()
       }));
       
       setEditing(false);
-      console.log("Account updated successfully"); // Debug log
+      console.log("Account updated successfully");
       
     } catch (err) {
       console.error("Update failed:", err);
-      setError("Failed to update account. Please try again.");
+      console.error("Error response:", err.response); // Additional debug info
+      
+      // More specific error handling
+      if (err.response) {
+        const errorMessage = err.response.data?.error || `Server error: ${err.response.status}`;
+        setError(`Failed to update: ${errorMessage}`);
+      } else if (err.request) {
+        setError("Network error: Unable to reach server");
+      } else {
+        setError("Failed to update account. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
   };
 
-  
   const handleCancel = () => {
     // Reset to original values
     setEditedFirstName(account.first_name);
