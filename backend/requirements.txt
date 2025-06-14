@@ -2,3 +2,9 @@ Flask
 flask-cors
 pymongo
 python-dotenv
+PyMuPDF==1.23.14
+requests==2.31.0
+chromadb==0.4.22
+sentence-transformers==2.2.2
+pathlib
+re

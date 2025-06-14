@@ -183,10 +183,6 @@ def update_profile():
         print(f"[DEBUG] Profile update error: {e}")
         return jsonify({"error": str(e)}), 500
     
-@app.before_request
-def log_request_info():
-    print(f"[DEBUG] Received {request.method} request at {request.path}")
-
 
 # Alternative route that matches the original function name
 @app.route('/change-names', methods=['PUT'])
