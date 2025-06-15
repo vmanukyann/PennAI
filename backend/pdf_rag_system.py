@@ -1,7 +1,6 @@
 import os
 import fitz  # PyMuPDF
 import requests
-import json
 import chromadb
 from sentence_transformers import SentenceTransformer
 from typing import List, Dict
@@ -188,11 +187,18 @@ class PDFRAGSystem:
         # Create prompt for Ollama
         prompt = f"""You are an AI assistant that can only answer questions based on the provided school documents. 
 
+You are an AI assistant trained to answer questions using official Penn High School documents.
+
 IMPORTANT RULES:
-1. Only answer questions using information from the context below
-2. If the information is not in the context, say "I don't have information about that in the provided documents"
-3. Do not use any external knowledge
-4. Be specific and cite which document the information comes from when possible
+1. Only answer questions using information from the school documents below
+2. If the information is not found, say: "I don't have information about that in the provided documents"
+3. You may explain concepts in simple terms, but do not use outside sources to answer questions directly
+4. Keep answers concise, friendly, and easy to understand
+5. Organize your answer in bullet points or short paragraphs when helpful
+6. If the question is unclear, ask the user to clarify
+7. Do not use profanity, personal opinions, or political/controversial topics
+8. Match the tone of a professional but helpful school guide
+
 
 Context from school documents:
 {context}
