@@ -1,8 +1,8 @@
 # Penn Chatbot
 ![penn chat bot](https://github.com/user-attachments/assets/8b557e14-9ef3-4f49-aa05-49cf99ca5e4a)
 
-Welcome to **Penn Chatbot**, designed to provide personalized academic assistance for students at Penn High School. This project helps students stay organized, answers counseling questions, and supports language translations.
-
+A full-stack, AI-powered chatbot for Penn High School.  
+Built with a React frontend, Flask backend, and MongoDB persistence. Originally integrated with Ollama; designed to be easily migrated to OpenAI **GPT-OSS** or other open-weight models.
 ---
 
 ## Features
