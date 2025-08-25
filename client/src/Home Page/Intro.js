@@ -397,27 +397,6 @@ function Intro() {
         </div>
       </section>
 
-      {/* New Testimonial Section */}
-      <section className="testimonial-section">
-        <div className="testimonial-content">
-          <div className="testimonial-card">
-            <div className="quote-mark">"</div>
-            <p className="testimonial-text">
-              "Penn Chatbot has completely transformed how I study. It's like having a personal tutor available 24/7. My grades have improved significantly!"
-            </p>
-            <div className="testimonial-author">
-              <div className="author-avatar">
-                <FaUser />
-              </div>
-              <div className="author-info">
-                <h4>Sarah M.</h4>
-                <span>Junior, Penn High School</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Enhanced CTA Section */}
       <section className="cta-section">
         <div className="cta-content">
