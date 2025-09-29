@@ -1,301 +1,480 @@
-/* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
+/* ========================================
+   SIGNUP PAGE - CLEAN DESIGN
+   ======================================== */
+
+:root {
+  --color-black: #000000;
+  --color-gold: #CDA85C;
+  --color-gold-light: #E6C77E;
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-600: #4b5563;
+  --color-gray-800: #1f2937;
+  --transition: 0.2s ease;
+}
+
+* {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Prevent scrollbars */
-  background-color: #000000; /* Default to dark mode */
-  color: #ffffff; /* White text for dark mode */
+  box-sizing: border-box;
 }
 
-/* CSS Rain Background Animation */
-.container {
-  position: fixed; /* Ensure it covers the entire viewport */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Ensure no scrollbars appear */
-  z-index: -1; /* Place the container behind other elements */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  overflow-x: hidden;
 }
 
-.container::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background-image: radial-gradient(
-    circle at 50% 50%,
-    #0000 0,
-    #0000 2px,
-    hsl(0 0 4%) 2px
-  );
-  background-size: 8px 8px;
-  --f: blur(1em) brightness(6);
-  animation: hii 10s linear infinite;
-}
-
-@keyframes hii {
-  0% {
-    backdrop-filter: var(--f) hue-rotate(0deg);
-  }
-  to {
-    backdrop-filter: var(--f) hue-rotate(360deg);
-  }
-}
-
-.container {
+/* ========================================
+   ANIMATED BACKGROUND
+   ======================================== */
+.signup-background {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  --c: #09f;
-  background-color: #000;
-  background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 252px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 252px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 150px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 150px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 204px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 204px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 134px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 134px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 179px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 179px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 299px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 299px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 215px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 215px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 281px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 281px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 158px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 158px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 210px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 210px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
-  background-size:
-    300px 235px,
-    300px 235px,
-    300px 235px,
-    300px 252px,
-    300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: hi 150s linear infinite;
+  background: linear-gradient(135deg, var(--color-black) 0%, var(--color-gray-800) 100%);
+  z-index: -1;
+  overflow: hidden;
 }
 
-@keyframes hi {
-  0% {
-    background-position:
-      0px 220px,
-      3px 220px,
-      151.5px 337.5px,
-      25px 24px,
-      28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
-  }
-
-  to {
-    background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
-  }
+.signup-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(205, 168, 92, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(205, 168, 92, 0.05) 0%, transparent 50%);
+  animation: pulse 8s ease-in-out infinite alternate;
 }
 
-/* Sign-Up Container */
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.signup-background::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle, rgba(205, 168, 92, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* ========================================
+   SIGNUP CONTAINER
+   ======================================== */
 .signup-container {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw; /* Ensure full width */
-  position: relative; /* Ensure it layers above the rain animation */
-  z-index: 2; /* Place the sign-up box above the animation */
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .signup-box {
-  background-color: #ffffff; /* Secondary white */
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: var(--color-white);
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 3rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* ========================================
+   LOGO & TITLE
+   ======================================== */
+.signup-logo {
   text-align: center;
-  width: 100%; /* Ensure it adjusts to screen size */
-  max-width: 400px; /* Set a maximum width */
+  margin-bottom: 2rem;
+}
+
+.signup-logo-icon {
+  font-size: 3rem;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
 }
 
 .signup-title {
-  font-size: 2rem;
-  color: #000000; /* Primary black */
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+
+.signup-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+.signup-form {
+  margin-top: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
 }
 
 .signup-input {
   width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  border: 2px solid var(--color-gray-100);
+  border-radius: 0.5rem;
   font-size: 1rem;
+  transition: all var(--transition);
   outline: none;
+  background: var(--color-white);
 }
 
 .signup-input:focus {
-  border-color: #ffd700; /* Primary gold */
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(205, 168, 92, 0.1);
 }
 
+.signup-input::placeholder {
+  color: var(--color-gray-600);
+}
+
+/* Password strength indicator */
+.password-strength {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.password-strength-bar {
+  height: 4px;
+  background: var(--color-gray-100);
+  border-radius: 2px;
+  margin-top: 0.25rem;
+  overflow: hidden;
+}
+
+.password-strength-fill {
+  height: 100%;
+  transition: all var(--transition);
+  border-radius: 2px;
+}
+
+.strength-weak { 
+  width: 33%; 
+  background: #dc2626; 
+}
+
+.strength-medium { 
+  width: 66%; 
+  background: #f59e0b; 
+}
+
+.strength-strong { 
+  width: 100%; 
+  background: #10b981; 
+}
+
+/* ========================================
+   ERROR & SUCCESS MESSAGES
+   ======================================== */
 .signup-error {
-  color: red;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .signup-success {
-  color: green;
-  font-size: 0.9rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.message-icon {
+  font-size: 1.125rem;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.signup-button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: var(--color-black);
+  color: var(--color-gold);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.signup-button {
-  width: 100%;
-  padding: 0.8rem;
-  background-color: #000000; /* Primary black */
-  color: #ffd700; /* Primary gold */
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.signup-button:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(205, 168, 92, 0.3);
 }
 
-.signup-button:hover {
-  background-color: #ffd700; /* Primary gold */
-  color: #000000; /* Primary black */
+.signup-button:active {
+  transform: translateY(0);
+}
+
+.signup-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ========================================
+   DIVIDER
+   ======================================== */
+.signup-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--color-gray-600);
+  font-size: 0.875rem;
+}
+
+.signup-divider::before,
+.signup-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.signup-divider span {
+  padding: 0 1rem;
+}
+
+/* ========================================
+   GOOGLE SIGN-UP BUTTON
+   ======================================== */
+.google-signup-button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background: var(--color-white);
+  color: var(--color-gray-800);
+  border: 2px solid var(--color-gray-100);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.google-signup-button:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-gray-600);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   FOOTER LINKS
+   ======================================== */
+.signup-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-gray-100);
 }
 
 .redirect-login {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
+  color: var(--color-gray-600);
 }
 
 .redirect-link {
-  color: #ffd700;
+  color: var(--color-gold);
+  font-weight: 600;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
+  transition: color var(--transition);
 }
 
 .redirect-link:hover {
-  color: #ffd700;
+  color: var(--color-gold-light);
+  text-decoration: underline;
+}
+
+.back-home {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.back-home a {
+  color: var(--color-gray-600);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.back-home a:hover {
+  color: var(--color-black);
+}
+
+/* ========================================
+   TERMS & CONDITIONS
+   ======================================== */
+.terms-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-600);
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--color-gold);
+}
+
+.terms-checkbox a {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.terms-checkbox a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 640px) {
+  .signup-container {
+    padding: 1rem;
+  }
+
+  .signup-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .signup-title {
+    font-size: 1.5rem;
+  }
+
+  .signup-logo-icon {
+    font-size: 2.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+.button-loading {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
